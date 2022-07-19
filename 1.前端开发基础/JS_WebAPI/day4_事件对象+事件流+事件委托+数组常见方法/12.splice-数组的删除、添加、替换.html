@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      可以完成数组任意位置的删除、添加、替换
+      arr.splice(startIndex, deleteNumber, 添加数据1，添加数据2...)
+    */
+      let arr = ["赵云", "马超", "刘备", "关羽", "张飞"];
+
+      // 删除：删除刘备
+      // arr.splice(2, 1);
+      // console.log(arr);
+
+      // 添加：刘备后添加诸葛亮
+      // arr.splice(3, 0, "诸葛亮");
+      // console.log(arr);
+
+      // 替换：刘备替换成孙权
+      arr.splice(2, 1, "孙权");
+      console.log(arr);
+    </script>
+  </body>
+</html>

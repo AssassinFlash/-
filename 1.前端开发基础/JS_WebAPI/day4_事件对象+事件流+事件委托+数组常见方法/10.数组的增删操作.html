@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 数组的增删操作
+       *
+       * 1、arr.push('数据')：在数组的最后，添加一项或多项数据，并且会返回新数组的长度
+       * 2、arr.pop()：在数组的最后，删除一项数据，并且返回被删除的那一项数据
+       * 3、arr.unshift('数据')：在数组的最前面，添加一项或多项数据，并且会返回新数组的长度
+       * 4、arr.shift()：在数组的最前面，删除一项数据，并且返回被删除的那一项数据
+       */
+
+      let arr = ["张三", "李四", "王五", "赵六"];
+      // let newLength = arr.push('田七')
+      // console.log(newLength, arr); // 5，array[5]：["张三", "李四", "王五", "赵六", "田七"]
+
+      // let result = arr.pop();
+      // console.log(result); // 赵六
+
+      // let newLength = arr.unshift('蒋志豪')
+      // console.log(newLength, arr); // 5, array[5]：["蒋志豪", "张三", "李四", "王五", "赵六"]
+      
+      let result = arr.shift()
+      console.log(result); // 张三
+    </script>
+  </body>
+</html>

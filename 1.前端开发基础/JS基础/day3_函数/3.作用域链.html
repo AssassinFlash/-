@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      作用域链：
+        函数内部可以继续声明函数，此时外层函数作用域中又有了新的一个函数作用域
+        根据变量访问规则，如果自己作用域内有就用自己的，自己没有就往上一级作用域查找
+          简单来说就是内部函数可以访问外部函数变量的这种机制，可以用链式查找决定哪些数据能被内部函数访问
+          这就是作用域链
+    */
+      // function fn1() {
+      //   let num = 10;
+      //   function fn2() {
+      //     let num = 30;
+      //     console.log(num); // 30
+      //   }
+      //   fn2();
+      // }
+      // let num = 20;
+      // fn1();
+
+      function fn1() {
+        let num = 10;
+        function fn2() {
+          console.log(num);
+        }
+        fn2();
+      }
+      let num = 20;
+      fn1();
+    </script>
+  </body>
+</html>

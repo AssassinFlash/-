@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      使用原型需要注意的地方：
+
+      1.什么样的数据才应该往原型上添加：
+        - 应该是公共的数据才应该往原型上添加
+    */
+      // 比如：这个班的学生学习方式是一样的
+        function Student(name, age) {
+          this.name = name
+          this.age = age
+        }
+        Student.prototype.study = function() {
+          // new出来的this指向被创建的对象
+          console.log(this.name + '在学习');
+        }
+        let s1 = new Student('jzh', 25)
+        let s2 = new Student('蒋志豪',25)
+        s1.study()
+        s2.study()
+
+      /*
+        2.对象访问成员（属性/方法）的访问规则：
+            - 对象自己有就访问对象自己的，自己没有才去访问原型的
+      */
+        let s3 = new Student('flash', 25)
+        s3.study = function() {
+          console.log(1);
+        }
+        s3.study() // 1
+
+      /*
+        3.访问原型（修改原型的属性/方法）必须使用构造函数.prototype
+      */
+
+      /*
+        4.原型可以替换：每个构造函数都有一个原型，即构造函数的prototype属性存放的是这个原型的地址
+            这个地址可以更改，也就是说构造函数.prototype不一定要指向这个原型，可以指向另一个原型
+      */
+        // 这就替换了原型
+      Student.prototype = {
+        name: '123',
+        age: 456
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 5.333rem;
+      height: 5.333rem;
+      background: pink;
+    }
+    /* 适配375px */
+    @media screen and (min-width: 375px) {
+      html {
+        font-size: 37.5px;
+      }
+    }
+    /* 适配640px */
+    @media screen and (min-width: 640px) {
+      html {
+        font-size: 64px;
+      }
+    }
+    /* 适配750px */
+    @media screen and (min-width: 750px) {
+      html {
+        font-size: 75px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    媒体查询适配的步骤
+      1.根据设计图尺寸，将px单位转换成rem单位：rem = px / html的font-size
+        一般会自定义一个html的font-size，为设计图宽度的1/10
+      2.配合媒体查询，当屏幕变小，让html的font-size变小，即设置不同屏幕下的html的font-size
+        保持比例相同：比例 = 屏幕宽度/当前的html标签的font-size
+   -->
+
+   <!-- 
+    需求：在750的设计图(屏幕)中量取div宽高为400，要求rem适配375、640、750的屏幕
+    -->
+    <div class="box"></div>
+</body>
+</html>

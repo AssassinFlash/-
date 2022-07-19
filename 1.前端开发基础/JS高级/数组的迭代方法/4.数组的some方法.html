@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      some：判断数组中是否有满足条件的元素
+        举例：判断数组中有没有负数
+
+      some方法特点：
+        1.回调执行次数 不一定等于 数组长度
+        2.本身返回值：
+          true：表示有满足条件的元素
+          false：表示没有满足条件的元素
+        3.回调函数内部的return
+            return true：循环立即结束，并且some方法本身返回true
+            return false：循环继续执行，如果全部遍历结束还是false，则some方法默认返回false
+    */
+
+      let arr = [10, 20, 30, -66, 40, 50];
+      let res = arr.some((value) => {
+        return value < 0;
+      });
+      console.log(res);
+    </script>
+  </body>
+</html>

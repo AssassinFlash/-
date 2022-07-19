@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 让用户输入10个数字，把10次的数据储存到数组中，求出10次输入数字的最大和最小值
+      let arr = [];
+      function getInput(arr, n) {
+        for (let i = 0; i < n; i++) {
+          let res = +prompt("请输入数字");
+          arr.push(res);
+        }
+      }
+      function getMax(arr) {
+        let max = arr[0]
+        for(let i = 1; i < arr.length; i++) {
+          if(max < arr[i]) max = arr[i]
+        }
+        return max
+      }
+      function getMin(arr) {
+        let min = arr[0]
+        for(let i = 1; i < arr.length; i++) {
+          if(min > arr[i]) min = arr[i]
+        }
+        return min
+      }
+      getInput(arr, 10)
+      let max = getMax(arr)
+      let min = getMin(arr)
+      console.log(max, min);
+    </script>
+  </body>
+</html>

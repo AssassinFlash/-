@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  li {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    a {
+      display: block;
+      height: 100%;
+
+      &:hover {
+        background: rgba(red, 0.4);
+      }
+
+      &.active {
+        background: red;
+        color: white;
+      }
+    }
+  }
+}
+
+div {
+  width: 700px;
+  height: 400px;
+  margin: 0 auto 20px;
+  color: white;
+
+  &:first-of-type {
+    margin-top: 100px;
+  }
+
+  &.clothes {
+    background: red;
+  }
+
+  &.playground {
+    background: blue;
+  }
+
+  &.electric {
+    background: orange;
+  }
+
+  &.movie {
+    background: purple;
+  }
+}

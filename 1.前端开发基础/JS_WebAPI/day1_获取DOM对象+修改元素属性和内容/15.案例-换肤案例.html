@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: url(./images/bg1.jpg) no-repeat;
+      background-size: cover;
+      overflow: hidden;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul li {
+      list-style: none;
+    }
+    ul {
+      background: rgba(256, 256, 256, .7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      padding: 20px 100px;
+    }
+    ul li {
+      height: 200px;
+      margin-right: 10px;
+    }
+    ul li:last-of-type {
+      margin-right: 0;
+    }
+    ul li a {
+      display: block;
+      height: 100%;
+    }
+    ul li a img {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="#"><img src="./images/bg1.jpg" alt=""></a></li>
+    <li><a href="#"><img src="./images/bg2.jpg" alt=""></a></li>
+    <li><a href="#"><img src="./images/bg3.jpg" alt=""></a></li>
+    <li><a href="#"><img src="./images/bg4.jpg" alt=""></a></li>
+    <li><a href="#"><img src="./images/bg5.jpg" alt=""></a></li>
+  </ul>
+
+  <script>
+    let body = document.querySelector('body')
+    let li = document.getElementsByTagName('li')
+    for(let i = 0; i< li.length; i++) {
+      li[i].addEventListener('click', function() {
+        let bgi = this.children[0].children[0].src
+        body.style.background = `url(${bgi})`
+      })
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      reduce：给数组的每一个元素执行一次回调
+      应用场景：数组累加和、求最大值
+
+      返回值：最后一次return的previousValue的结果
+    */
+
+      // 语法：
+      // arr.reduce((previousValue, currentValue, index)=>{}, intialValue)
+      // previousValue：上一次回调的返回值，第一次为第一个元素
+      // currentValue：当前元素值，从第二个元素开始
+      // index：当前元素下标，从第二个元素开始
+      // intialValue：previousValue的初始值，给0为保护语法
+
+      let arr = [10, 20, 30, 40, 50];
+      let res = arr.reduce((sum, val) => {
+        // 数组累加和
+        // 可以理解成：sum = sum+val，然后下一次继续sum = sum+val
+        // return sum + val;
+
+        // 求最大值
+        return sum < val ? val : sum;
+      }, 0); // 给0为保护语法，如果不给0，当数组是空数组时这个语法会报错，给0表示初始值为0
+      console.log(res);
+    </script>
+  </body>
+</html>

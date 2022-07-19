@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			div p {
+				color: red;
+			}
+
+			.father {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<!-- p标签是被直接选中了的，所以p标签的颜色是红色 -->
+			<p class="son">
+				<!-- span的颜色是继承父元素，即p标签的，只需判断p标签的颜色 -->
+				<span>文字</span>
+			</p>
+		</div>
+	</body>
+</html>

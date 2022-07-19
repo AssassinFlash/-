@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /**
+   * 为了满足各种各样的需求，网页会经常在本地存储大量的数据
+   * 本地存储：
+   * 1.数据存储在用户浏览器中
+   * 2.设置、读取方便，甚至页面刷新不丢失数据
+   * 3.容量较大，sessionStorage和localStorage约5M左右
+   * */
+
+  /**
+   * localStorage的特点：
+   * 1.生命周期为永久
+   * 2.同一浏览器的多个页面之间数据共享
+   * 3.以键值对的形式存储
+   * */
+
+  /**
+   * localStorage的方法
+   * - 储存数据：localStorage.setItem(key, value)
+   * - 获取数据：localStorage.getItem(key)
+   * - 删除数据：localStorage.removeItem(key)
+   * */
+
+  /**
+   * localStorage存储复杂数据类型的方法
+   * 场景：基本数据类型可直接存储到localStorage中，但是复杂数据类型无法直接存储
+   *      需要把复杂数据类型转换成JSON字符串，再把JSON字符串存储到localStorage中
+   *
+   * - 把复杂数据类型转换成JSON字符串：JSON.stringify(复杂数据类型)
+   *      存储数据时用该方法
+   *
+   * - 把JSON字符串转换成复杂数据类型：JSON.parse(JSON字符串)
+   *      取出数据时用该方法
+   * */
+
+  // 需要把num：10储存到localStorage
+  localStorage.setItem('num', 10)
+  localStorage.setItem('age', 25)
+  // 取出数据
+  let num = localStorage.getItem('num')
+  console.log(num)
+  // 删除数据
+  localStorage.removeItem('num')
+  localStorage.removeItem('age')
+
+  // 储存复杂数据类型
+  let obj = {
+    name: 'jzh',
+    age: 25,
+    job: '前端工程师'
+  }
+  localStorage.setItem('obj', JSON.stringify(obj))
+  // 查看复杂数据类型
+  console.log(JSON.parse(localStorage.getItem('obj')))
+  localStorage.removeItem('obj')
+</script>
+</body>
+</html>

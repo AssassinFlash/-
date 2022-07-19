@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      constructor：是原型对象的一个属性，它存放的就是原型对应的构造函数的地址（或者说它指向原型对应的构造函数）
+    */
+   
+    function Student(name, age) {
+      this.name = name
+      this.age = age
+    }
+    Student.prototype.study = function() {
+      console.log(this.name + '正在学习');
+    }
+
+    console.log(Student.prototype.constructor);
+    // 验证
+    console.log(Student.prototype.constructor === Student); // true
+
+    // 下面这句话不会报错：
+    let s1 = new Student('jzh', 25)
+    console.log(s1.constructor);
+    // 这是因为s1对象自己没有，但是s1.__proto__指向的原型它有constructor，所以s1访问到的是原型的constructor
+    // 这里应用到了对象访问成员的规则：对象自己没有的就回去访问原型的
+    // 也经常会用到这种方法，去查看对象是由哪个构造函数创建出来的
+
+    // 下面这句话不会报错：
+    let s2 = new Student.prototype.constructor('明星', 16)
+    // 这是因为 Student.prototype.constructor === Student
+  </script>
+</body>
+</html>

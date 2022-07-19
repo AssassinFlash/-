@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>我是一个按钮</button>
+  <script>
+    /*
+      事件三要素：
+        1.事件源：按钮
+        2.事件名：点击事件
+        3.事件处理函数：控制台打印
+    */
+    let btn = document.querySelector('button')
+    btn.onclick = function() {
+      console.log('触发事件');
+    }
+
+    /*
+      事件分类：
+        1.鼠标事件：
+          - click 鼠标点击
+          - mouseenter 鼠标进入
+          - mouseleave 鼠标离开
+
+        2.焦点事件：
+          - focus 获取焦点
+          - blur 失去焦点
+
+        3.键盘事件：
+          - keydown 键盘按下
+          - keyup 键盘抬起
+
+        4.文本事件：
+          - input 用户输入
+    */
+  </script>
+</body>
+</html>

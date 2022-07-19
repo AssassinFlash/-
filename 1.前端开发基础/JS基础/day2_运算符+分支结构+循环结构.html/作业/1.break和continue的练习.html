@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 求1~100之间不能被7整除的整数的和（用continue）
+      // let sum = 0;
+      // for (let i = 1; i <= 100; i++) {
+      //   if (i % 7 == 0) {
+      //     continue;
+      //   }
+      //   sum += i;
+      // }
+      // console.log(sum);
+
+      // 求200~300之间所有奇数的和（用continue）
+      // let sum = 0;
+      // for (let i = 200; i <= 300; i++) {
+      //   if (i % 2 == 0) {
+      //     continue;
+      //   }
+      //   sum += i;
+      // }
+      // console.log(sum);
+
+      // 求200~300之间第一个能被7整除的数
+      // let num = 0;
+      // for (let i = 200; i <= 300; i++) {
+      //   if (i % 7 == 0) {
+      //     num = i;
+      //     break;
+      //   }
+      // }
+      // console.log(num);
+
+      // 求200~300之间前3个能被7整除的数
+      let arr = [];
+      let k = 0;
+      for (let i = 200; i <= 300; i++) {
+        // 当k小于3时，表示还没找到3个数
+        if (k < 3) {
+          // 被7整除
+          if (i % 7 == 0) {
+            arr.push(i);
+            k++;
+          }
+        } else {
+          break;
+        }
+      }
+      console.log(arr);
+    </script>
+  </body>
+</html>

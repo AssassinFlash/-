@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+    .search {
+      position: relative;
+    }
+    input {
+      position: absolute;
+      left: 50%;
+      top: 100px;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #ccc;
+      outline: none;
+      text-indent: 10px;
+      transition: all 0.3s ease;
+    }
+    input:focus {
+      border: 1px solid orange;
+    }
+    ul {
+      position: absolute;
+      left: 50%;
+      top: 140px;
+      transform: translateX(-50%);
+      width: 200px;
+      padding-top: 10px;
+      border: 1px solid orange;
+      border-top: none;
+      display: none;
+      transition: all 0.3 ease;
+    }
+    ul li {
+      height: 30px;
+      line-height: 30px;
+      transition: all 0.3s ease;
+    } 
+    ul li a {
+      display: block;
+      height: 100%;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+    ul li:hover {
+      background: #eee;
+    }
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="search">
+    <input type="text" placeholder="小米笔记本">
+    <ul>
+      <li><a href="#">小米手机</a></li>
+      <li><a href="#">黑鲨手机</a></li>
+      <li><a href="#">手机散热器</a></li>
+      <li><a href="#">洗衣机</a></li>
+      <li><a href="#">烘干机</a></li>
+    </ul>
+  </div>
+
+  <script>
+    let ipt = document.querySelector('input')
+    let ul = document.querySelector('ul')
+
+    // 获取焦点
+    ipt.onfocus = function() {
+      ul.classList.add('show' )
+    }
+    // 失去焦点
+    ipt.onblur = function() {
+      ul.classList.remove('show')
+    }
+  </script>
+</body>
+</html>

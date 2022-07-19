@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="countDown"></div>
+    <script>
+      /*
+      时间戳：日期对象的数字形式
+      含义：表示距离1970年1月1日0时0分0秒的总毫秒数
+      作用：计算时间差
+    */
+
+      // 需求：计算距离17:00还有多长时间
+      let future = new Date("2022-6-28 20:00");
+      let now = new Date();
+      // // 将毫秒转换成秒
+      // let time = parseInt((future - now) / 1000);
+      // // 比如，剩78分钟，用户看到的是1小时18分
+      // let minutes = parseInt(time / 60) % 60;
+      // // 比如，剩25小时，用户看到的是1天1小时
+      // let hour = parseInt(minutes / 60) % 24;
+      // // 比如，剩70秒，用户看到的是1分10秒
+      // let second = time % 60;
+      // console.log(hour, minutes, second);
+
+      function addZero(num) {
+        if (num < 10) {
+          return "0" + num;
+        } else {
+          return num
+        }
+      }
+
+      function countDown(futureString) {
+        let future = new Date(futureString);
+        let now = new Date();
+
+        let time = Math.floor((future - now) / 1000);
+        let second = time % 60;
+        let minutes = Math.floor(time / 60) % 60;
+        let hour = Math.floor(time / 3600) % 24;
+
+        let countDownDiv = document.querySelector(".countDown");
+        countDownDiv.innerHTML = `距离${futureString}
+        还有${addZero(+hour)}时${addZero(+minutes)}分${addZero(+second)}秒`;
+      }
+
+      // 注意：setInterval里的function并不是调用函数，只是把一个函数体写到这里而已
+      setInterval(function() {
+        countDown('2022-6-28 17:10')
+      }, 1000);
+    </script>
+  </body>
+</html>

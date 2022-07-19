@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box {
+				width: 200px;
+				height: 200px;
+				background: pink;
+			}
+			span {
+				margin-right: 20px;
+				margin-left: 20px;
+				padding-left: 50px;
+				padding-right: 50px;
+
+				/* 无效 */
+				margin-top: 100px;
+				padding-top: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+      行内元素的margin和padding无效的情况
+        - 在水平方向上，设置行内元素的margin和padding，是有效的
+          在垂直方向上，设置行内元素的margin和padding是无效的
+     -->
+		<div class="box"></div>
+		<span>我是一个span标签</span>
+		<span>我是一个span标签</span>
+		<span>我是一个span标签</span>
+		<div class="box"></div>
+	</body>
+</html>

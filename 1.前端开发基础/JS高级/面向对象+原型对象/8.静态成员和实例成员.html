@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      静态成员：构造函数点出来的
+      实例成员：实例化对象点出来的
+    */
+
+    function Student(name) {
+      this.name = name
+    }
+    
+    let s1 = new Student('jzh')
+    
+    Student.prototype // 静态成员
+    s1.__proto__ // 实例成员
+  </script>
+</body>
+</html>

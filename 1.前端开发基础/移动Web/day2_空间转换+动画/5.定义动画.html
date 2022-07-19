@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      animation: donghua1 1s infinite linear;
+    }
+    @keyframes donghua1 {
+      from {
+        width: 200px;
+      }
+      to {
+        width: 800px;
+      }
+    }
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background: orange;
+      margin-top: 100px;
+      animation: donghua2 2s infinite linear;
+    }
+    @keyframes donghua2 {
+      0% {
+        width: 200px;
+        height: 200px;
+      }
+      50% {
+        width: 800px;
+        height: 200px;
+      }
+      100% {
+        width: 800px;
+        height: 800px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    定义动画：
+      - 需要分析清楚动画有几个状态
+      - 每个状态的样式是什么
+      - 按照顺序书写每个状态的样式
+
+      两个状态的情况：使用 from to
+      三个及以上状态的情况：使用百分比
+   -->
+
+   <!-- 需求1：盒子宽度从200变到800 -->
+   <div class="box1"></div>
+
+   <!-- 需求2：盒子先从宽度200变到800，再让盒子从高度200变到800 -->
+   <div class="box2"></div>
+</body>
+</html>

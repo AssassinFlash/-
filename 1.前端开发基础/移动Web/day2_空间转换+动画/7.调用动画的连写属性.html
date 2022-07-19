@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      animation: dong 1s linear infinite alternate;
+      /* 
+        连写的注意点：
+          1.省略问题：动画名字和动画持续时间不可省略
+          2.顺序问题：第一个时间表示动画持续时间，如果有第二个时间，它就表示动画的延时
+      */
+    }
+    @keyframes dong {
+      from {
+        width: 200px;
+      }
+      to {
+        width: 800px;
+      }
+    }
+    .box:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

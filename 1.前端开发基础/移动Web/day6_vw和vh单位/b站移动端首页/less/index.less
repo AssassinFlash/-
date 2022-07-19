@@ -1,0 +1,146 @@
+@import './base.less';
+
+// 头部样式开始
+header {
+  position: fixed;
+  height: 22.4vw;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
+  .top {
+    height: 11.7333vw;
+    padding: 0 3.2vw 0 4.8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      h3 {
+        font-size: 7.4667vw;
+        font-weight: normal;
+        color: #fb7299;
+      }
+    }
+    
+    .right {
+      width: 44.2667vw;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      i {
+        font-size: 5.8667vw;
+        color: #ccc;
+      }
+
+      img {
+        &:first-of-type {
+          width: 6.4vw;
+          height: 6.4vw;
+        }
+
+        &:last-of-type {
+          width: 19.2vw;
+          height: 6.4vw;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    height: 10.6667vw;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      height: 100%;
+      display: flex;
+      line-height: 10.6667vw;
+
+      li {
+        padding: 0 4.2667vw;
+        display: flex;
+        a {
+          font-size: 3.7333vw;
+          color: #333;
+
+          &.active {
+            border-bottom: 0.2667vw solid #fb7299;
+            color: #fb7299;
+          }
+        }
+      }
+    }
+
+    .more {
+      width: 10.6667vw;
+      height: 10.6667vw;
+      line-height: 10.6667vw;
+      text-align: center;
+
+      span {
+        font-size: 5.8667vw;
+        color: #ccc;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+// 头部样式结束
+
+// 内容样式开始
+.content {
+  // 向上padding，将内容往下移，解决固定定位遮挡内容的问题
+  padding: 22.4vw 1.3333vw 0;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      padding: 2.1333vw 1.3333vw;
+
+      a {
+        .pic {
+          position: relative;
+          width: 46vw;
+          height: 25.8667vw;
+          background: url(../images/1.jpg);
+          background-size: 100% 100%;
+
+          .info {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 2.1333vw;
+            background-image: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .left, .right {
+              font-size: 3.2vw;
+              color: #fff;
+
+              span {
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+
+        .title {
+          width: 46vw;
+          margin-top: 1.3333vw;
+          font-size: 3.2vw;
+        }
+      }
+    }
+  }
+}

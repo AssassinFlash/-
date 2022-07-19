@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.wrap {
+  width: 700px;
+  height: 400px;
+  margin: 100px auto;
+
+  .bigImage {
+    position: relative;
+    width: 100%;
+    height: 321px;
+
+    ul {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+
+      li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease;
+        opacity: 0;
+
+        &.show {
+          opacity: 1;
+        }
+
+        a {
+          display: block;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .indicator {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 53px;
+      background: rgba(black, 0.6);
+      padding: 0 45px 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        font-size: 26px;
+        color: #a9e247;
+      }
+
+      .arrow {
+        display: flex;
+        span {
+          display: block;
+          width: 30px;
+          height: 30px;
+          
+          &:first-of-type {
+            background-image: url(../images/icon_focus_switch.png);
+            margin-right: 5px;
+          }
+
+          &:last-of-type {
+            background-image: url(../images/icon_focus_switch.png);
+            background-position: -60px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .smallImage {
+    width: 100%;
+    height: calc(100% - 321px);
+    background: black;
+    padding: 10px;
+    display: flex;
+
+    li {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      margin-right: 9px;
+      box-sizing: content-box;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      .mask {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(black, 0.5);
+        cursor: pointer;
+      }
+
+      &.active {
+        border-bottom: 4px solid #a9e247;
+      }
+
+      &:first-of-type {
+        a {
+          z-index: 1;
+        }
+      }
+
+      a {
+        position: relative;
+        display: block;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

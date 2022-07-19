@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Math对象：数学对象，它有很多数学相关的属性和方法
+
+      // 1.圆周率
+      // console.log(Math.PI);
+
+      // 2.最大值和最小值
+      // let arr = [1, 2, 3, 4, 5];
+      // console.log(Math.max(...arr));
+      // console.log(Math.min(...arr));
+
+      // 3.取整
+      // 向上取整，取大的
+      // console.log(Math.ceil(1.1)); // 2
+      // // 向下取整，取小的
+      // console.log(Math.floor(1.1)); // 1
+
+      // 4.四舍五入
+      // console.log(Math.round(1.4)); // 1
+      // console.log(Math.round(1.6)); // 2
+
+      // 5.随机数
+      // 返回一个[0,1)之间的数，能取0，不能取1
+      // console.log(Math.random());
+
+      // 需求：随机取0，1，2三个整数
+      // 分析：范围：[0,3)，相比[0,1)
+      // 需要取0~n的整数，就设置为0~(n+1)
+      // let res = Math.floor(Math.random() * 3)
+      // console.log(res);
+
+      // 需求：随机取0~6的整数
+      // let res = Math.floor(Math.random() * 7)
+      // console.log(res);
+
+      // 6.绝对值
+      // console.log(Math.abs(-1)); // 1
+
+      // 7.次幂
+      // console.log(Math.pow(3,2)); // 3的2次方
+
+      // 8.开平方
+      console.log(Math.sqrt(9)); // 对9开平方
+    </script>
+  </body>
+</html>

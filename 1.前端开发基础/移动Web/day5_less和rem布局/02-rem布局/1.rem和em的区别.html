@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      /* rem只看html的font-size大小 */
+      font-size: 10px;
+    }
+    .em {
+      font-size: 20px;
+      width: 10em;
+      height: 10em;
+      background: pink;
+    }
+    .rem{
+      width: 20rem;
+      height: 20rem;
+      background: orange;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    rem布局，主要用到的rem是一个单位，在布局中，除了px之外，还有em和rem两个单位
+    
+    em：相对于当前元素的字体大小，1em = 当前标签的font-size
+      - 谷歌浏览器中默认的文字大小是16px
+
+    rem：相对于根元素(html)的字体大小，1rem = html标签的font-size
+      - 浏览器默认的font-size的大小为16px
+
+    rem布局的原理：
+      页面中元素单位是rem，此时只需要控制html标签的font-size大小，就可以统一控制页面中所有元素的大小变化
+      从而完成等比例缩放的效果
+   -->
+   <div class="em"></div>
+   <div class="rem"></div>
+</body>
+</html>

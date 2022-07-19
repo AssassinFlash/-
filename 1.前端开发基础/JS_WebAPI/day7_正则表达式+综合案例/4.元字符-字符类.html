@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 字符类：
+  * 1.[xxx] 只要字符串中有[]其中任何一个字符，就匹配成功
+  * 2.[] 里面有中划线 - ，表示一个范围，只要字符串的其中一个符合范围，就匹配成功，如 [a-z] 表示 a到z
+  * 3.[] 里面有一个 ^ ，表示取反，只要字符串中有一个符合范围，就匹配成功，如 [^abc] 表示除了abc以外
+  * 4. . 匹配除换行符以外的字符
+  * */
+
+  // 1. [xxx] 只要字符串中有 [] 其中任意一个字符，就匹配成功
+  // console.log(/[abc]/.test('andy')) // true
+  // console.log(/[abc]/.test('baby')) // true
+  // console.log(/[abc]/.test('cry')) // true
+  // console.log(/[abc]/.test('die')) // false
+
+  // 2. [] 里面有中划线 - ，表示一个范围，只要字符串其中一个符合范围，就匹配成功
+  // 如：[0-9a-zA-Z]
+  // console.log(/[0-9]/.test('123')) // true
+  // console.log(/[0-9]/.test('b2b')) // true
+  // console.log(/[a-z]/.test('qaq')) // true
+  // console.log(/[a-z]/.test('QAQ')) // false
+  // console.log(/[A-Z]/.test('QAQ')) // true
+
+  // 3. [] 里面有一个 ^ ，表示取反，只要字符串有一个符合范围，就匹配成功
+  // console.log(/[^a-z]/.test('QAQ')) // true
+  // console.log(/[^abc]/.test('abcd')) // true
+  // console.log(/[^0]/.test('0')) // false
+  // console.log(/[^0]/.test('0123')) // true
+  // console.log(/[^0]/.test('100')) // true
+
+  // 4. . 匹配除了换行符以外的字符，同样，只要字符串有一个符合范围，就匹配成功
+  console.log(/./.test('abc')) // true
+  console.log(/./.test('1231')) // true
+  console.log(/./.test('\n')) // false
+  console.log(/./.test('abc\n')) // true
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 10px solid #000;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolor velit, deserunt, mollitia iste voluptatibus corporis totam ex delectus tempore ea sit consectetur fugit vel quod, illum dicta. Suscipit, a?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolor velit, deserunt, mollitia iste voluptatibus corporis totam ex delectus tempore ea sit consectetur fugit vel quod, illum dicta. Suscipit, a?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolor velit, deserunt, mollitia iste voluptatibus corporis totam ex delectus tempore ea sit consectetur fugit vel quod, illum dicta. Suscipit, a?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolor velit, deserunt, mollitia iste voluptatibus corporis totam ex delectus tempore ea sit consectetur fugit vel quod, illum dicta. Suscipit, a?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolor velit, deserunt, mollitia iste voluptatibus corporis totam ex delectus tempore ea sit consectetur fugit vel quod, illum dicta. Suscipit, a?
+  </div>
+
+  <script>
+    /*
+      1.clientWidth 和 clientHeight：元素可视区域的宽高（content + padding）
+        注意点：如果内容溢出了，此时clientWidth 和 clientHeight 不包含溢出的内容
+
+      2.clientLeft 和 clientTop：获取元素左边框和上边框的宽度
+    */
+    let div = document.querySelector('div')
+    console.log(div.scrollHeight);
+    console.log(div.clientHeight);
+    console.log(div.offsetHeight);
+  </script>
+</body>
+</html>

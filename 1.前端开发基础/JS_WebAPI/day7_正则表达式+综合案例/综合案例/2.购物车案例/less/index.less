@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: green
+}
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+
+  table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+    thead {
+      height: 50px;
+      
+      tr {
+        background-color: #eee;
+        border-bottom: 1px dashed #ccc;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px dashed #ccc;
+        &:hover {
+          background-color: #eee;
+        }
+
+        td {
+          button {
+            width: 30px;
+            height: 30px;
+          }
+
+          .num {
+            width: 50px !important;
+            height: 30px;
+            text-align: center;
+          }
+
+          &:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .clear {
+    height: 50px;
+    padding: 0 20px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .clearCart {
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .total {
+      display: flex;
+      align-items: center;
+      span {
+        vertical-align: middle;
+        margin: 0 10px;
+      }
+
+      .items, .money {
+        margin: 0 5px;
+        font-size: 24px;
+        color: red;
+      }
+      .buy {
+        display: block;
+        width: 70px;
+        height: 50px;
+        background: red;
+        margin-left: 20px;
+        color: white;
+        line-height: 50px;
+        text-align: center;
+      }
+    }
+  }
+}

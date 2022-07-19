@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.css">
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    需求：一个盒子，在超小屏、小屏中隐藏，在大屏、中屏显示
+   -->
+   <!-- 
+    响应式工具：设置元素显示与隐藏
+    底层原理：通过媒体查询控制样式的显示和隐藏
+    
+    .hidden 所有屏幕都隐藏
+    .hidden-lg 只在大屏隐藏
+    .hidden-md 只在中屏隐藏
+    .hidden-sm 只在小屏隐藏
+    .hidden-xs 只在超小屏隐藏
+    -->
+    <div class="box hidden-xs hidden-sm"></div>
+</body>
+</html>

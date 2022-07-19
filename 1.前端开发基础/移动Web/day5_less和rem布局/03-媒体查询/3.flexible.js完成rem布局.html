@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 5.333rem;
+      height: 5.333rem;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 需求：在750设计稿中量取div宽高为400，要求rem适配375、640、750 -->
+  <!-- 
+    rem布局适配的流程：
+      1.把px单位转换成rem单位：rem = px / html的font-size（一般给设计图的十分之一）
+      2.引入js，规范在body标签内容的最后面引入
+   -->
+  <div class="box"></div>
+
+  <script src="./flexible.js"></script>
+</body>
+</html>

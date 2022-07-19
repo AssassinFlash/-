@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+.nav {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nav li {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.nav li a {
+  display: block;
+  height: 100%;
+}
+.nav li a:hover {
+  background: rgba(255, 0, 0, 0.4);
+}
+.nav li a.active {
+  background: red;
+  color: white;
+}
+div {
+  width: 700px;
+  height: 400px;
+  margin: 0 auto 20px;
+  color: white;
+}
+div:first-of-type {
+  margin-top: 100px;
+}
+div.clothes {
+  background: red;
+}
+div.playground {
+  background: blue;
+}
+div.electric {
+  background: orange;
+}
+div.movie {
+  background: purple;
+}

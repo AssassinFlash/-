@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 构造函数：使用new关键字调用一个函数
+      /*
+        new工作流程：
+          1.创建空对象{}
+          2.将this指向这个对象 this = {}
+          3.对象赋值
+          4.返回这个对象 return this
+      */
+      function Student(name, age) {
+        this.name = name;
+        this.age = age;
+        this.study = function () {
+          console.log(this.name + "在学习");
+        };
+      }
+
+      // 实例化学生对象
+      let s1 = new Student('jzh', 24)
+      s1.study()
+
+      let s2 = new Student('蒋志豪', 25)
+      s2.study()
+
+      console.log(s1.study === s2.study); // false
+
+      /*
+        s1和s2的study函数是引用类型，它们的地址存放在new关键字创建的对象上，
+        而s1和s2是两个不同的对象，所以它们的study函数的地址也不一样
+      */
+
+      /*
+        函数声明会在内存中开辟一块空间来存放这个声明的函数
+
+        new 关键字做了什么？
+          1.创建一个对象
+          2.把构造函数中的this指向这个被创建的对象
+          3.把这个创建的对象返回
+
+        方法体写在构造函数中，会有空间浪费的问题
+        如何解决？共用一份，如何共用一份？使用原型
+      */
+
+      // 什么是原型？
+      // 不管什么构造函数被创建，系统都会为之创建一个对应的对象，这个对象叫做原型
+      // 比如上述的Student构造函数，它就有一个对应的对象，叫做原型
+
+      // 如何访问这个原型对象？
+      // 语法：构造函数名.prototype，比如：Student.prototype
+      // 详细的说是Student构造函数有个属性，这个属性叫prototype，它存放的是这个原型对象的地址
+      // console.log(Student.prototype);
+
+      // 既然原型是一个对象，那就可以往这个对象添加属性和方法
+      Student.prototype.sb = 'sb'
+      Student.prototype.dsb = function() {
+        console.log(1);
+      }
+      // console.log(Student.prototype);
+
+      // 原型中添加的属性和方法，谁能访问？
+      // 1.原型对象自己
+      // console.log(Student.prototype.sb);
+      // 2.原型对象对应的构造函数new创建出来的对象
+      let s3 = new Student('lmq', 25)
+      console.log(s3.sb);
+      
+      let s4 = new Student('梁铭其', 25)
+      console.log(s3.dsb === s4.dsb); // true
+      /*
+        这是因为原型本身就是一个对象，dsb()只是这个对象上的一个属性
+        s3、s4是不同的对象，但是它们访问dsb()是通过原型对象来访问的
+        原型对象只有一个，所以它们的dsb()是同一个函数
+      */
+    </script>
+  </body>
+</html>

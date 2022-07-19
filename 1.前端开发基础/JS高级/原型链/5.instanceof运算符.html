@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // instanceof
+  // 语法：对象 instanceof 构造函数名
+  // 作用：判断这个构造函数的prototype在不在这个对象的原型链上，如果在就返回true，不在就返回false
+  // 实际作用：判断这个对象是由哪个构造函数创建出来的实例，如果为true，就可以让这个对象访问对应的构造函数的成员了
+
+  let arr = [10,20,30]
+  console.log(arr instanceof Array) // true
+  console.log(arr instanceof Object) // true
+
+  // Object对象的原型链：Function.prototype -> Object.prototype -> null
+  console.log(Object instanceof Object) // true
+  console.log(Object instanceof Function) // true
+
+  // Function对象的原型链：Function.prototype -> Object.prototype -> null
+  console.log(Function instanceof Function)
+  console.log(Function instanceof Object) // true
+</script>
+</body>
+</html>

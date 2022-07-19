@@ -1,0 +1,245 @@
+body {
+  position: relative;
+  height: 100vh;
+  background: #f7f7f8;
+  padding: 12px 11px 0;
+  /* 设置最大宽度和最小宽度 */
+  max-width: 1000px;
+  min-width: 375px;
+  margin: 0 auto;
+}
+/* 用户信息模块开始 */
+.xtx-user-msg {
+  height: 85px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.xtx-user-msg .location {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #6bc0a8;
+  margin-left: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.xtx-user-msg .location .icon-location {
+  color: #fff;
+}
+.xtx-user-msg .more {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.xtx-user-msg .more .icon-more {
+  color: #333;
+}
+.xtx-user-msg .info {
+  flex: 1;
+  height: 100%;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.xtx-user-msg .info .userinfo .user {
+  font-size: 15px;
+  color: #262626;
+}
+.xtx-user-msg .info .userinfo .phone {
+  font-size: 13px;
+}
+.xtx-user-msg .info .address {
+  font-size: 12px;
+}
+/* 用户信息模块结束 */
+/* 商品信息模块开始 */
+.xtx-item-info {
+  height: 107px;
+  margin-top: 9px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.xtx-item-info .shop-image {
+  width: 85px;
+  height: 85px;
+  margin-left: 11px;
+}
+.xtx-item-info .shop-image img {
+  width: 100%;
+  height: 100%;
+}
+.xtx-item-info .shop-number {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.xtx-item-info .shop-info {
+  flex: 1;
+  height: 100%;
+  margin-left: 12px;
+  padding: 13px 0 10px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.xtx-item-info .shop-info .title {
+  line-height: 19px;
+  font-size: 13px;
+  color: #262626;
+} 
+.xtx-item-info .shop-info .specs {
+  width: 95px;
+  height: 16px;
+  background: #f7f7f8;
+  border-radius: 2px;
+  font-size: 11px;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xtx-item-info .shop-info .price .newPrice .money {
+  line-height: 21px;
+  font-size: 9px;
+  color: #cf4444;
+  vertical-align: bottom;
+}
+.xtx-item-info .shop-info .price .newPrice {
+  line-height: 21px;
+  font-size: 16px;
+  color: #cf4444;
+}
+.xtx-item-info .shop-info .price .oldPrice {
+  line-height: 21px;
+  font-size: 12px;
+  color: #999;
+  text-decoration: line-through;
+}
+/* 商品信息模块结束 */
+/* 交易方式模块开始 */
+.xtx-shipping {
+  height: 125px;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 15px 12px 13px;
+  line-height: 21px;
+  font-size: 13px;
+  color: #262626;
+}
+.xtx-shipping .shipping {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xtx-shipping .remark {
+  display: flex;
+  align-items: center;
+}
+.xtx-shipping .remark .message {
+  margin-left: 19px;
+  font-size: 12px;
+  color: #989898;
+}
+.xtx-shipping .trade {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xtx-shipping .trade .icon-more {
+  color: #808080;
+  vertical-align: middle;
+}
+/* 交易方式模块结束 */
+/* 商品价格模块开始 */
+.xtx-price {
+  height: 125px;
+  line-height: 21px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 16px 12px 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #262626;
+}
+.xtx-price .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xtx-price .shipping {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xtx-price .discount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xtx-price .discount .money {
+  color: #cf4444;
+}
+/* 商品价格模块结束 */
+/* 商品支付模块开始 */
+.xtx-pay {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 79px;
+  background: #fff;
+  border-top: 1px solid #ededed;
+  padding: 0 11px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.xtx-pay .total {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: #1e1e1e;
+}
+.xtx-pay .total .money {
+  color: #cf4444;
+}
+.xtx-pay .total .money .before {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.xtx-pay .total .money .decimal {
+  font-size: 18px;
+  vertical-align: middle;
+}
+.xtx-pay .pay-button {
+  width: 91px;
+  height: 35px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.xtx-pay .pay-button input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #6fc2aa;
+  font-size: 13px;
+  color: #fff;
+}
+/* 商品支付模块结束 */

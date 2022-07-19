@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="my-app">
+      <!-- 不用事件修饰符的情况下，点击按钮，由于事件冒泡，会导致div也被点击 -->
+      <!-- 使用.stop修饰符，可以起到类似于stopPropagation()阻止事件冒泡的效果 -->
+      <div @click="divClick">
+        <button @click.stop="btnClick">按钮</button>
+      </div>
+
+      <!-- 不用事件修饰符的情况下，点击a标签，会有跳转页面的默认事件 -->
+      <!-- 使用.prevent修饰符，可以起到preventDefault()阻止默认事件的效果 -->
+      <a href="#" @click.prevent="linkClick">链接</a>
+
+      <!-- .enter表示特定按键才触发事件 -->
+      <input type="text" @keyup.enter="showIpt">
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        template: "#my-app",
+        data() {
+          return {
+            message: "hello world",
+          };
+        },
+        methods: {
+          divClick() {
+            console.log("div点击");
+          },
+          btnClick() {
+            console.log("button点击");
+          },
+          linkClick() {
+            console.log('a点击');
+          },
+          showIpt(event) {
+            // 输出事件对象的值
+            console.log(event.target.value);
+          }
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

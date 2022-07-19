@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background: pink;
+      transition: all 1s;
+    }
+    .box:hover {
+      transform: translate(500px,500px);
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    平面转换（2D转换）：改变盒子在平面内的状态（平移、伸缩、旋转）
+    
+    平面转换属性名：transform
+
+    平移：
+      属性名：transform
+      属性值：
+        1.translateX，水平偏移量
+        2.translateY，垂直偏移量
+        3.translate()，水平偏移量，垂直偏移量
+
+    注意点：
+      平移后的元素效果，不会影响其他盒子的原有布局，类似于相对定位
+      百分比取值，是相对于盒子自身去取值的
+   -->
+   <div class="box"></div>
+   <h1>我是一个h1标签</h1>
+</body>
+</html>

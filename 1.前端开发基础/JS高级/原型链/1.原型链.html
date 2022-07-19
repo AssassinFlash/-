@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 原型链
+    // 每一个对象都有对应的原型，原型本身也是对象，所以原型也有原型，这样形成了一种链式结构，称为原型链
+
+    function Student(name) {
+      this.name = name
+    }
+
+    Student.prototype.study = function() {
+      console.log(1);
+    }
+
+    let s1 = new Student('jzh')
+
+    // 验证
+    console.log(s1.__proto__ === Student.prototype); // true
+
+    console.log(s1.__proto__.__proto__.constructor); // Object构造函数
+    console.log(s1.__proto__.__proto__ === Object.prototype); // true
+
+    console.log(s1.__proto__.__proto__.__proto__); // null 原型链也是有尽头的
+  </script>
+</body>
+</html>

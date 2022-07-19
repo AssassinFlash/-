@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <!-- 
+      v-show和v-if的区别：
+      用法上：
+      - v-show 不支持template
+      - v-show 没有 v-else
+
+      本质上：
+      - v-show 无论判断结果是否为true，都会渲染dom，只是通过css的display属性来进行显示切换
+      - v-if 当条件为false时，是不会渲染dom的
+
+      如何进行选择？
+      - 如果元素需要在显示和隐藏之间进行频繁的切换，使用v-show
+      - 如果不会频繁的发生切换，使用v-if
+     -->
+    <h2 v-show="isShow">{{message}}</h2>
+    <h2 v-if="isShow">呵呵呵</h2>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          message: 'hello world',
+          isShow: false
+        }
+      }
+    }
+    Vue.createApp(App).mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      视距、透视
+      需求：让图片沿着x轴旋转，此时图片是往里还是往外旋转？
+
+      属性名：perspective
+      属性值：数字px
+      取值：观察者的眼睛距离元素初始平面的距离，即模拟了用户由多远的地方看到这个元素的视觉效果
+        取值越小，代表眼睛距离平面越近，看到的近大远小的效果越明显
+
+      注意：
+        - 视距给转换元素的父元素设置
+        - 实际上视距还是一个平面效果
+        - 真正实现3D效果的是 transform-style: preserve-3d
+
+      作用：让子元素拥有了近大远小的视觉效果
+
+      transform-style和perspective的区别：
+        1.transform-style:preserve-3d 是真正实现3d效果的属性，perspective:1000px只是让子元素拥有了近大远小的效果，本质还是平面
+        2.perspective都是给父元素添加的属性，transform-style是谁需要变成3D元素就给谁加
+    */
+
+    body {
+      /* 视距，一般值是给1000px，太大效果不明显，太小效果太明显 */
+      perspective: 1000px;
+    }
+    img {
+      display:block;
+      width: 400px;
+      margin: 200px auto;
+      transition: all 0.3s;
+    }
+    img:hover {
+      /* 图片沿着x轴旋转 */
+      transform: rotateX(-45deg);
+    }
+  </style>
+</head>
+<body>
+  <img src="./images/hero.jpeg" alt="">
+</body>
+</html>

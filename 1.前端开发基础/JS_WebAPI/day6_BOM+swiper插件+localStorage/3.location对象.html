@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        location对象：window对象上的属性，对应的就是浏览器中的地址栏
+      */
+
+      console.log(location);
+
+      // 1. location.href 表示地址栏的URL地址，可赋值，用于跳转
+      console.log(location.href);
+      // 设置跳转，可以做到点击任何元素都可以跳转
+      location.href = "https://www.baidu.com"
+
+      // 2. location.search 获取地址栏中的参数，即 ? 后面的部分，包括 ?
+      
+      // 3. location.hash 获取地址中携带的哈希值，即 #之后的东西，包括 #
+
+      // 4. location.reload() 重新加载，刷新页面，传入true表示强制刷洗
+    </script>
+  </body>
+</html>

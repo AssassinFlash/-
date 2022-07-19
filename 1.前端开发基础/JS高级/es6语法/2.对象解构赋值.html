@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 解构赋值：变量赋值的简写形式
+      let obj = {
+        name: "jzh",
+        age: 25,
+        gender: "男",
+      };
+
+      // 解构赋值：声明变量，自动取右边对象的同名属性赋值
+      // let { name, age, gender } = obj;
+
+      // 解构赋值的细节补充
+      // 1.变量名与属性名不一致
+      let { name, age, gender: sex, hobby } = obj;
+      console.log(sex);
+      // let name = obj.name
+      // let age = obj.age
+      // let sex = obj.gender
+      // let hobby = obj.hobby
+      console.log(hobby); // undefined
+    </script>
+  </body>
+</html>

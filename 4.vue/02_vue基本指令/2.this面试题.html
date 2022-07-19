@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let person1 = {
+      foo1: function() {
+        console.log(this);
+      },
+      foo2: ()=> {
+        console.log(this);
+      },
+      foo3: function() {
+        return function() {
+          console.log(this);
+        }
+      },
+      foo4: function() {
+        return () => {
+          console.log(this);
+        }
+      }
+    }
+
+    let person2 = {
+      name: 'person2'
+    }
+
+    person1.foo1() // person1对象
+
+    person1.foo1.call(person2) // person2对象
+
+    person1.foo2() // 箭头函数找上层，window
+
+    person1.foo2.call(person2) // 箭头函数没有call，window
+
+    person1.foo3()() // person1.foo3()返回一个函数，相当于是直接调用这个函数，所以为 window
+    person1.foo3.call(person2)() // 虽然绑定了person2，但是返回的函数没有绑定，所以还是直接调用这个函数，为window
+
+    person1.foo3().call(person2) // 这次是返回的函数绑定了person2，所以是 person2
+
+    person1.foo4()() // person1
+
+    person1.foo4.call(person2)() // person2
+
+    person1.foo4().call(person2) // person1
+  </script>
+</body>
+</html>

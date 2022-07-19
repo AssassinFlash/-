@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      z-index：改变定位元素的层级
+        属性取值：数字
+        - 数字越大，层级越高，默认盒子的层级为0
+
+      注意点：z-index不能改变所有元素的层级，只能改变定位元素的层级
+    */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+    }
+    .red {
+      position: relative;
+      background-color: red;
+    }
+    .green {
+      position: absolute;
+      background-color: green;
+      left: 100px;
+      top: 100px;
+    }
+    .blue {
+      position: fixed;
+      width: 220px;
+      height: 220px;
+      background-color: blue;
+      left: 200px;
+      top: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="red"></div>
+  <div class="green"></div>
+  <div class="blue"></div>
+</body>
+</html>

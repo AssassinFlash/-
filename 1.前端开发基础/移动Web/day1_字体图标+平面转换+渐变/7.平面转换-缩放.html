@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      margin: 100px auto;
+      transition: all 0.3s;
+    }
+    .box:hover {
+      /* 缩放 */
+      /* transform: scale(2); */
+      transform: scaleX(2);
+      transform: scaleY(2);
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    平面转换-缩放
+
+    属性名：transform
+    属性值：
+      1.scaleX(x轴缩放倍数)
+      2.scaleY(y轴缩放倍数)
+      3.scale(x轴缩放倍数,y轴缩放倍数)
+
+    注意点：
+      - 如果x轴和y轴缩放倍数相同，可简写成 transform:scale(倍数)
+      - 倍数是纯数字，不带单位
+      - 倍数大于1表示放大，小于1表示缩小
+      - 缩放是使得内容也跟着一起缩放
+   -->
+
+   <div class="box">我是内容</div>
+</body>
+</html>

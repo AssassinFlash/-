@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // typeof 检测有局限性
+  // console.log(typeof null) // 只能返回object
+
+  // 万能数据类型检测：
+  // Object.prototype.toString() [object type] type为数据类型
+  // 那就借用一下
+  console.log(Object.prototype.toString.call(123)) // [object Number]
+  console.log(Object.prototype.toString.call(function (){})) // [object Function]
+  console.log(Object.prototype.toString.call(undefined)) // [object Undefined]
+</script>
+</body>
+</html>

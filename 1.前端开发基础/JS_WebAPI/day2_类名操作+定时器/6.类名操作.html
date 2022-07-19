@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background: pink;
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button>切换显示/隐藏</button>
+  <div></div>
+  <script>
+    /*
+      classList是一个集合，使用classList代替className来操作clas类
+
+      每个dom对象都有一个属性：classList，并且classList上有4个方法：
+        1.classList.add('')：往元素添加类名，不会覆盖原有类名
+        2.classList.remove('')：往元素移除类名，不会影响其他
+        3.classList.contains('')：判断元素中是否包含此类名
+        4.classList.toggle('')：切换类名，若元素含有此类名就移除该类名，否则就添加该类名
+    */
+
+    let div = document.querySelector('div')
+    let btn = document.querySelector('button')
+    
+    btn.addEventListener('click', function() {
+      div.classList.toggle('show')
+    })
+  </script>
+</body>
+</html>

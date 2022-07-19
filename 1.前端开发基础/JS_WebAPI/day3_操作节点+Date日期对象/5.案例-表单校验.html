@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        display: none;
+      }
+      .show {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="请输入2到6个字符" />
+    <span></span>
+
+    <script>
+      let ipt = document.querySelector("input");
+      let span = ipt.nextElementSibling;
+
+      ipt.addEventListener("keyup", function () {
+        if (ipt.value.length >= 2 && ipt.value.length <= 6) {
+          span.classList.add("show");
+          span.innerHTML = "√";
+          span.style.color = "green";
+        } else {
+          span.classList.add("show");
+          span.innerHTML = "× 不符合2到6个字符";
+          span.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>

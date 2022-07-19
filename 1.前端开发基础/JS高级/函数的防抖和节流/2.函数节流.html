@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 1000px;
+        height: 4000px;
+        background: pink;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      /*
+      函数节流：间隔时间内函数只被触发一次
+      作用：降低高频事件触发的频率，如果不节流，事件触发频率过高会影响浏览器性能
+
+      函数节流思路：计算两次事件触发的时间间隔
+        1.声明变量存储本次事件触发的时刻time
+        2.每一次触发事件的时候，使用当前时刻 - 变量time，得到两次触发事件的时间间隔，判断它是否超过 节流时间
+        3.如果超过，则触发事件，time更新为此次触发事件的时刻
+          如果没超过，则不触发事件，time不更新
+
+      
+      高频事件：触发频率很高的事件，mousemove、scroll
+    */
+
+    let REDUCE_TIME = 300
+    // 1.声明变量存储第一次事件触发的时刻time
+    let time = null
+    let div = document.querySelector('div')
+    document.addEventListener('scroll', function() {
+      // 2.记录第二次事件触发的时刻currentTime
+      let currentTime = Date.now()
+      // 3.判断两次触发事件的时间间隔是否超过节流时间
+      if(currentTime - time >= REDUCE_TIME) {
+        // 更新time为此次触发事件的时刻
+        time = currentTime
+        // 获取页面被卷去的距离
+        console.log(document.documentElement.scrollTop);
+      }
+    })
+    </script>
+  </body>
+</html>

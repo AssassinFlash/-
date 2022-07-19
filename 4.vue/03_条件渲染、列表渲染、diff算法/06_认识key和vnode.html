@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+       在使用v-for进行列表渲染时，通常要给元素或者组件绑定一个key属性
+       key属性的作用：
+         - 主要用于vue的虚拟dom算法，在新旧nodes的对比时辨识VNodes
+         - 如果不使用key，vue会最大限度减少动态元素并且尽可能尝试就地修复/复用相同类型元素
+         - 使用key，vue会基于key的变化重新排列元素顺序，并且移除/销毁key不存在的元素
+
+       VNode的概念：VNode是虚拟节点
+         事实上，无论是组件还是元素，它们最终在vue中表示出来的都是一个个VNode
+         VNode本质还是一个js对象
+
+         const vnode = {
+           type: 'div',
+           props: {
+             class: 'title',
+             style: {
+               'font-size': '30px',
+               color: 'red'
+             }
+           }
+         }
+
+       虚拟DOM：一堆元素形成的VNode tree，是多个vnode形成的树结构，所以虚拟dom也称为 vnode tree
+         先由template编译成虚拟DOM，然后再渲染成真实的DOM
+         虚拟DOM和真实的DOM不一定是一一对应的
+
+       虚拟DOM的优点：跨平台
+      */
+    </script>
+  </body>
+</html>

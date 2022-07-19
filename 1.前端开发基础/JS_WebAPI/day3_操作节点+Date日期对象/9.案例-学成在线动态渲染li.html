@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/xuecheng.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>精品课程</h2>
+        <span>查看全部</span>
+      </div>
+      <ul class="course-list">
+        <!-- <li>
+        <a href="#">
+          <img src="./images/course01.png" alt="">
+          <div class="info">
+            <p class="course-title">Think PHP 5.0 博客系统实战项目演练</p>
+            <p class="course-detail">
+              <span class="level">高级</span>
+              <span class="dot"></span>
+              <span class="learner">1125</span>人在学习
+            </p>
+          </div>
+        </a>
+      </li> -->
+      </ul>
+    </div>
+
+    <script>
+      // 需求，动态创建li
+      let data = [
+        {
+          src: "images/course01.png",
+          title: "Think PHP 5.0 博客系统实战项目演练",
+          num: 1125,
+        },
+        {
+          src: "images/course02.png",
+          title: "Android 网络动态图片加载实战",
+          num: 357,
+        },
+        {
+          src: "images/course03.png",
+          title: "Angular2 大前端商城实战项目演练",
+          num: 22250,
+        },
+        {
+          src: "images/course04.png",
+          title: "Android APP 实战项目演练",
+          num: 389,
+        },
+        {
+          src: "images/course05.png",
+          title: "UGUI 源码深度分析案例",
+          num: 124,
+        },
+        {
+          src: "images/course06.png",
+          title: "Kami2首页界面切换效果实战演练",
+          num: 432,
+        },
+        {
+          src: "images/course07.png",
+          title: "UNITY 从入门到精通实战案例",
+          num: 888,
+        },
+        {
+          src: "images/course08.png",
+          title: "棠哥最帅！",
+          num: 888,
+        },
+        {
+          src: "images/course08.png",
+          title: "棠哥最帅！",
+          num: 888,
+        },
+        {
+          src: "images/course08.png",
+          title: "棠哥最帅！",
+          num: 888,
+        },
+      ];
+
+      let wrapDiv = document.querySelector(".wrap");
+      let courseListUl = document.createElement("ul");
+      courseListUl.classList.add('course-list');
+
+      for (let i = 0; i < data.length; i++) {
+        let courseLi = document.createElement("li");
+        let courseLi_a = document.createElement("a");
+        courseLi_a.innerHTML = `
+          <img src=${data[i].src} alt="">
+          <div class="info">
+            <p class="course-title">${data[i].title}</p>
+            <p class="course-detail">
+              <span class="level">高级</span>
+              <span class="dot"></span>
+              <span class="learner">${data[i].num}</span>人在学习
+            </p>
+          </div>
+      `;
+        courseLi.appendChild(courseLi_a);
+        courseListUl.insertBefore(courseLi, null);
+      }
+      wrapDiv.appendChild(courseListUl);
+    </script>
+  </body>
+</html>

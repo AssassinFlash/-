@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      input {
+        border: none;
+        outline: none;
+      }
+      .wrap {
+        position: relative;
+        width: 150px;
+        height: 40px;
+        margin: 100px auto;
+        line-height: 40px;
+        text-align: center;
+      }
+      .number {
+        width: 100px;
+        height: 40px;
+        border: 1px solid #333;
+      }
+      input {
+        position: absolute;
+        right: 20px;
+        width: 30px;
+        height: 20px;
+        font-size: 20px;
+        line-height: 20px;
+        cursor: pointer;
+      }
+      #add {
+        top: 0;
+      }
+      #minus {
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="number">1</div>
+      <input type="button" value="+" id="add" />
+      <input type="button" value="-" id="minus" />
+    </div>
+
+    <script>
+      let addBtn = document.getElementById("add");
+      let minusBtn = document.getElementById("minus");
+      let numDiv = document.querySelector(".number");
+
+      addBtn.addEventListener("click", function () {
+        numDiv.innerHTML = +numDiv.innerHTML + 1;
+        minusBtn.disabled = false;
+      });
+      minusBtn.addEventListener("click", function () {
+        numDiv.innerHTML -= 1;
+        if (+numDiv.innerHTML === 1) {
+          minusBtn.disabled = true;
+        }
+      });
+    </script>
+  </body>
+</html>

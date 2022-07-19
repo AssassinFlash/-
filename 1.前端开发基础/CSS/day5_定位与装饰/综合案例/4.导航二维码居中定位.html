@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* 占满一行的边框 */
+    .nav {
+      height: 40px;
+      border-bottom: 1px solid #ccc;
+    }
+    /* ul宽度固定，然后水平居中 */
+    ul {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    ul li {
+      float: left;
+      width: 20%;
+      height: 40px;
+      border-right: 1px solid #ccc;
+      text-align: center;
+      line-height: 40px;
+    }
+    ul li:last-of-type {
+      border-right: none;
+    }
+    ul li a {
+      display: block;
+      height: 40px;
+      color: black;
+    }
+    ul li a.app {
+      position: relative;
+    }
+    ul li a.app img {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 40px;
+      transform: translateX(-50%);
+    }
+    ul li a.app:hover img {
+      display: block;
+    }
+    .clearfix::before, .clearfix::after {
+      content: '';
+      display: table;
+      height: 0;
+      visibility: hidden;
+    }
+    .clearfix::after {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <ul class="clearfix">
+      <li><a href="#">我要投资</a></li>
+      <li><a href="#">平台介绍</a></li>
+      <li><a href="#">新手专区</a></li>
+      <li>
+        <a href="#" class="app">
+          <span>手机微金所</span>
+          <img src="./images/code.jpg" alt="">
+        </a>
+      </li>
+      <li><a href="#">个人中心</a></li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="time"></div>
+
+    <script>
+      let timeDiv = document.querySelector(".time");
+      setInterval(function () {
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = now.getMonth();
+        let date = now.getDate();
+        let hour = now.getHours();
+        let minutes = now.getMinutes();
+        let second = now.getSeconds();
+
+        if (+hour < 10) {
+          hour = "0" + hour;
+        }
+        if (+minutes < 10) {
+          minutes = "0" + minutes;
+        }
+        if (+second < 10) {
+          second = "0" + second;
+        }
+
+        timeDiv.innerHTML = `
+          ${year}年${month}月${date}日${hour}时${minutes}分${second}秒
+        `
+      }, 1000);
+    </script>
+  </body>
+</html>

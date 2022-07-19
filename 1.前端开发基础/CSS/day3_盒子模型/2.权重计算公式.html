@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* 从前往后比较，所以它是红色 */
+			/* 0 1 0 1 */
+			div #one {
+				color: red;
+			}
+
+			/* 0 0 2 0 */
+			.father .son {
+				color: green;
+			}
+
+			/* 0 0 0 2 */
+			div p {
+				color: blue;
+			}
+
+			/* 0 0 1 1 */
+			.father p {
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+      权重叠加计算公式：（每一级之间不存在进位）
+          0              0              0               0
+      行内样式的个数    id选择器的个数    类选择器的个数    标签选择器的个数
+
+      比较规则：从前往后比较，以第一级数字优先，再去比较第二级数字，以此类推
+
+      先判断选择器能否直接选中标签，如果不能选中 -> 继承，优先级最低 -> pass
+     -->
+		<div class="father">
+			<p class="son" id="one">我是一个标签</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      遍历对象，把对象的所有属性都访问一遍
+
+      for...in...
+
+      键值对：
+        键：key -> 属性名
+        值：value
+
+      语法：
+      for(let key in obj) {
+        key：每个键值对中的键名 -> 属性名
+      }
+    */
+      // let zs = {
+      //   name: 'jzh',
+      //   age: 25,
+      //   gender: '男'
+      // }
+      // for(let key in zs) {
+      //   console.log(zs[key]);
+      // }
+
+      // 需求：将所有 obj2 的属性，添加到 obj 中
+      let obj = {
+        name: "jzh",
+        age: 25,
+      };
+      let obj2 = {
+        money: 0,
+        job: "none",
+      };
+      for (let key in obj2) {
+        obj[key] = obj2[key];
+      }
+      console.log(obj);
+    </script>
+  </body>
+</html>

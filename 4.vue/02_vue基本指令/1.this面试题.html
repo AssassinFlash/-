@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let person = {
+      name: 'person',
+      sayName: function() {
+        console.log(this);
+      }
+    }
+    let sss = person.sayName // 相当于把 sayName 函数赋值给sss
+    sss() // 独立函数调用，相当于直接调用 sayName()，因此是默认绑定，window
+
+    person.sayName() // 是person对象调用了 sayName()，因此是 person
+
+    function sayHi() {
+      (b=person.sayName)() // 相当于把 sayName 函数赋值给b，相当于是直接调用 sayName()
+      (person.sayName)() // 报错
+    }
+    sayHi()
+  </script>
+</body>
+</html>

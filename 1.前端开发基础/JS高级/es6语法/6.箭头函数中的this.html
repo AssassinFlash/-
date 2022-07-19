@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1.复习function中this的指向：谁调用我，我就指向谁（取决于调用，与声明无关）
+    /*
+      普通函数：函数名()，this指向window
+      对象方法：对象名.方法名()，this指向对象
+      构造函数：new 函数名()，this指向new创建的实例对象
+    */
+
+    // 2.箭头函数中的this指向：谁声明我，我就指向谁
+    // 真正的含义：箭头函数没有this
+
+    // 0级作用域链
+    // 1.普通函数
+    let fn = () => {
+      // 1级作用域链
+      console.log(this);
+    }
+    fn() // window
+
+    // 2.对象的方法
+    // 对象不能开启局部作用域，局部作用域只有函数才能开启
+    let obj = {
+      name: 'jzh',
+      eat() {
+        // 1级作用域链
+        console.log(this);
+        let fn = () => {
+          // 2级作用域链
+          console.log(this); // obj
+        }
+        fn()
+      },
+      learn: ()=> {
+        // 1级作用域链
+        console.log(this);
+      },
+      sayHi() {
+        let fn = function() {
+          console.log(this);
+        }
+        fn() // window，因为是使用到了 函数名()，this永远指向window
+      }
+    }
+    obj.eat() // obj
+    obj.learn() // window，箭头函数跟调用没关系，永远都是访问上级作用域的this
+  </script>
+</body>
+</html>

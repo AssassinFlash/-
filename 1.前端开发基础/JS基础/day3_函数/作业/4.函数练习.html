@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 封装函数，求数组以任意字符串拼接之后的一个字符串，返回拼接好的字符串
+      function joinStr(arr, spliter) {
+        let str = arr.join(spliter);
+        return str;
+      }
+      let arr = ["aa", "bb", "cc"];
+      let str = joinStr(arr, "|");
+      console.log(str);
+    </script>
+  </body>
+</html>

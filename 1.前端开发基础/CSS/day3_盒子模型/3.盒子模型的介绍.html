@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				width: 380px;
+				height: 380px;
+				background: green;
+				/* border会撑大盒子 */
+				border: 10px solid #000;
+			}
+			.box1 {
+				width: 240px;
+				height: 240px;
+				background: pink;
+				border: 10px solid black;
+				/* padding会撑大盒子 */
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+      盒子的概念：
+        浏览器在渲染页面时，会将网页中的元素看做是一个个的矩形区域，形象的称为盒子
+
+      盒子模型：
+        每个盒子是由：内容区域(content)、内边距区域(padding)、边框区域(border)、外边距区域(margin)构成
+        这就是盒子模型
+
+      盒子实际大小（宽度）：
+        border-left + padding-left + content + padding-right + border-right
+
+      盒子实际大小（高度）：
+        border-top + padding-top + content + padding-bottom + border-bottom
+     -->
+		<!-- 需求：盒子尺寸300 * 300，背景粉色，边框10px实线黑色，上下左右20px内边距 -->
+		<div class="box1"></div>
+	</body>
+</html>

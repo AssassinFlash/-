@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 400px;
+      /* height: 400px; */
+      background-color: pink;
+    }
+    .son {
+      float: left;
+      width: 100px;
+      height: 400px;
+      background-color: blue;
+    }
+    .clearfix::before {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    /* 补充写法 */
+    .clearfix::after {
+      /* 必填属性 */
+      content: '';
+      /* 伪元素默认是行内元素 */
+      display: block;
+      /* 关键代码 */
+      clear: both;
+      /* 在网页中看不到伪元素 */
+      height: 0;
+      visibility: hidden;
+    }
+    /* 1.清除浮动，2.解决margin的塌陷问题
+      原理：在父元素的最前面添加了一个伪元素，隔开了父元素和子元素的margin
+     */
+    .clearfix2::before, .clearfix2::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    浮动带来的影响：
+      - 如果子元素浮动了，此时子元素不能撑开标准流的块级父元素
+    
+    原因：子元素浮动后会脱离标准流，此时子元素不再占用位置
+          同时浮动的元素会比标准流的层级高半个层级，所以表现为子元素覆盖了父元素
+
+    浮动会影响到网页布局，因此要清除浮动带来的影响
+   -->
+   <!-- 清除浮动的方法： -->
+   <!-- 
+     1.额外标签法
+      - 操作：
+        1.在父元素最后添加一个块级元素
+        2.给添加的块级元素设置clear:both
+
+      缺点：在页面中添加了额外的标签，改变了HTML的结构
+     -->
+   <div class="father clearfix2">
+     <div class="son"></div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>购物车</title>
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" id="allCheck">
+              <label for="allCheck">全选</label>
+            </th>
+            <th>商品</th>
+            <th>单价</th>
+            <th>商品数量</th>
+            <th>小计</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="checkbox" class="item">
+            </td>
+            <td>
+              <img src="./images/01.jpg" alt="">
+              牛奶
+            </td>
+            <td><span class="unit">5</span>￥</td>
+            <td>
+              <button class="reduce">-</button><input type="text" value="1" class="num" readonly><button class="add">+</button>
+            </td>
+            <td><span class="unit-totalPrice">5</span>￥</td>
+            <td><a href="#">删除</a></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" class="item">
+            </td>
+            <td>
+              <img src="./images/01.jpg" alt="">
+              牛奶
+            </td>
+            <td><span class="unit">10</span>￥</td>
+            <td>
+              <button class="reduce">-</button><input type="text" value="1" class="num" readonly><button class="add">+</button>
+            </td>
+            <td><span class="unit-totalPrice">10</span>￥</td>
+            <td><a href="#">删除</a></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" class="item">
+            </td>
+            <td>
+              <img src="./images/01.jpg" alt="">
+              牛奶
+            </td>
+            <td><span class="unit">15</span>￥</td>
+            <td>
+              <button class="reduce">-</button><input type="text" value="1" class="num" readonly><button class="add">+</button>
+            </td>
+            <td><span class="unit-totalPrice">15</span>￥</td>
+            <td><a href="#">删除</a></td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" class="item">
+            </td>
+            <td>
+              <img src="./images/01.jpg" alt="">
+              牛奶
+            </td>
+            <td><span class="unit">20</span>￥</td>
+            <td>
+              <button class="reduce">-</button><input type="text" value="1" class="num" readonly><button class="add">+</button>
+            </td>
+            <td><span class="unit-totalPrice">20</span>￥</td>
+            <td><a href="#" class="removeItem">删除</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="clear">
+        <div class="clearCart">
+          <a href="#" class="removeChecked">删除所选商品</a>
+          <a href="#" class="removeAll">清理购物车</a>
+        </div>
+        <div class="total">
+          <span>已选<span class="items">0</span>件商品</span>
+          <span>总价<span class="money">0</span>￥</span>
+          <a href="#" class="buy">去结算</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

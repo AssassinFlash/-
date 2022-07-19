@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+  <style>
+    span {
+      vertical-align: middle;
+    }
+
+    .false {
+      color: red;
+    }
+
+    .true {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+<label for="uname">用户名</label>
+<input type="text" id="uname">
+<span></span>
+
+<script>
+  // **需求：当失去焦点时，对用户名进行判断，用户名要求用户英文字母、数字、下划线或者短横线组成，并且用户名长度为6~16位**
+  let uname = document.getElementById('uname')
+  let span = document.querySelector('span')
+
+  uname.addEventListener('blur', function () {
+    let reg = /^[0-9a-zA-Z_-]{6,16}$/
+    if (reg.test(uname.value)) {
+      span.classList.remove('false')
+      span.classList.remove('true')
+      span.classList.add('true')
+      span.innerHTML = '用户名正确可使用'
+    } else {
+      span.classList.remove('false')
+      span.classList.remove('true')
+      span.classList.add('false')
+      span.innerHTML = '用户名不符合要求'
+    }
+  })
+</script>
+</body>
+</html>

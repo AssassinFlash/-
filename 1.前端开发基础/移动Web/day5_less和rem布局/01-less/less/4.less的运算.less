@@ -1,0 +1,16 @@
+// 在less代码中可以直接写加减乘除进行运算
+@boxColor: pink;
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: @boxColor;
+  // 伪类
+  &:hover {
+    // 运算后的结果单位为第一个数字后所带的单位
+    width: 200px * 2;
+    // 注意，除法需要在括号内运算
+    height: (200px / 2);
+    width: 200px + 100;
+  }
+}

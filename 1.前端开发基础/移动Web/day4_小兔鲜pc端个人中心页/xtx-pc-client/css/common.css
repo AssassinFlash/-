@@ -1,0 +1,338 @@
+/* 版心 */
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+/* header.shortcut开始 */
+.xtx-shortcut {
+  height: 52px;
+  background: #333;
+}
+.xtx-shortcut .container {
+  height: 52px;
+}
+.xtx-shortcut .container ul {
+  float: right;
+  height: 52px;
+  display: flex;
+}
+.xtx-shortcut .container ul li.line {
+  width: 1px;
+  height: 14px;
+  background: #5a5a5a;
+  margin: 19px 16px 0;
+}
+.xtx-shortcut .container ul li a{
+  display: block;
+  line-height: 52px;
+  font-size: 14px;
+  color: #dcdcdc;
+}
+.xtx-shortcut .container ul li:last-of-type a::before {
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 16px;
+  background: url(../images/sprites.png) -160px -70px;
+  margin-right: 8px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+/* header.shortcut结束 */
+
+/* header.main-nav开始 */
+.xtx-main-nav {
+  height: 130px;
+}
+.xtx-main-nav .container {
+  display: flex;
+  height: 130px;
+}
+.xtx-main-nav .container .logo {
+  width: 228px;
+}
+.xtx-main-nav .container .logo a {
+  display: block;
+  height: 100%;
+  background: url(../images/logo.png) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  /* 将a标签里面写的东西隐藏掉 */
+  font-size: 0;
+}
+.xtx-main-nav .container .search {
+  position: relative;
+  box-sizing: content-box;
+  width: 172px;
+  display: flex;
+  align-items: center;
+}
+.xtx-main-nav .container .search::before {
+  content: '';
+  /* 子绝父相 */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-80%);
+  width: 17px;
+  height: 17px;
+  background: url(../images/sprites.png) -80px -70px;
+}
+.xtx-main-nav .container .search input {
+  font-size: 14px;
+  color: #ccc;
+  padding-bottom: 10px;
+  padding-left: 28px;
+  border-bottom: 2px solid #f4f4f4;
+}
+.xtx-main-nav .container .cart {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background: url(../images/sprites.png) -120px -70px;
+  /* 单独自身的侧轴对齐方式 */
+  align-self: center;
+  margin-left: 15px;
+}
+.xtx-main-nav .container .cart .number {
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  line-height: 15px;
+  right: -14px;
+  top: -5px;
+  background: #e26237;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+}
+.xtx-main-nav .container .nav {
+  display: flex;
+  margin-left: 28px;
+}
+.xtx-main-nav .container .nav li {
+  height: 130px;
+  margin-right: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.xtx-main-nav .container .nav li:last-of-type {
+  margin-right: 82px;
+}
+.xtx-main-nav .container .nav li a {
+  box-sizing: content-box;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+.xtx-main-nav .container .nav li a:hover {
+  color: #25ba9b;
+  border-bottom: 1px solid #25ba9b;
+}
+/* header.main 结束 */
+
+/* footer.contact 开始 */
+.xtx-contact {
+  height: 303px;
+  border-top: 1px solid #e4e4e4;
+}
+.xtx-contact .container {
+  height: 100%;
+  padding: 0 85px 0 52px;
+  display: flex;
+  align-items: center;
+}
+.xtx-contact dl {
+  height: 156px;
+  padding: 0 35px;
+}
+.xtx-contact dl dt {
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 35px;
+}
+.xtx-contact dl dd {
+  display: flex;
+}
+.xtx-contact dl dd a {
+  width: 93px;
+  height: 92px;
+  border: 1px solid #eee;
+  display: flex;
+  /* 主轴方向 */
+  flex-direction: column;
+  /* 主轴对齐方式 */
+  align-items: center;
+  font-size: 14px;
+  color: #999;
+}
+.xtx-contact dl dd a:first-of-type {
+  margin-right: 6px;
+}
+.xtx-contact dl:first-of-type dd a:first-of-type::before {
+  content: '';
+  display: inline-block;
+  width: 29px;
+  height: 27px;
+  background: url(../images/sprites.png) -250px -70px;
+  margin: 22px 0 10px;
+  vertical-align: middle;
+}
+.xtx-contact dl:first-of-type dd a:last-of-type::before {
+  content: '';
+  display: inline-block;
+  width: 29px;
+  height: 28px;
+  background: url(../images/sprites.png) -350px -70px;
+  margin: 22px 0 10px;
+  vertical-align: middle;
+}
+.xtx-contact dl:nth-of-type(2) dd a:first-of-type::before {
+  content: '';
+  display: inline-block;
+  width: 36px;
+  height: 29px;
+  margin: 22px 0 10px;
+  background: url(../images/sprites.png) -205px -15px;
+  vertical-align: middle;
+}
+.xtx-contact dl:nth-of-type(2) dd a:last-of-type::before {
+  content: '';
+  display: inline-block;
+  width: 36px;
+  height: 29px;
+  margin: 22px 0 10px;
+  background: url(../images/sprites.png) -350px -15px;
+  vertical-align: middle;
+}
+.xtx-contact dl:nth-of-type(3) {
+  border-right: 1px solid #f4f4f4;
+}
+.xtx-contact dl:nth-of-type(3) dt {
+  margin-bottom: 24px;
+}
+.xtx-contact dl:nth-of-type(3) dd a:first-of-type {
+  width: 116px;
+  height: 116px;
+  padding-top: 6px;
+}
+.xtx-contact dl:nth-of-type(3) dd a:first-of-type img {
+  vertical-align: middle;
+}
+.xtx-contact dl:nth-of-type(3) dd p {
+  width: 105px;
+  margin-left: 26px;
+}
+.xtx-contact dl:nth-of-type(3) dd p span {
+  display: block;
+  padding-left: 4px;
+  font-size: 14px;
+  color: #999;
+}
+.xtx-contact dl:nth-of-type(3) dd p button {
+  width: 100%;
+  height: 32px;
+  margin-top: 18px;
+  background: #25ba9b;
+  font-size: 14px;
+  color: #fff;
+}
+.xtx-contact dl:last-of-type dt {
+  margin-bottom: 58px;
+}
+.xtx-contact dl:last-child dd:first-of-type {
+  font-size: 22px;
+  font-weight: bold;
+  color: #666;
+}
+.xtx-contact dl:last-child dd:last-child {
+  font-size: 15px;
+  color: #999;
+}
+
+/* footer.service 开始 */
+.xtx-service {
+  height: 174px;
+  background: #333;
+}
+.xtx-service .container {
+  width: 1391px;
+  height: 174px;
+  padding: 0 93px 0 134px;
+}
+.xtx-service .container ul {
+  height: 174px;
+  border-bottom: 1px solid #434343;
+  display: flex;
+  /* 主轴对齐方式 */
+  justify-content: space-between;
+}
+.xtx-service .container ul li {
+  width: 190px;
+  display: flex;
+  align-items: center;
+}
+.xtx-service .container ul li a {
+  font-size: 28px;
+  color: #fff;
+}
+.xtx-service .container ul li a::before {
+  content: '';
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  margin-right: 19px;
+  vertical-align: middle;
+}
+.xtx-service .container ul li:first-of-type a::before {
+  background: url(../images/sprites.png) 0 0;
+}
+.xtx-service .container ul li:nth-of-type(2) a::before {
+  background: url(../images/sprites.png) -65px 0;
+}
+.xtx-service .container ul li:last-of-type a::before {
+  background: url(../images/sprites.png) -130px 0;
+}
+/* footer.service 结束 */
+
+/* footer.copyright 开始 */
+.xtx-copyright {
+  height: 169px;
+  background: #333;
+}
+.xtx-copyright .container {
+  height: 100%;
+  /* 解决margin塌陷 */
+  overflow: hidden;
+}
+.xtx-copyright .container ul {
+  height: 14px;
+  margin-top: 42px;
+  display: flex;
+  justify-content: center;
+}
+.xtx-copyright .container ul li.line {
+  width: 1px;
+  height: 14px;
+  background: #999;
+  margin: 0 12px;
+}
+.xtx-copyright .container ul li a {
+  display: block;
+  line-height: 1;
+  font-size: 14px;
+  color: #999;
+}
+.xtx-copyright .container p {
+  margin-top: 19px;
+  line-height: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+/* footer.copyright 结束 */

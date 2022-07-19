@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1:first-of-type {
+            font-size: 50px;
+            text-align: center;
+            text-shadow: 5px 5px 10px red;
+        }
+        h1:nth-of-type(2) {
+            background: gray;
+            font-size: 50px;
+            color: gray;
+            text-align: center;
+            text-shadow: 1px 1px 1px black, -1px -1px 1px white;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        text-shadow：给文字添加阴影效果
+        用法：text-shadow: horizontal vertical blur color
+        属性取值：
+            参数1：h-shadow（必写），水平偏移量，允许负值，正值往右
+            参数2：v-shadow（必写），垂直偏移量，允许负值，正值往下
+            参数3：blur，可选，模糊度
+            参数4：color，可选，阴影颜色
+
+        拓展：阴影可叠加，如：
+        text-shadow: 5px 5px 5px red, 5px 5px 5px green
+     -->
+
+     <h1>多喝热水</h1>
+     <!-- 文字立体效果 -->
+     <h1>多喝热水</h1>
+</body>
+</html>

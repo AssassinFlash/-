@@ -1,0 +1,14 @@
+// 使用@import引入less文件
+@import './base_less的引入.less';
+
+.father {
+  .box(@fatherWidth, @fatherColor);
+
+  .son {
+    .box(@sonWidth, @sonColor);
+  }
+  
+  &:hover {
+    .box((@fatherWidth * 2), @fatherColor)
+  }
+}

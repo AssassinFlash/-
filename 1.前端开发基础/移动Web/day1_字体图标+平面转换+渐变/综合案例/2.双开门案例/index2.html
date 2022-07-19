@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      width: 1366px;
+      height: 600px;
+      margin: 100px auto;
+      background: url(./images/bg.jpg);
+      overflow: hidden;
+    }
+    .box::before {
+      content: '';
+      float: left;
+      width: 50%;
+      height: 100%;
+      background: url(./images/fm.jpg);
+      transition: all 0.3s;
+    }
+    .box::after {
+      content: '';
+      float: right;
+      width: 50%;
+      height: 100%;
+      background: url(./images/fm.jpg);
+      background-position: 683px 0;
+      transition: all 0.3s;
+    }
+    /* 伪元素，要紧贴着前面的选择器 */
+    .box:hover::before {
+      transform: translateX(-100%)
+    }
+    .box:hover::after {
+      transform: translateX(100%)
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

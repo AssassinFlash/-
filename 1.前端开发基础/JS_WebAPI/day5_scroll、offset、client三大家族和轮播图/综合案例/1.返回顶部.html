@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      transition: all ease 0.3s;
+    }
+    .wrap {
+      width: 1000px;
+      height: 2000px;
+      margin: 0 auto;
+      background: pink;
+    }
+    .close {
+      position: fixed;
+      width: 50px;
+      height: 70px;
+      right: 198px;
+      bottom: 150px;
+      cursor: pointer;
+      text-decoration: none;
+      display: none;
+    }
+    img {
+      width: 50px;
+      height: 20px;
+      vertical-align: middle;
+    }
+    .up {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      background: rgba(0, 0, 0, 0.3);
+      text-align: center;
+      font-size: 12px;
+      color: white;
+    }
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">我是内容</div>
+  <a href="#" class="close">
+    <img src="./images/close2.png" alt="">
+    <div class="up">返回顶部</div>
+  </a>
+
+  <script>
+    let wrapDiv = document.querySelector('.wrap')
+    let close = document.querySelector('.close')
+
+    window.addEventListener('scroll', function() {
+      // 若浏览器滚动距离超过300px
+      if(document.documentElement.scrollTop > 300) {
+        close.classList.add('show')
+      } else {
+        close.classList.remove('show')
+      }
+    })
+
+    close.addEventListener('click', function(e) {
+      document.documentElement.scrollTop = 0
+      // 阻止a标签默认跳转事件
+      e.preventDefault()
+    })
+  </script>
+</body>
+</html>

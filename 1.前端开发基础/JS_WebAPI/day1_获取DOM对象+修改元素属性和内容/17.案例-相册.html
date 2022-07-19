@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 50px;
+      }
+      ul li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        display: flex;
+        margin-bottom: 30px;
+      }
+      ul li {
+        width: 200px;
+        height: 124px;
+        margin-right: 15px;
+      }
+      ul li a {
+        display: block;
+        height: 124px;
+      }
+      ul li a img {
+        width: 100%;
+        height: 100%;
+      }
+      .placeholder {
+        width: 400px;
+        height: 250px;
+        background: url(./images/placeholder.png) no-repeat;
+        background-size: 100% 100%;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>相册案例</h3>
+    <ul>
+      <li>
+        <a href="#"><img src="./images/1-small.jpg" alt="1" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="./images/2-small.jpg" alt="2" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="./images/3-small.jpg" alt="3" /></a>
+      </li>
+      <li>
+        <a href="#"><img src="./images/4-small.jpg" alt="4" /></a>
+      </li>
+    </ul>
+    <div class="placeholder"></div>
+    <p class="info">描述信息</p>
+
+    <script>
+      let lis = document.querySelectorAll("li");
+      let placeholderDiv = document.querySelector(".placeholder");
+      let infoP = document.querySelector(".info");
+
+      for (let i = 0; i < lis.length; i++) {
+        lis[i].onclick = function () {
+          let bgImage = this.children[0].children[0].src
+          let info = this.children[0].children[0].alt
+          placeholderDiv.style.background = `url(${bgImage}) no-repeat`
+          placeholderDiv.style.backgroundSize = '100% 100%'
+          infoP.innerHTML = info
+          return false
+        };
+      }
+    </script>
+  </body>
+</html>

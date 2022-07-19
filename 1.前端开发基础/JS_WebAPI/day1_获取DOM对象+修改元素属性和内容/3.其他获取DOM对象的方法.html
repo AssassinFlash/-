@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box" class="box">我是一个box</div>
+
+  <script>
+    /*
+      可以通过id属性获取元素
+      document.getElementById('id选择器')
+    */
+    let box = document.getElementById('box')
+    console.log(box);
+
+    /*
+      通过标签名获取元素，获取的是一个伪数组 HTMLCollection[]
+      document.getElementsByTagName('标签名')
+    */
+    let div = document.getElementsByTagName('div')
+    console.log(div);
+
+    /*
+      通过类名获取，获取的是一个伪数组 HTMLCollection[]
+      document.getElementsByClassName('类名')
+    */
+    let classBox = document.getElementsByClassName('box')
+    console.log(classBox);
+  </script>
+</body>
+</html>

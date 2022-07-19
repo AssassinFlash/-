@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+.wrap .section-title {
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .section-title h2 {
+  font-size: 20px;
+  color: #494949;
+}
+.wrap .section-title span {
+  font-size: 11px;
+  color: #a5a5a5;
+}
+.wrap .course-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrap .course-list li {
+  width: 228px;
+  height: 270px;
+  margin: 0 15px 15px 0;
+  transition: all 0.3s;
+}
+.wrap .course-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 1px 5px 2px rgba(0, 0, 0, 0.4);
+}
+.wrap .course-list li:nth-of-type(5n) {
+  margin: 0;
+}
+.wrap .course-list li a {
+  display: block;
+  height: 100%;
+}
+.wrap .course-list li a img {
+  width: 100%;
+  height: 152px;
+  vertical-align: middle;
+}
+.wrap .course-list li a .info {
+  height: calc(100% - 152px);
+  padding: 25px 25px 18px;
+}
+.wrap .course-list li a .info .course-title {
+  font-size: 14px;
+  color: #060504;
+  margin-bottom: 22px;
+}
+.wrap .course-list li a .info .course-detail {
+  font-size: 12px;
+  color: #999;
+}
+.wrap .course-list li a .info .course-detail .level,
+.wrap .course-list li a .info .course-detail .learner {
+  color: #ee8343;
+}
+.wrap .course-list li a .info .course-detail .dot::before {
+  content: '·';
+  display: inline-block;
+  font-size: 14px;
+}

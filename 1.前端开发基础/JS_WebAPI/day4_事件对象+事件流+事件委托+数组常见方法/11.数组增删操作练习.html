@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 练习1
+      let arr = ["刘备"];
+      //添加数据后变成：["赵云","马超","刘备","关羽","张飞"]
+      arr.unshift("赵云", "马超");
+      arr.push("关羽", "张飞");
+
+      //接着删除数据后变成：["关羽","张飞"]
+      let newArr = arr.slice(3, 5);
+      console.log(newArr);
+
+      // 练习2
+      let arr2 = ["赵云", "马超", "刘备", "关羽", "张飞"];
+      // 把数组的最后一个元素变成数组的第一个元素
+      // let element = arr2.pop()
+      // arr2.unshift(element)
+      // console.log(arr2);
+      // 把数组的第一个元素变成数组的最后一个元素
+      // let element = arr2.shift();
+      // arr2.push(element);
+      // console.log(arr2);
+    </script>
+  </body>
+</html>

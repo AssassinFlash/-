@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // js是对象与对象之间的继承
+
+      // 替换原型式继承
+      let wjl = {
+        house: {
+          address: "广州",
+          price: 10000000,
+        },
+        car: {
+          brand: "幻影",
+          price: 8000000,
+        },
+      };
+
+      // Zn构造函数
+      function Zn(name, girls) {
+        this.name = name;
+        this.girls = girls;
+      }
+      // 每一个Zn都有公共的hongGirl方法
+      Zn.prototype.hongGirl = function () {
+        console.log("么么哒");
+      };
+
+      // 现在，我希望每个通过Zn实例化出来的对象，都拥有wjl的house和car
+      // 即，需求为：每一个Zn对象都有公共的house和car
+      // 替换原型式继承：
+      // 这是因为原型可被替换，只需将原型存放的对应的构造函数的地址更换掉即可
+      // Zn.prototype = wjl;
+
+      // // 实例化Zn对象
+      // let z1 = new Zn("jzh", ["小红", "小明", "翠花"]);
+      // console.log(z1);
+      // // 验证是否有house和car
+      // console.log(z1.house, z1.car);
+      // 弊端：原先Zn的原型无了，没了hongGirl方法
+
+      // 现在，我希望每个通过Zn实例化出来的对象，既拥有原先的hongGirl方法，也有wjl的house和car
+      // 混合式继承：
+      for (let key in wjl) {
+        // 给原型加东西，不是把原型替换掉
+        Zn.prototype[key] = wjl[key];
+      }
+
+      let z1 = new Zn("jzh", ["小红", "小明", "翠花"]);
+      console.log(z1);
+      // 验证
+      console.log(z1.hongGirl);
+      console.log(z1.house, z1.car);
+    </script>
+  </body>
+</html>

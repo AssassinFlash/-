@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点击插队</button>
+    <ul>
+      <li>张三</li>
+      <li>李四</li>
+      <li class="ww">王五：田七要排到我的前面</li>
+      <li>赵六</li>
+    </ul>
+
+    <li class="tq">田七：我要排到王五的前面</li>
+
+    <script>
+      /*
+      插入到目标节点之前：insertBefore(newChild, refChild)：可将节点插入到目标节点的前面
+      语法：parent.insertBefore(newChild, refChild)
+        parent: 要插入元素的父元素
+        newChild: 要插入的元素
+        refChild: 被插入的目标元素
+    */
+
+      let btn = document.querySelector("button");
+      let ul = document.querySelector("ul");
+      let wwli = document.querySelector(".ww");
+      let tqli = document.querySelector(".tq");
+
+      btn.addEventListener("click", function () {
+        // ul.insertBefore(tqli, wwli);
+
+        // 把tq插队到ul的最后面
+        ul.insertBefore(tq, null);
+      });
+    </script>
+  </body>
+</html>

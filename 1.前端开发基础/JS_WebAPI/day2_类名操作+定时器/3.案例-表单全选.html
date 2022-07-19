@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .wrap {
+        width: 300px;
+        margin: 100px auto;
+      }
+      table {
+        width: 300px;
+        border: 1px solid #c0c0c0;
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #d0d0d0;
+        color: #303060;
+      }
+      th {
+        background: #09c;
+        font: bold 16px "微软雅黑";
+        color: #fff;
+      }
+      td {
+        font: 14px "微软雅黑";
+      }
+      tbody,
+      tr {
+        background-color: #f0f0f0;
+        text-align: center;
+      }
+      tbody tr:hover {
+        background-color: #fafafa;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" id="all" />
+            </th>
+            <th>美食</th>
+            <th>人气指数</th>
+          </tr>
+        </thead>
+        <tbody id="other">
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>窝窝头</td>
+            <td>★★★</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>鲱鱼罐头</td>
+            <td>★★★★</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>大肠刺身</td>
+            <td>★★</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>黄焖中暑竹鼠</td>
+            <td>★★★★</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      /*
+        表单选中状态的区别：
+          input：checked
+          select的option：selected
+      */
+      // 1.找到全选框和其他复选框
+      // 2.给全选框设置点击事件
+      // 3.将全选框的状态赋值给其他复选框
+
+      let allCheck = document.getElementById("all");
+      let checks = document.querySelectorAll("tbody input");
+
+      allCheck.addEventListener("click", function () {
+        for (let i = 0; i < checks.length; i++) {
+          checks[i].checked = allCheck.checked;
+        }
+      });
+
+      // 全选反选
+      // 只要有一个未选中，全选按钮都为false
+      function isAllCheck() {
+        for (let i = 0; i < checks.length; i++) {
+          if (!checks[i].checked) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      // 给按钮注册点击事件
+      for (let i = 0; i < checks.length; i++) {
+        checks[i].addEventListener("click", function () {
+          if (isAllCheck()) {
+            allCheck.checked = true;
+          } else {
+            allCheck.checked = false;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

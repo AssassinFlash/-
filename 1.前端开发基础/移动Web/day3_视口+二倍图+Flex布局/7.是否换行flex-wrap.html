@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .father {
+      width: 600px;
+      height: 600px;
+      border: 3px solid black;
+      margin: 100px auto;
+      /* 给父元素设置弹性盒子 */
+      display: flex;
+      /* 给父元素设置是否换行 */
+      flex-wrap: wrap;
+    }
+    .son {
+      width: 100px;
+      height: 100px;
+      background: pink;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    是否换行：flex-wrap
+
+    flex布局中，默认是单行显示的，如果子元素宽度之和超过了父元素的宽度，此时子盒子会压缩显示
+    通过设置flex-wrap可让子盒子换行显示
+
+    取值：
+      1.nowrap 不换行（默认值）
+      2.wrap 当子元素放不下就换行，同时，分成几行，侧轴的空间就等分成几份
+   -->
+
+   <div class="father">
+     <div class="son">1</div>
+     <div class="son">2</div>
+     <div class="son">3</div>
+     <div class="son">1</div>
+     <div class="son">2</div>
+     <div class="son">3</div>
+     <div class="son">1</div>
+     <div class="son">2</div>
+     <div class="son">3</div>
+   </div>
+</body>
+</html>

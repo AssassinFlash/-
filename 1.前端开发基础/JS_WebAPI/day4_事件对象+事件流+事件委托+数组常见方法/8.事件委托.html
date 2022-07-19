@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    // 方法1：给所有li添加事件，利用排他思想，先干掉所有人，再复活自己
+    let lis = document.getElementsByTagName('li')
+    for(let i = 0; i< lis.length; i++) {
+      lis[i].addEventListener('click', function() {
+        for(let j = 0; j< lis.length; j++) {
+          lis[j].classList.remove('red')
+        }
+        this.classList.add('red')
+      })
+    }
+
+    // 方法2：给li的父元素ul添加事件，利用事件冒泡，点击li触发ul的事件
+    // e.target即为真正触发事件的元素，它是被点击的具体对象
+    let ul = document.querySelector('ul')
+    ul.addEventListener('click', function(e) {
+      for(let i = 0; i< lis.length; i++) {
+        lis[i].classList.remove('red')
+      }
+      e.target.classList.add('red')
+    })
+  </script>
+</body>
+</html>

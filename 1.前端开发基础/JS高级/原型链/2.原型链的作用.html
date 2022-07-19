@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      原型链的作用：继承
+      表现在：对象的访问成员(属性/方法)规则上
+        对象自己有就访问自己的，自己没有就访问原型的
+        如果原型也没有，就沿着原型链一直向上查找
+        如果找到null头了也没有，就返回undefined或者报错
+    */
+
+    function Student(name, age) {
+      this.name = name
+      this.age = age
+      this.haha = function() {
+        console.log(1);
+      }
+    }
+    // 每个Student都有study方法：
+    Student.prototype.study = function() {
+      console.log(2);
+    }
+    // 实例化
+    let s1 = new Student('jzh', 25)
+    console.log(s1.name);
+    s1.haha()
+
+    s1.study()
+    // s1.sb // undefined
+    // s1.dsb() // 报错
+
+    s1.toString() // 不报错，因为Object原型有toString方法
+  </script>
+</body>
+</html>

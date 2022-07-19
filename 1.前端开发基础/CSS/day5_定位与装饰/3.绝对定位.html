@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .red {
+      background: red;
+    }
+    .green {
+      position: absolute;
+      left: 100px;
+      top: 100px;
+      background: green;
+    }
+    .blue {
+      background: blue;
+    }
+    div {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    绝对定位：相对于非静态定位的最近的父元素进行定位
+      position: absolute;
+
+    特点：
+      1.相对于非静态定位的父元素进行定位，如果没有父元素则相对于浏览器可视区域进行定位
+      2.定位后，原来的位置不再保留，即已经脱离标准流
+   -->
+   <div class="red"></div>
+   <div class="green"></div>
+   <div class="blue"></div>
+</body>
+</html>

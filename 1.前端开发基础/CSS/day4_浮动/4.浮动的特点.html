@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      width: 300px;
+      height: 300px;
+    }
+    .red {
+      background: red;
+    }
+    .green {
+      float: left;
+      /* float: right; */
+      background: green;
+    }
+    .blue {
+      float: left;
+      background: blue;
+    }
+    span {
+      width: 300px;
+      height: 300px;
+      /* 行内元素设置了float: left;之后，可设置宽高，且相比行内块元素，它没有了空格合并的问题，即没有了元素之间的间隙 */
+      float: left;
+      background: orange;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    浮动的特点：
+      1.浮动的元素会脱离标准流，在标准流中不占位置（类似于排队）
+      2.浮动的元素比标准流的元素层级高半个级别，可以覆盖标准流中的元素
+      3.浮动元素之间按水平布局排列
+      4.浮动元素会受到上面元素边界的影响（如果上边元素是块元素，那这个浮动的元素就上不去）
+      5.浮动的元素有特殊的显示效果
+          - 一行可以显示多个
+          - 可以设置宽高
+
+      注意点：
+        - 浮动的元素，不能通过text-align:center或者margin:0 auto 让浮动元素本身水平居中
+   -->
+   <!-- <div class="red"></div>
+   <div class="green"></div>
+   <div class="blue"></div> -->
+   <span>我是一个span</span>
+   <span>我是一个span</span>
+   <span>我是一个span</span>
+</body>
+</html>

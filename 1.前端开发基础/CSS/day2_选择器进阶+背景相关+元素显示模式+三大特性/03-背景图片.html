@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box {
+				width: 400px;
+				height: 400px;
+				background: pink;
+				/* 
+          background-image：背景图片
+            默认是在水平和垂直方向平铺的
+            背景图片类似于背景颜色，是不能撑开盒子的
+        */
+				background-image: url(./images/1.jpg);
+
+				/* 
+          background-repeat: 背景平铺
+            可选属性值：
+              repeat 默认值，水平和垂直方向平铺
+              no-repeat 不平铺
+              repeat-x 沿着水平方向平铺
+              repeat-y 沿着垂直方向平铺
+        */
+				background-repeat: no-repeat;
+
+				/* 
+          background-position: 水平方向位置 垂直方向位置 
+          背景图片的位置
+            可选属性值：
+              水平方向 垂直方向
+
+            坐标轴：每个盒子都有一个坐标系
+            原点：左上角
+            x轴：水平向右
+            y轴：垂直向下
+        */
+				/* background-position: center center; */
+				background-position: 50px center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

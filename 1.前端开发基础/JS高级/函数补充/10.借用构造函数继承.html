@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 借用构造函数继承
+  function Person(name, age) {
+    this.name = name
+    this.age = age
+  }
+
+  function Student(name,age,score) {
+    // Person(name, age) // 这样相当于window.Person(name, age)
+    // 不能像上面这样直接调用Person，因为在new Student创建新对象时，直接调用Person就只是相当于window.Person()
+    // Person里面的this是window对象，而不是new关键字创建出来的对象
+
+    // 应该是下面这样：
+    Person.call(this, name, age) // 更改Person里this的指向，为new Student新创建的对象
+    this.score = score
+  }
+
+  // 实例化
+  let s1 = new Student('jzh', 25, 100)
+  console.log(s1)
+</script>
+</body>
+</html>

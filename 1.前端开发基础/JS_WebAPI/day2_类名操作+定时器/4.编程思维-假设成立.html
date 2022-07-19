@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      假设成立：
+        1.先假设结果成立
+        2.找反例
+        3.结果：
+          1.如果找到反例，证明假设失败
+          2.如果没有找到反例，证明假设成功
+    */
+
+      // 判断这个数组是否全是偶数
+      // 假设全是偶数为true，如果发现有奇数，假设就不成立，为false，就不全是偶数
+      let arr = [2, 4, 6, 8, 10, 1];
+
+      // 1.假设数组中全是偶数 -> flag=true
+      let flag = true
+
+      // 2.找推翻假设的情况（找到不为偶数的数）
+      function isEven(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2) {
+            // 有奇数，假设被推翻 -> flag=false
+            flag = false
+            return false;
+          }
+        }
+        // 3.如果没有找到不为偶数的数 -> flag=true没有发生改变 -> 假设成立
+        return true
+      }
+      console.log(isEven(arr));
+    </script>
+  </body>
+</html>

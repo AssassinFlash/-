@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>张三</li>
+    <li class="ls">李四</li>
+    <!-- 注释 -->
+    <li>王五</li>
+    <li>赵六</li>
+  </ul>
+
+  <script>
+    let ls = document.querySelector('.ls')
+
+    /*
+      查找节点-兄弟节点：
+      
+        1.找到上一个兄弟元素：previousElementSibling
+        2.找到下一个兄弟元素：nextElementSibling
+    */
+
+    console.log(ls.previousElementSibling);
+    console.log(ls.nextElementSibling);
+  </script>
+</body>
+</html>

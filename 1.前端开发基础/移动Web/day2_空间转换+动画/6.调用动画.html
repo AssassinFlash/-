@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      /* 调用动画 */
+      /* animation: dong 1s; */
+      /* 动画的名字 */
+      animation-name: dong;
+      /* 动画的持续时间 */
+      animation-duration: 1s;
+      /* 动画的速度变化效果，默认是ease，先慢后快再慢 */
+      animation-timing-function: linear; /* linear: 匀速 */
+      /* 动画的延时 */
+      animation-delay: 2s;
+      /* 动画的执行次数 */
+      animation-iteration-count: infinite;
+      /* 动画的执行方向：默认是从from到to */
+      animation-direction: alternate; /* alternate 交替执行（from->to->from->to...） */
+      /* 动画的结束状态：默认是回到起点状态backwards */
+      animation-fill-mode: forwards;
+      /* 动画的播放状态，一般配合hover状态使用 */
+      /* animation-play-state: paused; */
+    }
+    @keyframes dong {
+      from {
+        width: 200px;
+      }
+      to {
+        width: 1000px;
+      }
+    }
+    .box:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    调用动画：设置animation属性
+
+      animation属性是一个复合属性，是8个属性的连写
+      animation: name duration timing-function delay iteration-count direction fill-mode;
+      - 参数1：name 动画的名称
+      - 参数2：duration 动画的持续时间
+      - 参数3：time-function 动画的速度变化效果，取值有：ease 默认值，先慢再快再慢，linear 匀速，steps：分步进行
+      - 参数4：delay 动画的延时
+      - 参数5：iteration-count 动画的执行次数，取值有：次数、infinite 无限次
+      - 参数6：direction 动画的执行方向，取值有：normal 正常的，reverse 反常的，alternate 交替执行（from->to->from->to）
+      - 参数7：fill-mode 动画的结束状态，取值有：forwards 最后一帧状态，backwards 第一帧状态
+      - 参数8：play-state 动画的播放状态，取值有：running 播放 paused 暂停
+   -->
+   <div class="box"></div>
+</body>
+</html>

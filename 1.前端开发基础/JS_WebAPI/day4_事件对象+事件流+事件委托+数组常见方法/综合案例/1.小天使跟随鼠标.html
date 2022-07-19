@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        position: relative;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./images/tianshi.gif" alt="" />
+
+    <script>
+      // 鼠标移动事件：mousemove
+      let img = document.querySelector("img");
+      // 鼠标在整个浏览器中移动，给document注册mousemove鼠标移动事件
+      document.addEventListener("mousemove", function (e) {
+        // 图片的左上角坐标跟随鼠标是不够的，需要调整offset
+        // 因为控制的是图片，所以图片左移50%，上移50%(减去)
+        let offsetX = e.pageX - img.width / 2;
+        let offsetY = e.pageY - img.height / 2;
+        img.style.left = offsetX + "px";
+        img.style.top = offsetY + "px";
+      });
+    </script>
+  </body>
+</html>

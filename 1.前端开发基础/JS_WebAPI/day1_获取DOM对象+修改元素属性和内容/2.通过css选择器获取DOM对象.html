@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">我是第一个box</div>
+  <div class="box">我是第二个box</div>
+  <div class="box">我是第三个box</div>
+  <div class="box">我是第四个box</div>
+  <div class="box">我是第五个box</div>
+  <script>
+    /*
+      通过css选择器获取DOM对象
+
+      1.获取单个对象
+      document.querySelector('选择器')
+
+      注意点：如果符合条件的对象有多个，只会获取第一个
+             如果没有符合条件的对象，获取的值为null
+    */
+    let box = document.querySelector('.box')
+    // console.log(box);
+    // 以对象的形式展示打印的内容
+    console.dir(box)
+
+    /*
+      2.获取多个对象：
+        document.querySelectorAll('选择器')
+
+        注意点：无论符合条件的对象有还是没有，获取的都是一个伪数组 NodeList[]
+
+      伪数组：
+        1.有下标，有长度length，可以被遍历
+        2.伪数组无法使用之前数组的相关方法，比如：arr.push()
+    */
+    let divs = document.querySelectorAll('div')
+    console.log(divs);
+  </script>
+</body>
+</html>

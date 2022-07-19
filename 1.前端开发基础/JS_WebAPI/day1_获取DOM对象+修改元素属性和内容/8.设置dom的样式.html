@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>我是一个div</div>
+
+  <script>
+    /*
+      可以通过dom对象的style属性设置元素样式
+
+      注意点：
+        1.dom对象的style属性是一个对象，这个对象有该标签所有的行内样式
+        2.设置的是标签的行内样式，因此优先级会很高
+    */
+    let div = document.querySelector('div')
+    div.style.width = '200px'
+    div.style.height = '200px'
+    div.style.background = 'red'
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 声明箭头函数
+      let fn = (a, b) => {
+        console.log(a, b);
+      };
+
+      // 2.箭头函数其他用法
+      // 2.1 如果箭头函数只有一个形参，则可以省略形参小括号
+      let fn1 = (a) => {
+        return a * 2;
+      };
+
+      // 2.2 如果箭头函数大括号只有一行代码，可以省略大括号，此时也必须要省略return
+      let fn2 = (a) => a * 2;
+    </script>
+  </body>
+</html>

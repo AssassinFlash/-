@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 函数调用时候的三种指向
+  // 结论：不需担心函数声明在哪里，执行什么代码，只需关心谁调用，谁调用this就指向谁
+
+  // 1.作为普通函数调用
+  function test() {
+    console.log(1)
+    console.log(this)
+  }
+  // test() // window.test() -> this指向window
+
+  // 2.作为方法调用
+  let obj = {
+    name: 'jzh',
+    sayHi: function () {
+      console.log(this)
+    }
+  }
+  // obj.sayHi() // Object -> this指向obj对象
+
+  // 2.1
+  // test = obj.sayHi // 把obj.sayHi赋值给test函数的函数体
+  // test() // window.test() -> this指向window
+
+  // 2.2
+  // obj.sayHi = test
+  // obj.sayHi() // Object -> this指向obj对象
+
+  // 3.作为构造函数调用
+  // new 关键字调用构造函数，this就指向new创建出来的对象
+  function Student(name, age) {
+    this.name = name
+    this.age = age
+    console.log(this)
+  }
+  new Student('jzh', 25)
+</script>
+</body>
+</html>

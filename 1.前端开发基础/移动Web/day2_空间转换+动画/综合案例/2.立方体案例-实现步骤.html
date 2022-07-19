@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+    }
+    ul {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 200px auto;
+      /* 视距，给父元素加，一般值为1000px，给子元素拥有近大远小的效果，但本质还是一个平面的效果 */
+      /* perspective: 1000px; */
+      /* 通过 transform-style:preserve-3d 让元素真正变成3d立体元素 */
+      transform-style: preserve-3d;
+      transition: 3s;
+    }
+    ul li {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 300px;
+      font-size: 50px;
+      font-weight: bold;
+    }
+    ul li:nth-of-type(1) {
+      /* 前 */
+      background: red;
+      transform: translateZ(150px);
+    }
+    ul li:nth-of-type(2) {
+      /* 后 */
+      background: pink;
+      transform: translateZ(-150px);
+    }
+    ul li:nth-of-type(3) {
+      /* 上 */
+      background: orange;
+      transform: rotateX(90deg) translateZ(150px);
+    }
+    ul li:nth-of-type(4) {
+      /* 下 */
+      background: skyblue;
+      transform: rotateX(-90deg) translateZ(150px);
+    }
+    ul li:nth-of-type(5) {
+      /* 左 */
+      background: yellow;
+      transform: rotateY(-90deg) translateZ(150px);
+    }
+    ul li:nth-of-type(6) {
+      /* 右 */
+      background: purple;
+      transform: rotateY(90deg) translateZ(150px);
+    }
+    ul:hover {
+      transform: rotateX(400deg) rotateY(400deg) rotateZ(400deg)
+    }
+  </style>
+</head>
+<body>
+  <!-- ul表示立方体的整体 -->
+  <!-- li表示立方体的每一个面 -->
+  <ul>
+    <li>前</li>
+    <li>后</li>
+    <li>上</li>
+    <li>下</li>
+    <li>左</li>
+    <li>右</li>
+  </ul>
+</body>
+</html>

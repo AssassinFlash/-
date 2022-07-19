@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      1.map：映射数组，对数组每个元素进行映射处理，得到一个全新数组
+
+      2.map方法特点：
+        2.1 回调执行次数 === 数组长度
+        2.2 本身返回值：映射处理之后的新数组
+        2.3 回调函数内部return
+              return 映射之后的值
+    */
+
+      let arr = [88, 60, 50, 100, 99];
+      let res = arr.map((val, index) => {
+        return val * 0.8;
+      });
+      console.log(res);
+    </script>
+  </body>
+</html>

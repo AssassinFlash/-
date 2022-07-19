@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>立方体</title>
+  <style>
+    body {
+      perspective: 1000px;
+    }
+    img {
+      display: block;
+      width: 400px;
+      margin: 200px auto;
+      transition: 0.3s;
+    }
+    /* 
+      立方体每一个面的思路：
+        1.先旋转到面朝的方向
+        2.沿z轴平移
+    */
+    img:hover {
+      /* 右面 */
+      /* transform: rotateY(90deg) translateZ(200px) */
+      /* 左面 */
+      /* transform: rotateY(-90deg) translateZ(200px); */
+      /* 上面 */
+      /* transform: rotateX(90deg) translateZ(200px); */
+      /* 下面 */
+      transform: rotateX(-90deg) translateZ(200px);
+    }
+  </style>
+</head>
+<body>
+  <img src="../images/hero.jpeg" alt="">  
+</body>
+</html>

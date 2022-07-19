@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="https://www.baidu.com">5秒后跳转页面</a>
+
+    <script>
+      let link = document.querySelector("a");
+
+      let countDown = 5;
+      let timer = null;
+      timer = setInterval(function () {
+        countDown--;
+        if (countDown === 0) {
+          clearInterval(timer);
+        }
+        link.innerHTML = `${countDown}秒后跳转页面`;
+      }, 1000);
+
+      setTimeout(function () {
+        location.href = "http://www.baidu.com";
+      }, 5000);
+    </script>
+  </body>
+</html>

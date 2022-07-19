@@ -1,0 +1,160 @@
+@import './normalize.less';
+@import './base.less';
+
+@bodyColor: #f0f0f0;
+@footerColor: #FECA49;
+
+body {
+  background: @bodyColor;
+  // 解决固定定位的footer挡住部分内容的方法
+  // 让body有个padding-bottom，将内容上提一部分
+  padding-bottom: 1.306667rem /* 49/37.5 */;
+}
+
+.banner {
+  height: 4.266667rem /* 160/37.5 */;
+  ul {
+    li {
+      a {
+        display: inline-block;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.title {
+  height: 1.093333rem; /* 41/37.5 */
+  line-height: 1.093333rem /* 41/37.5 */;
+  padding-left: .4rem /* 15/37.5 */;
+  font-size: .373333rem /* 14/37.5 */;
+}
+
+.item {
+  height: 6.666667rem /* 250/37.5 */;
+  li {
+    position: relative;
+    background: #fff;
+    margin-bottom: .266667rem /* 10/37.5 */;
+    a {
+      display: inline-block;
+      .content {
+        width: 100%;
+        height: 4.266667rem /* 160/37.5 */;
+        vertical-align: middle;
+      }
+      .info {
+        display: flex;
+        margin-top: .133333rem /* 5/37.5 */;
+        padding: 0 .4rem /* 15/37.5 */;
+        .left {
+          width: 7.866667rem /* 295/37.5 */;
+          line-height: .56rem /* 21/37.5 */;
+          font-size: .4rem /* 15/37.5 */;
+          color: #3c3c3c;
+        }
+        .right {
+          line-height: .56rem;
+          margin-left: .4rem /* 30/37.5 */;
+          font-size: .4rem /* 15/37.5 */;
+          color: #FE6249;
+        }
+      }
+      .detail {
+        margin-top: .426667rem /* 16/37.5 */;
+        padding-left: .4rem /* 15/37.5 */;
+        display: flex;
+        font-size: 11px;
+        color: #b4b4b4;
+        .number {
+          span {
+            margin-right: .186667rem /* 7/37.5 */;
+            vertical-align: middle;
+          }
+        }
+        .time {
+          margin-left: .4rem /* 15/37.5 */;
+          span {
+            margin-right: .186667rem /* 7/37.5 */;
+            vertical-align: middle;
+          }
+        }
+      }
+      .status_active, .status_end {
+        position: absolute;
+        width: 1.813333rem /* 68/37.5 */;
+        height: .773333rem /* 29/37.5 */;
+        background-size: 100%;
+        left: .4rem /* 15/37.5 */;
+        top: -.08rem /* 3/37.5 */;
+        font-size: .32rem /* 12/37.5 */;
+        color: #fff;
+        text-align: center;
+        line-height: .666667rem /* 25/37.5 */;
+        z-index: 1;
+      }
+      .status_active {
+        background: url(../images/status_active.png);
+      }
+      .status_end {
+        background: url(../images/status_default.png);
+      }
+      .like {
+        position: absolute;
+        font-size: .64rem /* 24/37.5 */;
+        color: #fff;
+        right: .48rem /* 18/37.5 */;
+        top: .4rem /* 15/37.5 */;
+      }
+      .heart {
+        position: absolute;
+        width: .64rem /* 24/37.5 */;
+        height: .64rem /* 24/37.5 */;
+        right: .48rem /* 18/37.5 */;
+        top: .4rem /* 15/37.5 */;
+      }
+      .mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.4);
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.306667rem /* 49/37.5 */;
+  background: @footerColor;
+  display: flex;
+  // 1 2 2 1
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+  a {
+    display: flex;
+    flex-direction: column;
+    // 1 1 1 
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+    .iconfont {
+      font-size: 24px;
+      vertical-align: middle;
+    }
+    .footer_title {
+      font-size: 11px;
+    }
+  }
+}

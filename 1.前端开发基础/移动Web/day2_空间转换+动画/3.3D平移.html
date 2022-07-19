@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* 视距，给父元素加，一般值为1000px，给子元素拥有近大远小的效果 */
+      perspective: 1000px;
+    }
+    img {
+      display: block;
+      width: 400px;
+      margin: 200px auto;
+      transition: 0.3s;
+    }
+    img:hover {
+      /* transform: translateZ(600px); */
+      /* transform: translateZ(-600px); */
+      /* 同时进行3个轴的平移 */
+      transform: translate3d(100px, 100px, 400px);
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    3D平移：让元素进行空间上的平移
+    
+    属性名：transform
+    属性值：沿着Z轴平移，此时是3D空间平移
+      - translateZ(px)
+      - 正值为靠近眼睛，负值为远离眼睛
+   -->
+   <img src="./images/hero.jpeg" alt="">
+</body>
+</html>

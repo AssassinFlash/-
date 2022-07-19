@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: inline-block;
+      width: 150px;
+      height: 30px;
+      border: 1px solid pink;
+      line-height: 30px;
+      font-size: 16px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <button>点名</button>
+  <div class="box"></div>
+
+  <script>
+    let arr = ['刘备', '关羽', '张飞', 'jzh', 'lmq', 'zqh', '棠哥', 'pink', '张天禹']
+    let btn = document.querySelector('button')
+    let box = document.querySelector('.box')
+    
+    btn.onclick = function() {
+      let randomIndex = parseInt(Math.random() * arr.length)
+      box.innerHTML = arr[randomIndex]
+    }
+  </script>
+</body>
+</html>

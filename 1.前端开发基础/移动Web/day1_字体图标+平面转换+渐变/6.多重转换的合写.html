@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 800px;
+      height: 200px;
+      border: 1px solid black;
+      margin: 200px auto;
+    }
+    img {
+      width: 200px;
+      /* 过渡属性，谁需要慢慢变化就给谁添加 */
+      transition: all 2s;
+    }
+    .box:hover img {
+      /* 
+        多重转换的合写
+          属性名：transform
+          属性值：转换取值写在一起，取值之间用空格隔开
+
+        注意点：如果转换的第一个值是rotate，此时会连同坐标轴一起旋转，导致平移也会跟着旋转
+                所以第一个值不能写rotate
+      */
+      /* transform: rotate(360deg) translateX(600px); */
+      transform: translateX(600px) rotate(360deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="./images/tyre1.png" alt="">
+  </div>
+</body>
+</html>

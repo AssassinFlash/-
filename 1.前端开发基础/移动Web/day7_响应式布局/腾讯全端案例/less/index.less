@@ -1,0 +1,47 @@
+// -----------------------导航条样式
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+// -----------------------轮播图样式
+/*
+  需要设置不同屏幕下轮播图的高度
+  超小屏：250
+  小屏：400
+  大屏和中屏：500
+*/
+@media screen and (min-width: 0) {
+  .carousel-inner {
+    img {
+      height: 250px !important;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .carousel-inner {
+    img {
+      height: 400px !important;
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  .carousel-inner {
+    img {
+      height: 500px !important;
+    }
+  }
+}
+
+// -----------------------内容区样式
+.content {
+  padding-top: 30px;
+
+  .item {
+    a {
+      display: block;
+      height: 200px;
+      background-color: skyblue;
+    }
+  }
+}

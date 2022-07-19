@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>腾讯云项目</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      box-sizing: border-box;
+    }
+    body {
+      line-height: 1;
+    }
+    a {
+      text-decoration: none;
+    }
+    .clearfix::before, .clearfix::after {
+      content: '';
+      display: table;
+      height: 0;
+      visibility: hidden;
+    }
+    .clearfix::after {
+      clear: both;
+    }
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    /* 顶部导航栏开始 */
+    .box .nav {
+      height: 40px;
+      background-color: #2b303b;
+    }
+    .nav .container .left {
+      float: left;
+      height: 40px;
+      width: 100px;
+      background: url(./images/logo.png) no-repeat left center;
+    }
+    .nav .container .right {
+      float: right;
+      /* background-color: skyblue; */
+    }
+    .nav .container .right li {
+      float: left;
+    }
+    .nav .container .right li a{
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+      color: #fff;
+    }
+    .nav .container .right li.line {
+      width: 2px;
+      height: 14px;
+      background-color: #addfff;
+      margin: 13px 9px 0;
+    }
+    /* 顶部导航栏结束 */
+    /* banner栏开始 */
+    .banner {
+      height: 480px;
+      background: url(./images/banner.png) no-repeat;
+      background-size: 100% 480px;
+    }
+    .banner .container .shortcut {
+      width: 250px;
+      height: 480px;
+      background: #1b2a3f;
+      padding: 40px 20px 0;
+    }
+    .banner .container .shortcut li {
+      line-height: 40px;
+    }
+    .banner .container .shortcut li a {
+      float: left;
+      width: 100%;
+      font-size: 16px;
+      color: #fff;
+    }
+    .banner .container .shortcut li a::after {
+      content: '>';
+      float: right;
+      font-size: 10px;
+    }
+    /* banner栏结束 */
+    /* 标题栏开始 */
+    .container .title {
+      height: 140px;
+      /* background: pink; */
+    }
+    .container .title h2 {
+      margin: 44px 0 24px;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 400;
+    }
+    .container .title h4 {
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+    }
+    /* 标题栏结束 */
+    /* info栏开始 */
+    .container .info {
+      width: 100%;
+      height: 462px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      padding: 40px 50px 0;
+    }
+    .container .info .left {
+      float: left;
+      width: 441px;
+    }
+    .container .info .left h2 {
+      display: inline-block;
+      line-height: 40px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    .container .info .left .desc {
+      margin-bottom: 20px;
+      line-height: 30px;
+      font-size: 12px;
+      color: #666;
+    }
+    .container .info .left .button {
+      display: block;
+      width: 164px;
+      height: 49px;
+      line-height: 47px;
+      text-align: center;
+      border: 1px solid #ffa500;
+      color: black;
+    }
+    .container .info .right {
+      float: left;
+      width: 580px;
+      height: 348px;
+      margin-left: 77px;
+    }
+    .container .info .right img {
+      width: 100%;
+      height: 100%;
+    }
+    /* info栏结束 */
+    /* footer栏开始 */
+    .footer {
+      height: 400px;
+      background: #2e3033;
+      margin-top: 138px;
+    }
+    .footer .container {
+      padding-top: 33px;
+    }
+    .footer .container dl {
+      float: left;
+      margin-right: 142px;
+    }
+    .footer .container dl dt {
+      font-size: 12px;
+      color: #eee;
+      padding-bottom: 12px;
+    }
+    .footer .container dl dd {
+      line-height: 20px;
+      font-size: 11px;
+      color: #ccc;
+    }
+    .footer .container .copyright {
+      float: left;
+      width: 190px;
+    }
+    .footer .container .copyright p {
+      line-height: 21px;
+      font-size: 11px;
+      color: #ccc;
+    }
+    .footer .container .copyright .button {
+      display: block;
+      height: 35px;
+      margin-top: 19px;
+      line-height: 35px;
+      text-align: center;
+      background: #00a4ff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <!-- 顶部导航栏 -->
+    <div class="nav">
+      <div class="container">
+        <div class="left"></div>
+        <ul class="right">
+          <li><a href="#">最新活动</a></li>
+          <li class="line"></li>
+          <li><a href="#">产品</a></li>
+          <li class="line"></li>
+          <li><a href="#">解决方案</a></li>
+          <li class="line"></li>
+          <li><a href="#">定价</a></li>
+          <li class="line"></li>
+          <li><a href="#">文档</a></li>
+          <li class="line"></li>
+          <li><a href="#">企业中心</a></li>
+          <li class="line"></li>
+          <li><a href="#">云市场</a></li>
+          <li class="line"></li>
+          <li><a href="#">开发者支持</a></li>
+          <li class="line"></li>
+          <li><a href="#">合作与生态</a></li>
+          <li class="line"></li>
+          <li><a href="#">客户</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- banner栏 -->
+    <div class="banner">
+      <div class="container">
+        <ul class="shortcut">
+          <li><a href="#">云服务器</a></li>
+          <li><a href="#">轻量应用服务器</a></li>
+          <li><a href="#">域名注册</a></li>
+          <li><a href="#">网站备案</a></li>
+          <li><a href="#">对象存储</a></li>
+          <li><a href="#">云硬盘</a></li>
+          <li><a href="#">云数据库</a></li>
+          <li><a href="#">云数据库</a></li>
+          <li><a href="#">批量计算</a></li>
+          <li><a href="#">容器服务</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <!-- 标题 -->
+      <div class="title clearfix">
+        <h2>云从业者培训及认证</h2>
+        <h4>好好学习，天天向上</h4>
+      </div>
+      <!-- info -->
+      <div class="info">
+        <div class="left">
+          <h2>在线课程</h2>
+          <p class="desc">
+            本课程专为云计算初学者、学生、个人开发者打造，购买云+校园任意套餐可免费观看课程视频本课程专为云计算初学者、学生、个人开发者打造，购买云+校园任意套餐可免费观看课程视频本课程专为云计算初学者、学生、个人开发者打造，购买云+校园任意套餐可免费观看课程视频本课程专为云计算初学者、学生、个人开发者打造，购买云+校园任意套餐可免费观看课程视频本课程专为云计算初学者、学生、个人开发者打造，购买云+校园任意套餐可免费观看课程视频
+          </p>
+          <a href="#" class="button">开始学习</a>
+        </div>
+        <div class="right">
+          <img src="./images/right.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <dl>
+          <dt>腾讯云计算</dt>
+          <dd>产品</dd>
+          <dd>云市场</dd>
+          <dd>客户案例</dd>
+          <dd>产品发布台</dd>
+          <dd>网站备案</dd>
+          <dd>认证信息</dd>
+          <dd>许可证说明</dd>
+          <dd>隐私声明</dd>
+          <dd>关于我们</dd>
+        </dl>
+        <dl>
+          <dt>解决方案</dt>
+          <dd>产品</dd>
+          <dd>云市场</dd>
+          <dd>客户案例</dd>
+          <dd>产品发布台</dd>
+          <dd>网站备案</dd>
+          <dd>认证信息</dd>
+          <dd>许可证说明</dd>
+          <dd>隐私声明</dd>
+          <dd>关于我们</dd>
+        </dl>
+        <dl>
+          <dt>资源与社区</dt>
+          <dd>产品</dd>
+          <dd>云市场</dd>
+          <dd>客户案例</dd>
+          <dd>产品发布台</dd>
+          <dd>网站备案</dd>
+          <dd>认证信息</dd>
+          <dd>许可证说明</dd>
+          <dd>隐私声明</dd>
+          <dd>关于我们</dd>
+        </dl>
+        <dl>
+          <dt>合作与生态</dt>
+          <dd>产品</dd>
+          <dd>云市场</dd>
+          <dd>客户案例</dd>
+          <dd>产品发布台</dd>
+          <dd>网站备案</dd>
+          <dd>认证信息</dd>
+          <dd>许可证说明</dd>
+          <dd>隐私声明</dd>
+          <dd>关于我们</dd>
+        </dl>
+        <dl>
+          <dt>管理与支持</dt>
+          <dd>产品</dd>
+          <dd>云市场</dd>
+          <dd>客户案例</dd>
+          <dd>产品发布台</dd>
+          <dd>网站备案</dd>
+          <dd>认证信息</dd>
+          <dd>许可证说明</dd>
+          <dd>隐私声明</dd>
+          <dd>关于我们</dd>
+        </dl>
+        <div class="copyright">
+          <p>Copyright &copy; 2013 - 2020</p>
+          <p>Tencent Cloud. All Rights Reserved.</p>
+          <p>腾讯云 版权所有</p>
+          <a href="#" class="button">购买咨询</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

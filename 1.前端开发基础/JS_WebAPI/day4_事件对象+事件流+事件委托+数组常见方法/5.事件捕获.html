@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .father {
+        width: 600px;
+        height: 600px;
+        background: pink;
+        margin: 0 auto;
+      }
+      .son {
+        width: 400px;
+        height: 400px;
+        background: green;
+        margin: 0 auto;
+      }
+      .sun {
+        width: 200px;
+        height: 200px;
+        background: blue;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son">
+        <div class="sun"></div>
+      </div>
+    </div>
+    <script>
+      let father = document.querySelector(".father");
+      let son = document.querySelector(".son");
+      let sun = document.querySelector(".sun");
+
+      /**
+       * 如果需要看到捕获的过程，需要额外设置参数
+       * 事件源.addEventListener('事件名', 事件处理函数, true)
+       * 这里addEventListener的第三个参数默认为false，即事件冒泡阶段执行
+      */
+
+      father.addEventListener("click", function () {
+        console.log("father事件触发");
+      }, true);
+      son.addEventListener("click", function () {
+        console.log("son事件触发");
+      }, true);
+      sun.addEventListener("click", function () {
+        console.log("sun事件触发");
+      }, true);
+    </script>
+  </body>
+</html>

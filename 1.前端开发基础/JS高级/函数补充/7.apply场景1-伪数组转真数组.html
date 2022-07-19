@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let weiArr = {
+    0: 'jzh',
+    1: 'lmq',
+    2: 'zqh',
+    3: 'cyy',
+    4: 'wq',
+    length: 5
+  }
+  // 同样，借用Array.prototype的成员slice方法
+  // apply只有两个参数，第二个参数为数组，它会和形参一一对应赋值
+  // let newArr = Array.prototype.slice.apply(weiArr, [0]) // 更改this的指向，表示weiArr使用了slice方法
+  // console.log(newArr)
+
+  // 第二种方法：使用arr.push
+  // 不用更改this指向
+  // let arr = []
+  // arr.push.apply(arr, weiArr) // 把weiArr的所有元素依次交给push方法
+  // console.log(arr)
+
+  // 第三种方法：使用es6语法：Array.from()
+  let arr = Array.from(weiArr)
+  console.log(arr)
+</script>
+</body>
+</html>

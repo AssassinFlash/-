@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.clearfix::before, .clearfix::after {
+  content: '';
+  display: table;
+  height: 0;
+  visibility: hidden;
+}
+.clearfix::after {
+  clear: both;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* shortcut栏开始 */
+.shortcut {
+  height: 101px;
+}
+.shortcut .container {
+  height: 100%;
+}
+.shortcut .container .logo {
+  float: left;;
+  width: 195px;
+  height: 100%;
+  background: url(../images/logo.png) no-repeat;
+  background-size: 195px 42px;
+  background-position: left center;
+}
+.shortcut .container ul {
+  float: left;
+  margin: 30px 0 0 53px;
+}
+.shortcut .container ul li {
+  float: left;
+  text-align: center;
+  margin: 0 17px;
+}
+.shortcut .container ul li a {
+  display: block;
+  padding: 0 8px;
+  line-height: 40px;
+  font-size: 18px;
+  color: #050505;
+}
+.shortcut .container ul li.active {
+  border-bottom: 2px solid #00a4ff;
+}
+.shortcut .container .search {
+  float: left;
+  width: 411px;
+  height: 40px;
+  margin: 30px 0 0 69px;
+}
+.shortcut .container .search input {
+  float: left;
+  width: 361px;
+  height: 100%;
+  line-height: 38px;
+  outline: none;
+  border-left: 1px solid #00a4ff;
+  border-top: 1px solid #00a4ff;
+  border-bottom: 1px solid #00a4ff;
+  border-right: none;
+  padding-left: 19px;
+  font-size: 14px;
+  color: #bfbfbf;
+}
+.shortcut .container .search .button {
+  float: left;
+  width: 50px;
+  height: 100%;
+  background: url(../images/btn.png) no-repeat;
+  background-size: 100% 100%;
+}
+.shortcut .container .user {
+  float: left;
+  height: 30px;
+  margin: 35px 0 0 31px;
+  line-height: 30px;
+}
+.shortcut .container .user img {
+  vertical-align: middle;
+}
+.shortcut .container .user .username {
+  font-size: 14px;
+  color: #666;
+}
+/* shortcut栏结束 */
+
+/* banner栏开始 */
+.banner {
+  height: 420px;
+  background-color: #1c036c;
+}
+.banner .container {
+  position: relative;
+  height: 100%;
+  background: url(../images/banner2.png) no-repeat;
+  background-size: 100%;
+}
+.banner .container .nav {
+  float: left;
+  width: 190px;
+  height: 420px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px 20px 0;
+}
+.banner .container .nav li a{
+  display: block;
+  line-height: 44px;
+  font-size: 12px;
+  color: white;
+}
+.banner .container .nav li a::after {
+  content: '>';
+  float: right;
+}
+.banner .container .dot {
+  position: absolute;
+  width: 159px;
+  height: 12px;
+  left: 50%;
+  bottom: 34px;
+  transform: translateX(-50%);
+}
+.banner .container .dot span {
+  float: left;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  margin-right: 16px;
+}
+.banner .container .dot span:last-of-type {
+  margin-right: 0;
+}
+.banner .container .dot span.active {
+  width: 19px;
+  border-radius: 6px;
+  background: white;
+}
+.banner .container .chart {
+  float: right;
+  width: 228px;
+  height: 300px;
+  background: white;
+  margin-top: 50px;
+}
+.banner .container .chart .title {
+  height: 48px;
+  line-height: 48px;
+  background: #9bceea;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+.banner .container .chart ul {
+  padding: 6px 19px 0;
+}
+.banner .container .chart ul li {
+  line-height: 20px;
+  padding-bottom: 10px;
+  padding-top: 11px;
+  border-bottom: 1px solid #efefef;
+}
+.banner .container .chart ul li p:first-of-type span:first-of-type {
+  font-size: 16px;
+  color: #4e4e4e;
+}
+.banner .container .chart ul li p:first-of-type span:last-of-type {
+  font-size: 14px;
+  color: #4e4e4e;
+}
+.banner .container .chart ul li p:last-of-type span {
+  font-size: 12px;
+  color: #a5a5a5;
+}
+.banner .container .chart ul li:last-of-type {
+  padding: 0;
+  border: none;
+}
+.banner .container .chart ul li a.button {
+  display: block;
+  height: 41px;
+  margin-top: 5px;
+  line-height: 39px;
+  border: 1px solid #00a4ff;
+  text-align: center;
+  font-size: 16px;
+  color: #00a4ff;
+}
+/* banner栏结束 */

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      every：判断数组中是否所有元素都满足条件
+        举例：全选按钮
+
+      every方法特点：
+        1.回调函数执行次数 不一定等于 数组长度
+        2.本身返回值：
+            true：表示数组中所有元素都满足条件
+            false：表示数组中存在元素不满足条件
+        3.回调函数return：
+            return true：循环继续执行，直到遍历完整个数组，若还为true则every返回true
+            return false：循环立即结束，every返回false
+    */
+
+      let arr = [10, 20, 30, 40, 50, -60];
+      let res = arr.every((value) => {
+        return value >= 0;
+      });
+      console.log(res);
+    </script>
+  </body>
+</html>

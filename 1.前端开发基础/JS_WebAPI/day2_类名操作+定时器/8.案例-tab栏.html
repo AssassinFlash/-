@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/tab.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <ul>
+        <li class="active"><a href="#">面板1</a></li>
+        <li><a href="#">面板2</a></li>
+        <li><a href="#">面板3</a></li>
+        <li><a href="#">面板4</a></li>
+      </ul>
+      <div class="image">
+        <img class="show" src="./images/guojidapai.jpg" alt="" />
+        <img src="./images/guozhuangmingpin.jpg" alt="" />
+        <img src="./images/nanshijingpin.jpg" alt="" />
+        <img src="./images/qingjieyongpin.jpg" alt="" />
+      </div>
+    </div>
+
+    <script>
+      let tabs = document.querySelectorAll(".wrap li");
+      let images = document.querySelectorAll(".image img");
+
+      for (let i = 0; i < tabs.length; i++) {
+        // 1.点击面板时，先去除所有的active类，再让自己添加active类
+        tabs[i].addEventListener("click", function () {
+           for (let j = 0; j < tabs.length; j++) {
+            tabs[j].classList.remove("active");
+          }
+          this.classList.add("active");
+
+          // 2.相应的，点击了第几个面板，第几个的图片就应该显示出来
+          // 因此要记住i
+          // 首先还是要隐藏所有的图片，然后将自己显示出来
+          for (let k = 0; k < images.length; k++) {
+            images[k].classList.remove("show");
+          }
+          images[i].classList.add("show");
+        });
+      }
+    </script>
+  </body>
+</html>

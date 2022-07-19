@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>走马灯案例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      .box {
+        width: 500px;
+        height: 300px;
+        margin: 100px auto;
+        border: 3px solid orange;
+        overflow: hidden;
+      }
+      .box ul {
+        width: 700%;
+        height: 300px;
+        animation: move 5s linear infinite;
+      }
+      .box ul li {
+        float: left;
+        width: 500px;
+        height: 300px;
+      }
+      .box:hover ul {
+        animation-play-state: paused;
+      }
+      .box ul li a {
+        display: block;
+        width: 500px;
+        height: 300px;
+      }
+      .box ul li a img {
+        width: 500px;
+        height: 300px;
+        vertical-align: top;
+      }
+      @keyframes move {
+        from {
+          transform: translateX(0)
+        }
+        to {
+          transform: translateX(-3000px)
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li>
+          <a href="#">
+            <img src="./images/1.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/2.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/3.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/4.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/5.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/6.jpg" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./images/1.jpg" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

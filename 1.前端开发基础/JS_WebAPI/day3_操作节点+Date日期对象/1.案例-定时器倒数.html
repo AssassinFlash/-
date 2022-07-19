@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>请阅读上述协议</button>
+
+    <script>
+      let btn = document.querySelector("button");
+      let timer = null;
+
+      btn.addEventListener("click", function () {
+        btn.disabled = true;
+        let countdown = 5;
+        btn.innerHTML = `请等待倒计时${countdown}`;
+        timer = setInterval(function () {
+          countdown--;
+          btn.innerHTML = `请等待倒计时${countdown}`;
+          if (countdown === 0) {
+            clearInterval(timer);
+            btn.innerHTML = "已阅读协议";
+            btn.disabled = false;
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

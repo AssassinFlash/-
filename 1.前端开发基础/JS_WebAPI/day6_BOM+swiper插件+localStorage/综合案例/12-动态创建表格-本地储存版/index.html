@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+  <h1>新增学员</h1>
+  <div class="info">
+    姓名：<input type="text" class="uname">
+    年龄：<input type="text" class="age">
+    性别: <select name="gender" id="" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    薪资：<input type="text" class="salary">
+    就业城市：<select name="city" id="" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+
+    </select>
+    <button class="add">录入</button>
+  </div>
+
+  <h1>就业榜</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1001</td>
+        <td>欧阳霸天</td>
+        <td>19</td>
+        <td>男</td>
+
+        <td>15000</td>
+        <td>上海</td>
+        <td>
+          <a href="javascript:">删除</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    // 模拟后端发送过来的数据
+    // let arr = [
+    //   { stuId: 1001, uname: '欧阳霸天', age: 19, gender: '男', salary: '20000', city: '上海' },
+    //   { stuId: 1002, uname: '令狐霸天', age: 29, gender: '男', salary: '30000', city: '北京' },
+    //   { stuId: 1003, uname: '诸葛霸天', age: 39, gender: '男', salary: '2000', city: '北京' },
+    // ]
+
+    let tbody = document.querySelector('tbody')
+    let uname = document.querySelector('.uname')
+    let age = document.querySelector('.age')
+    let gender = document.querySelector('.gender')
+    let salary = document.querySelector('.salary')
+    let city = document.querySelector('.city')
+    let add = document.querySelector('.add')
+
+
+    // 渲染的函数--------------------------------------------------
+    // 1. 读取本地储存中的数组
+    //   1. 如果本地储存中没有储存数据，此时把默认的数组储存进去
+    //       1. 把默认数组通过 `JSON.stringify(数组)` 转换成 JSON字符串
+    //       2. 把JSON字符串储存到本地储存中去
+    //   2. 如果本地储存中有储存数据，此时则获取本地储存数据
+    //       1. 获取到的数据默认是JSON字符串，需要把JSON字符串通过 `JSON.parse(JSON字符串)` 转换成复杂数据类型
+    // 2. 将获取的数组渲染到页面中去
+    //   1. 本地储存中没有数据则渲染默认数组
+    //   2. 本地储存中有数据则渲染获取到的数据
+    // 3. 优化：因为每个功能都需要获取本地储存中的数据，因此，可以将读取本地储存的数组的代码，封装成函数
+    function render() {
+      // 读取本地数据
+      // 调用获取数据函数---------------------------------------------------
+      let arr = getLocalDate()
+
+      // 在渲染数据之前，把tbody原本的内容清空
+      tbody.innerHTML = ''
+      // 进行数组的变量——》每拿出一项，就创建出一个tr
+      for (let i = 0; i < arr.length; i++) {
+        // 创建一个tr
+        let newTr = document.createElement('tr')
+        // 给tr中添加内容
+        // console.log(arr[i].uname)
+        newTr.innerHTML = `
+          <td>${arr[i].stuId}</td>
+          <td>${arr[i].uname}</td>
+          <td>${arr[i].age}</td>
+          <td>${arr[i].gender}</td>
+          <td>${arr[i].salary}</td>
+          <td>${arr[i].city}</td>
+          <td>
+            <a href="javascript:" id="${i}">删除</a>
+          </td>
+        `
+        // 把创建好的tr添加到tbody里面去
+        tbody.appendChild(newTr)
+      }
+    }
+
+    // 读取本地储存的数据的函数封装--------------------------------------------
+    function getLocalDate() {
+      let data = localStorage.getItem('data')
+      if (data === null || data === '[]') {
+        // 如果没有数据，则显示默认的数组，并且储存到本地储存中
+        let arr = [
+          { stuId: 1001, uname: '欧阳霸天', age: 19, gender: '男', salary: '20000', city: '上海' },
+          { stuId: 1002, uname: '令狐霸天', age: 29, gender: '男', salary: '30000', city: '北京' },
+          { stuId: 1003, uname: '诸葛霸天', age: 39, gender: '男', salary: '2000', city: '北京' },
+        ]
+        localStorage.setItem('data',JSON.stringify(arr))
+        return arr
+      } else {
+        // 如果有数据，则转换后赋值给arr
+        let arr = JSON.parse(data)
+        return arr
+      }
+    }
+
+    // 网页第一次打开的时候，就需要进行渲染
+    render()
+
+
+    // 点击添加功能-----------------------------------------------------------
+    // 1. 从本地储存获取原数组——》调用封装好的函数
+    // 2. 往获取的原数组中添加新数据
+    // 3. 把新数组储存到本地储存中去——》需要先数组通过 `JSON.stringify(数组)` 转换成 JSON字符串，再储存
+    // 4. 渲染新数组
+    add.addEventListener('click', function () {
+      // 获取本地储存--------------------------------------------------
+      let arr = getLocalDate()
+
+      // 优化：如果uname、age、salary三个中有一个为空，此时弹框提示，并且终止当前的事件处理函数
+      if (uname.value.trim().length === 0 || age.value.trim().length === 0 || salary.value.trim().length === 0) {
+        alert('请输入完整的数据')
+        uname.value = ''
+        age.value = ''
+        salary.value = ''
+        gender.value = '男'
+        city.value = '北京'
+        // 终止
+        return
+      }
+
+      // 需要把散装的数据，组装成一个对象的形式（格式和数组arr中每一项的数据格式保持一致）
+      let obj = {}
+      obj.stuId = arr.length === 0 ? 1001 : arr[arr.length - 1].stuId + 1
+      obj.uname = uname.value
+      obj.age = age.value
+      obj.gender = gender.value
+      obj.salary = salary.value
+      obj.city = city.value
+      console.log(obj)
+
+      // 2、把数据添加到数组中去
+      arr.push(obj)
+
+      // 把新数据储存进去---------------------------------------------------------
+      localStorage.setItem('data',JSON.stringify(arr))
+
+      // 3、重新渲染
+      render()
+
+      // 把5个表单的内容清空和恢复默认值
+      uname.value = ''
+      age.value = ''
+      salary.value = ''
+      gender.value = '男'
+      city.value = '北京'
+    })
+
+
+    // 删除功能--------------------------------------------------
+    // 1. 从本地储存获取原数组——》调用封装好的函数
+    // 2. 往获取的原数组中删除这一项
+    // 3. 把新数组储存到本地储存中去——》需要先数组通过 `JSON.stringify(数组)` 转换成 JSON字符串，再储存
+    // 4. 渲染新数组
+    tbody.addEventListener('click', function (e) {
+      // 需要判断当前被点击的对象是不是a标签，如果是a标签才删除
+      if (e.target.tagName === 'A') {
+        // 获取本地储存数据---------------------------------------------------------------------------
+        let arr = getLocalDate()
+
+        arr.splice(e.target.id, 1)
+
+        // 把删除之后的数据储存到本地储存中去--------------------------------------------
+        localStorage.setItem('data',JSON.stringify(arr))
+        // 删除之后重新渲染
+        render()
+
+      }
+    })
+
+
+  </script>
+</body>
+
+</html>

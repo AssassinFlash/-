@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 140px;
+      height: 140px;
+      /* border: 1px solid black; */
+      background: url(./images/bg.png);
+      /* 人物跑起来原理类似于翻书，所以要分成12段，每段快速的经过 */
+      /* 多组动画要写在一起，否则下面的会覆盖上面的 */
+      animation: run 0.5s steps(12) infinite, move 3s linear alternate infinite;
+    }
+    /* 动画1：人物跑起来 */
+    @keyframes run {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: -1680px 0;
+      }
+    }
+    /* 动画2：盒子移动 */
+    @keyframes move {
+      from {
+        transform: translateX(0)
+      }
+      to {
+        transform: translateX(1000px)
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

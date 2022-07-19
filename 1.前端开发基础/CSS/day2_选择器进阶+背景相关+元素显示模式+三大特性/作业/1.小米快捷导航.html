@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.container {
+				background: #333;
+			}
+
+			.clearfix::before,
+			.clearfix::after {
+				content: '';
+				display: table;
+				clear: both;
+			}
+
+			ul {
+				width: 1226px;
+				height: 40px;
+				margin: 0 auto;
+				list-style: none;
+			}
+
+			li {
+				float: left;
+				line-height: 40px;
+			}
+
+			li.line {
+				width: 1px;
+				height: 14px;
+				background: #b0b0b0;
+				margin: 15px 7px 0;
+			}
+
+			a {
+				text-decoration: none;
+				font-size: 12px;
+				color: #b0b0b0;
+			}
+
+			a:hover {
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul class="clearfix">
+				<li><a href="#">小米网</a></li>
+				<li class="line"></li>
+				<li><a href="#">MIUI</a></li>
+				<li class="line"></li>
+				<li><a href="#">米聊</a></li>
+				<li class="line"></li>
+				<li><a href="#">游戏</a></li>
+				<li class="line"></li>
+				<li><a href="#">多看阅读</a></li>
+				<li class="line"></li>
+				<li><a href="#">云服务</a></li>
+				<li class="line"></li>
+				<li><a href="#">小米移动版</a></li>
+				<li class="line"></li>
+				<li><a href="#">问题反馈</a></li>
+				<li class="line"></li>
+				<li><a href="#">Select Region</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

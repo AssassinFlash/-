@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.求出下列数组中所有数的和、最大值、最小值
+      let arr = [123, 321, 233, 666, 1, 7, 888, 11, 23, 60, 123];
+      function getMax(arr) {
+        let max = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+          if (max < arr[i]) {
+            max = arr[i];
+          }
+        }
+        return max;
+      }
+      function getMin(arr) {
+        let min = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+          if (min > arr[i]) {
+            min = arr[i];
+          }
+        }
+        return min;
+      }
+      function getSum(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      }
+      let max = getMax(arr);
+      let min = getMin(arr);
+      let sum = getSum(arr);
+      console.log(max, min, sum);
+    </script>
+  </body>
+</html>

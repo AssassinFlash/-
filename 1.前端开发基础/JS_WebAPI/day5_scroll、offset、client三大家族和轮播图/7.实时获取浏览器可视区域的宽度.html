@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      在窗口尺寸改变时触发事件：resize
+      获取浏览器窗口宽度：document.documentElement.clientWidth
+    */
+
+      window.addEventListener("resize", function () {
+        console.log(document.documentElement.clientWidth);
+        // 获取html的font-size：一般为浏览器窗口宽度 / 10
+        // 设置html的font-size（用于rem）
+        document.documentElement.style.fontSize =
+          document.documentElement.clientWidth / 10 + "px";
+      });
+    </script>
+  </body>
+</html>

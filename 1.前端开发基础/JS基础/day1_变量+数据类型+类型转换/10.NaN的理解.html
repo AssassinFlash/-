@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      NaN：如果把无法用数字表示的字符串转换成数字类型，可以转换成功，此时浏览器不会报错，但是会用 NaN 来表示
+        
+        如果代码中出现了 NaN，表示此时代码出现了问题，存在不能转换成数字类型的数据
+
+        NaN 简记：not a number 是数字类型，但无法用数字来表示
+    */
+    let str = 'abc'
+    str = Number(str)
+    console.log(str, typeof str); // 结果为 NaN number
+  </script>
+</body>
+</html>

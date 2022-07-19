@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sprite {
+            width: 24px;
+            height: 21px;
+            margin: 100px auto;
+            background: url(./images/taobao.png) no-repeat;
+            /* 由于是图片向上移，而y轴的正方向是朝下，所以值取负数 */
+            background-position: 0 -90px;
+        }
+        .sprite2 {
+            width: 22px;
+            height: 24px;
+            background: url(./images/taobao.png) no-repeat;
+            background-position: 0 -132px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        精灵图：项目中将多张小图片，合并成一张大图片，这张大图片称为精灵图
+
+        场景：有8张小图片，如果不处理，就要向服务器发送8次请求，获得8张图片
+            处理过后，只需发一张大图片即可
+
+            优点：减少服务器发送次数，减轻服务器的压力，提高页面加载速度
+     -->
+
+     <!-- 
+         使用方式：
+         1.创建一个盒子
+         2.量取小图片的大小，将这小图片的宽高设置给盒子
+         3.盒子的背景图片设置为精灵图
+         4.量取小图片的左上角坐标，将偏移量x,y当作是盒子background-position的x,y
+      -->
+
+    <div class="sprite"></div>
+    <div class="sprite2"></div>
+</body>
+</html>

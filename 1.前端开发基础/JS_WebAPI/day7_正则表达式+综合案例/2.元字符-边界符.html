@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 元字符：有特殊含义，可以匹配更多规则，如 /[a-z]/
+  *
+  * 元字符分类：
+  * 1.边界符：表示位置，开头和结尾
+  *     1. ^ 表示匹配行首的文本（以谁开始）
+  *     2. $ 表示匹配行尾的文本（以谁结束）
+  *
+  * 2.量词：表示重复的次数
+  * 3.字符类：特定的字符表示特定的规则
+  * */
+
+  // ^ 开头
+  console.log(/^二哈/.test('很二哈哈')) // false
+  console.log(/^二哈/.test('二哈很傻')) // true
+  console.log(/^二哈/.test('二哈')) // true
+
+  // $ 结尾
+  console.log(/二哈$/.test('二哈很傻')) // false
+  console.log(/二哈$/.test('二哈二哈')) // true
+  console.log(/二哈$/.test('二哈')) // true
+
+  // 注意点：当^$一起使用时，表示字符串必须完全一样，从头到尾必须符合规则，常用于表单校验
+  console.log(/^二哈$/.test('二哈很傻')) // false
+  console.log(/^二哈$/.test('二哈二哈')) // false
+  console.log(/^二哈$/.test('二哈')) // true
+</script>
+</body>
+</html>

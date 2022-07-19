@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a:link {
+      color: pink
+    }
+    a:visited {
+      color: yellow;
+    }
+    a:hover {
+      color: blue;
+    }
+    a:active {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    a:link 选中a链接未访问过的状态
+    a:visited 选中a链接访问之后的状态
+    a:hover 鼠标悬停的状态
+    a:active 选中鼠标按下的状态
+
+    注意点：
+      1.顺序问题：link，visited，hover，active 这四个顺序不能乱 lvha
+      2.:hover可以用于其他标签上，但是link、visited、active不行
+   -->
+   <a href="#">我是一个a标签</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      findIndex：获取某个元素的下标
+        与indexof()类似，但是indexof()只能用于查找基本数据类型
+        findIndex可用于查找对象数组
+
+      findIndex方法特点：
+        1.回调函数执行次数 不一定等于 数组长度
+        2.本身返回值：
+          元素的下标或者-1
+        3.回调函数内部return
+            return true：表示找到了符合条件的元素，循环立即结束，且findIndex返回该元素的下标
+            return false：循环继续执行，如果遍历完数组都是false，则findIndex返回-1
+    */
+
+      let arr = [
+        {
+          name: "张三",
+          age: 25,
+        },
+        {
+          name: "李四",
+          age: 26,
+        },
+        {
+          name: "王五",
+          age: 27,
+        },
+      ];
+      let index = arr.findIndex((value) => {
+        // return value.name === '王五'
+        return value.name === "jzh";
+      });
+      console.log(index);
+    </script>
+  </body>
+</html>

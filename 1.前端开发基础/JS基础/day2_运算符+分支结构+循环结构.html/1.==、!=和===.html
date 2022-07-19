@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      == 和 !=：
+        只比较内容，不比较类型
+    */
+   console.log(12 == 12); // true
+   console.log(12 == '12'); // true 这是因为 == 只比较内容，不比较类型 
+   console.log(12 != '12'); // false 同样，!= 只比较内容，不比较类型 
+
+   /*
+    === 和 !==：
+       全等和不全等
+       既比较内容，也比较类型
+   */
+  console.log(12 === 12); // true
+  console.log(12 === '12'); // false 这是因为 === 既比较内容，也比较类型
+  console.log(12 !== '12'); // true
+
+  // 特别注意：NaN是number类型，但是它谁都不等，就是说 NaN 不等于任何值
+  console.log(NaN == NaN); // false
+  console.log(NaN === NaN); // false
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+@fatherWidth: 400px;
+@sonWidth: 200px;
+@fatherColor: pink;
+@sonColor: orange;
+
+// .father {
+//   width: @fatherWidth;
+//   height: @fatherWidth;
+//   background: @fatherColor;
+//   // 后代选择器：.father .son 通过嵌套来表示
+//   .son {
+//     width: @sonWidth;
+//     height: @sonWidth;
+//     background: @sonColor;
+//   }
+// }
+
+// 子代选择器：.father > .son 嵌套 然后 >
+// .father {
+//   width: @fatherWidth;
+//   height: @fatherWidth;
+//   background: @fatherColor;
+
+//   >.son {
+//     width: @sonWidth;
+//     height: @sonWidth;
+//     background: @sonColor;
+//   }
+// }
+
+// 并集选择器：.father .one, .father .two 省略父级选择器
+// .father {
+//   width: @fatherWidth;
+//   height: @fatherWidth;
+//   background: @fatherColor;
+
+//   .one, .two {
+//     background: yellow;
+//   }
+// }
+
+// 交集选择器：.father.red &表示父级选择器
+.father {
+  width: @fatherWidth;
+  height: @fatherWidth;
+  background: @fatherColor;
+
+  &.red {
+    background: red;
+  }
+  // 伪类选择器
+  &:hover {
+    background: orange;
+  }
+  &:first-child {
+    background: yellow;
+  }
+  // 伪元素选择器
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: red;
+  }
+}

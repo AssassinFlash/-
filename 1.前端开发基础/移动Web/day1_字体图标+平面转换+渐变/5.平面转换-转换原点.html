@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background: pink;
+      margin: 100px auto;
+      transition: all 0.3s;
+      /* 转换原点 */
+      /* transform-origin: 150px 0; */
+      transform-origin: left bottom;
+    }
+    .box:hover {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    转换原点：transform-origin
+    场景：转换默认是元素的中心点，设置transform-origin可让其沿着特殊点进行旋转
+    注意：设置转换原点一般要先加，不要在状态中加
+
+    属性值：transform-origin
+    属性值：原点水平位置 原点垂直位置
+    常见取值：和background-position一样
+      1.方位名词：left、center、top等
+      2.数字坐标
+   -->
+   <div class="box">1</div>
+</body>
+</html>

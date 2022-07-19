@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      float: left;
+    }
+    .left {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      /* 浮动不像display:inline-block，它没有间隙 */
+      float: left;
+    }
+    .right {
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    标准流排版规则：
+      1.块级元素：从上往下，垂直布局，独占一行
+      2.行内元素或行内块元素：从左往右，水平布局，空间不够自动折行
+   -->
+
+   <!-- 
+     浮动的作用：
+      1.早期：图文环绕
+      2.现在：网页布局，让垂直布局的盒子变成水平布局
+    -->
+    <!-- <div class="pic">
+      <img src="./images/1.jpg" alt="">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat nam inventore nulla error suscipit repudiandae possimus ad modi. Consectetur possimus ut suscipit doloribus eius dignissimos earum, quisquam fugit maiores adipisci?
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat nam inventore nulla error suscipit repudiandae possimus ad modi. Consectetur possimus ut suscipit doloribus eius dignissimos earum, quisquam fugit maiores adipisci?
+    </div> -->
+
+    <div class="left"></div>
+    <div class="right"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        width: 200px;
+        height: 200px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button>点击添加样式</button>
+    <div class="box"></div>
+    <script>
+      let btn = document.querySelector("button");
+      let box = document.querySelector(".box");
+      let index = 0;
+
+      /*
+        设置class属性，要用className或者classList来替换，不能直接用class
+      */
+      btn.onclick = function () {
+        if (index % 2) {
+          box.classList.remove("red");
+        } else {
+          box.classList.add("red");
+        }
+        index++;
+      };
+    </script>
+  </body>
+</html>

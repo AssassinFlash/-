@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.box1 {
+				/* 继承性：给父亲设置font，儿子也会具有font */
+				font-size: 30px;
+				color: red;
+				line-height: 50px;
+				/* text-indent: 2em; */
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+      css三大特性：
+        1.继承性：子元素有默认继承父元素样式的特点
+            可继承的常见属性：
+              - color
+              - font-style、font-weight、font-size、font-family
+              - text-indent、text-align
+              - line-height
+
+          继承性常见利用场景：
+            1.给ul设置list-style:none 取出列表默认的小圆点
+            2.直接给body标签设置统一的font-size，统一不同浏览器默认的字体大小
+            
+					继承性失效的特殊情况：
+						1.a标签的color会失效（其实继承下来了，但是给浏览器默认样式覆盖掉了）
+						2.h系列标签的font-size继承失效（同样，继承下来了，给浏览器默认样式覆盖了）
+						3.div的高度不能继承，但是宽度有类似继承的效果（这是因为子元素的div的宽度默认为父元素的宽度）
+     -->
+
+		<div class="box1">
+			父亲
+			<div class="box2">儿子</div>
+			<a href="#">a标签</a>
+		</div>
+	</body>
+</html>

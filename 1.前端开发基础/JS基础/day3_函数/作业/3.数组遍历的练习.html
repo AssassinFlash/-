@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 将下列字符串数组中的数据，倒序拼接成一个字符串
+      let arr = ["aaa", "bbb", "ccc", "ddd", "eee"];
+      function reverseArr(arr) {
+        let str = ''
+        for (let i = arr.length - 1; i >= 0; i--) {
+          str = str + arr[i]
+        }
+        return str
+      }
+      let str = reverseArr(arr)
+      console.log(str);
+    </script>
+  </body>
+</html>

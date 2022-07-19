@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 组合继承（借用构造函数继承+替换原型继承）
+  function Person(name, age) {
+    this.name = name
+    this.age = age
+  }
+
+  // 每个人都有打招呼的方法
+  Person.prototype.sayHi = function () {
+    console.log('你好，我是' + this.name)
+  }
+
+  function Student(name, age, score) {
+    // 借用构造函数继承
+    Person.call(this, name, age)
+    this.score = score
+  }
+
+  // 每个学生都有学习的方法，每个学生也要有打招呼的方法
+  // 所以使用替换原型继承
+  // Student.prototype = Person.prototype
+  // 上述不能这样使用，因为此时Student的原型存放的是Person原型的地址，也就是说修改Student的原型就会修改到Person的原型
+  // 即如果给Student.prototype添加学习方法，Person.prototype也会添加学习方法，这是不允许的
+
+  // 应该像下述使用，这样就相当于复制了一份Person的原型给Student原型
+  Student.prototype = new Person()
+  Student.prototype.study = function () {
+    console.log('我是' + this.name + ', 我是这样学习的')
+  }
+
+  // 实例化
+  let s1 = new Student('jzh', 25, 100)
+  s1.study()
+  s1.sayHi()
+  console.log(s1)
+</script>
+</body>
+</html>

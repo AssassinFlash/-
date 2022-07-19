@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 函数也是一个对象
+  function test() {
+    console.log(1)
+  }
+  test.sb = '随便'
+  test.dsb = function () {
+    console.log(2)
+  }
+
+  console.dir(test)
+
+  // 既然函数是一个对象，那么它是由哪个构造函数实例化出来的呢？
+  console.log(test.__proto__.constructor) // Function
+  // 验证
+  console.log(test.__proto__ === Function.prototype) // true
+
+  // 查找原型链
+  console.log(test.__proto__.__proto__.constructor) // Object
+  // 验证
+  console.log(test.__proto__.__proto__ === Object.prototype) // true
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      1.闭包的概念：闭包是一个可以访问其他函数内部变量的函数，只要撤掉其中一个概念闭包立刻消失
+          1.2 闭包 = 函数 + 局部作用域的引用
+
+      2.闭包的作用：解决变量污染
+          闭包出现较多一般在回调函数里
+    */
+
+    function fn() {
+      let a = 1
+
+      // 在函数fn1中，访问了其他函数fn的内部变量a
+      function fn1() {
+        console.log(a);
+      }
+      fn1()
+    }
+  </script>
+</body>
+</html>

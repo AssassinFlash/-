@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="my-app">
+      <!-- 可以拿到data中返回的数据 -->
+      <h2 :class="['abc', title]">{{message}}</h2>
+      <!-- 可以写三元表达式 -->
+      <h2 :class="['abc', title, isActive ? 'active': '']">{{message}}</h2>
+      <!-- 数组语法中允许嵌套对象语法 -->
+      <h2 :class="['abc', title, {active: isActive}]">{{message}}</h2>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        template: "#my-app",
+        data() {
+          return {
+            message: "hello world",
+            title: "cba",
+            isActive: true,
+          };
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

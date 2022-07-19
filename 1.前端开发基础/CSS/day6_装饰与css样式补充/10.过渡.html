@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            /* 鼠标移入移出都有过渡效果 */
+            /* transition: width 1s; */
+            /* 延时过渡 */
+            transition: all 1s 1s;
+
+        }
+        .box:hover {
+            width: 1000px;
+            /* 只有鼠标移入才有过渡效果 */
+            /* transition: width 1s; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        transition: 过渡，让元素慢慢的变化
+        用法：transition: 过渡的属性 过渡的时长 过渡的延时
+
+        过渡的属性可填all，表示所有属性都要过渡
+
+        注意点：
+            1.过渡要前后状态不一样才有过渡
+            2.过渡需要添加在过渡的元素本身
+            3.过渡加在不同的状态上，显示就会不同：
+                - 给元素默认状态加，那前后变化都会有过渡
+                - 给元素hover状态设置，那只有鼠标移入才有过渡，鼠标移出是没有过渡的
+     -->
+
+    <div class="box"></div>
+</body>
+</html>

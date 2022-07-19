@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      rem布局的目的：让页面中的元素等比例缩放
+        1.页面变小，页面中的元素变小
+        2.页面变大，页面中的元素变大
+
+      px = rem * html的font-size
+
+      rem布局的原理：让html标签的font-size随着屏幕的变化而缩放
+
+      如何当屏幕宽度变化之后，改变html的font-size值呢？
+        - 通过css语法的媒体查询来完成
+
+      完成rem布局的两个步骤：
+        1.页面元素单位用rem
+        2.根据当前屏幕宽度改变html的font-size值
+     */
+    html {
+      font-size: 20px;
+    }
+    .rem1 {
+      width: 20rem;
+      height: 20rem;
+      background: pink;
+    }
+    .rem2 {
+      width: 10rem;
+      height: 10rem;
+      background: orange;
+    }
+    .rem3 {
+      width: 5rem;
+      height: 5rem;
+      background: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="rem1"></div>
+  <div class="rem2"></div>
+  <div class="rem3"></div>
+</body>
+</html>

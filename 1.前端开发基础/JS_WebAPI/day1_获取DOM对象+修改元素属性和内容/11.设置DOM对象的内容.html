@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>我是一个button</button>
+  
+  <div class="father">
+    我是父亲
+    <div class="son">我是儿子</div>
+  </div>
+  <script>
+    /*
+      通过js修改标签内容
+
+        1. innerText
+          - 获取内容，只能获取文本
+          - 设置内容，只能设置文本
+
+        2. innerHTML
+          - 获取内容，可以获取标签和文本
+          - 设置内容，可以设置标签和文本
+    */
+    let btn = document.querySelector('button')
+    // btn.onclick = function() {
+    //   console.log(btn.innerText);
+    //   console.log(btn.innerHTML);
+    // }
+
+    let father = document.querySelector('.father')
+    btn.onclick = function() {
+      console.log(father.innerHTML);
+      console.log(father.innerText);
+    }
+  </script>
+</body>
+</html>

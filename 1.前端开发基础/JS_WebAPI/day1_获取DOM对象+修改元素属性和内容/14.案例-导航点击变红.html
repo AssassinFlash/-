@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      ul {
+        width: 600px;
+        margin: 100px auto;
+        border: 1px solid #333;
+        display: flex;
+      }
+      ul li {
+        height: 50px;
+        width: 100px;
+      }
+      ul li a {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">导航1</a></li>
+      <li><a href="#">导航2</a></li>
+      <li><a href="#">导航3</a></li>
+      <li><a href="#">导航4</a></li>
+      <li><a href="#">导航5</a></li>
+      <li><a href="#">导航6</a></li>
+    </ul>
+
+    <script>
+      let li = document.getElementsByTagName("li");
+      for (let i = 0; i < li.length; i++) {
+        li[i].addEventListener("click", function () {
+          this.style.backgroundColor = "red";
+        });
+      }
+    </script>
+  </body>
+</html>

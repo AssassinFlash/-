@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* 
+        前5个：-n+5，不能写成5-n，这是浏览器的识别问题
+      */
+			li:nth-child(-n + 5) {
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<!--  
+      伪类选择器：根据元素在HTML结构中的关系来查找元素
+     -->
+		<!-- ul>li{我是第$个li}*20 -->
+		<ul>
+			<li>我是第1个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+			<li>我是第4个li</li>
+			<li>我是第5个li</li>
+			<li>我是第6个li</li>
+			<li>我是第7个li</li>
+			<li>我是第8个li</li>
+			<li>我是第9个li</li>
+			<li>我是第10个li</li>
+			<li>我是第11个li</li>
+			<li>我是第12个li</li>
+			<li>我是第13个li</li>
+			<li>我是第14个li</li>
+			<li>我是第15个li</li>
+			<li>我是第16个li</li>
+			<li>我是第17个li</li>
+			<li>我是第18个li</li>
+			<li>我是第19个li</li>
+			<li>我是第20个li</li>
+			
+		</ul>
+	</body>
+</html>

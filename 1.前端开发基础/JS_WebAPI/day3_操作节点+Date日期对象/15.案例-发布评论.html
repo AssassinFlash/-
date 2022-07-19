@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/pinglun.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="release">
+        <img src="./images/tip.png" alt="" class="title" />
+        <textarea
+          id="release-comment"
+          maxlength="200"
+          placeholder="想说的话..."
+        ></textarea>
+        <div class="right">
+          <span class="word-count">0</span>
+          <span>/</span>
+          <span class="total">200</span>
+          <button>发布</button>
+        </div>
+      </div>
+
+      <ul class="comment">
+        <!-- <li>
+        <div class="avatar">
+          <img src="./images/01.jpg" alt="">
+        </div>
+        <div class="userInfo">
+          <div class="user">
+            <h3 class="username">扁鹊</h3>
+            <p class="comment-time">
+              发布于
+              <span>2022/6/28 17:00</span>
+            </p>
+          </div>
+          <div class="user-comment">111</div>
+        </div>
+        <div class="delete">X</div>
+      </li> -->
+      </ul>
+    </div>
+
+    <script>
+      // 模拟数据
+      let dataArr = [
+        { uname: "司马懿", imgSrc: "./images/01.jpg" },
+        { uname: "女娲", imgSrc: "./images/02.jpg" },
+        { uname: "百里守约", imgSrc: "./images/03.jpg" },
+        { uname: "亚瑟", imgSrc: "./images/04.jpg" },
+        { uname: "虞姬", imgSrc: "./images/05.jpg" },
+        { uname: "张良", imgSrc: "./images/06.jpg" },
+        { uname: "安其拉", imgSrc: "./images/07.jpg" },
+        { uname: "李白", imgSrc: "./images/08.jpg" },
+        { uname: "阿珂", imgSrc: "./images/09.jpg" },
+        { uname: "墨子", imgSrc: "./images/10.jpg" },
+        { uname: "鲁班", imgSrc: "./images/11.jpg" },
+        { uname: "嬴政", imgSrc: "./images/12.jpg" },
+        { uname: "孙膑", imgSrc: "./images/13.jpg" },
+        { uname: "周瑜", imgSrc: "./images/14.jpg" },
+        { uname: "老夫子", imgSrc: "./images/15.jpg" },
+        { uname: "狄仁杰", imgSrc: "./images/16.jpg" },
+        { uname: "扁鹊", imgSrc: "./images/17.jpg" },
+        { uname: "马可波罗", imgSrc: "./images/18.jpg" },
+        { uname: "露娜", imgSrc: "./images/19.jpg" },
+        { uname: "孙悟空", imgSrc: "./images/20.jpg" },
+        { uname: "黄忠", imgSrc: "./images/21.jpg" },
+        { uname: "百里玄策", imgSrc: "./images/22.jpg" },
+      ];
+
+      // 获取对象
+      let textarea = document.getElementById("release-comment");
+      let wordCount = document.querySelector(".word-count");
+      let btn = document.querySelector("button");
+      let commentUl = document.querySelector(".comment");
+      // 文本域内容
+      let content = "";
+
+      // 字数统计
+      textarea.addEventListener("keyup", function () {
+        // 去除字符串前后空格：str.trim()
+        content = textarea.value.trim();
+        wordCount.innerHTML = content.length;
+      });
+
+      // 发送评论函数
+      function sendComment() {
+        // 1.创建新li
+        let newLi = document.createElement("li");
+        // 2.获取li的数据，下标0~dataArr.length-1
+        let index = Math.floor(Math.random() * dataArr.length);
+        let imgSrc = dataArr[index].imgSrc;
+        let uname = dataArr[index].uname;
+        let date = new Date().toLocaleString();
+        // 3.li添加数据
+        newLi.innerHTML = `
+        <div class="avatar">
+          <img src="${imgSrc}" alt="">
+        </div>
+        <div class="userInfo">
+          <div class="user">
+            <h3 class="username">${uname}</h3>
+            <p class="comment-time">
+              发布于
+              <span>${date}</span>
+            </p>
+          </div>
+          <div class="user-comment">${content}</div>
+        </div>
+        `;
+        // 4.给li添加删除功能
+        let deleteBtn = document.createElement("div");
+        deleteBtn.innerHTML = "X";
+        deleteBtn.classList.add("delete");
+        deleteBtn.addEventListener("click", function () {
+          this.parentNode.parentNode.removeChild(this.parentNode);
+        });
+        newLi.appendChild(deleteBtn);
+        // 5.li挂载到ul上
+        commentUl.insertBefore(newLi, commentUl.firstElementChild);
+        // 6.还原文本域和字数统计
+        textarea.value = "";
+        wordCount.innerHTML = 0;
+      }
+
+      // 发送评论按钮点击事件
+      btn.addEventListener("click", function () {
+        // 如果评论为空则不能发布
+        if (content.length === 0) {
+          alert("评论不能为空");
+          return;
+        }
+        sendComment();
+      });
+
+      // 控制键盘，当键盘键入enter时发送评论
+      textarea.addEventListener("keyup", function (e) {
+        if (e.key === "Enter") {
+          // sendComment();
+          // 或者使用按钮的点击事件
+          btn.click()
+        }
+      });
+    </script>
+  </body>
+</html>

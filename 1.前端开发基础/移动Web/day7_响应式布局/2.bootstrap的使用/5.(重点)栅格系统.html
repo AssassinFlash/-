@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.css">
+  <style>
+    .container {
+      border: 1px solid #333;
+    }
+    .item {
+      height: 100px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    栅格系统：在bootstrap中会把一行分成12份，通过对应的类名实现每个盒子宽度的动态变化
+    原理：媒体查询 + 宽度百分比 + 浮动
+
+    语法：.col-取值1-取值2
+
+    取值1：
+      1.lg：大屏以上生效(1200px~)
+      2.md: 中屏以上生效(992px~)，注意：中屏可以，大屏也可以
+      3.sm: 小屏以上生效(768px~)
+      4.xs: 超小屏以上生效(0~)
+
+    取值2：份数(1~12)，整数
+
+    比如：.col-lg-6表示大屏以上生效，盒子宽度为一行的6/12，在一行中显示
+   -->
+   <div class="container">
+    <!-- <div class="item col-lg-6"></div>
+    <div class="item col-lg-6"></div> -->
+    <div class="item col-sm-3"></div>
+    <div class="item col-sm-3"></div>
+   </div>
+</body>
+</html>

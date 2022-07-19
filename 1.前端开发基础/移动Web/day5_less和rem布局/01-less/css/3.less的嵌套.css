@@ -1,0 +1,21 @@
+.father {
+  width: 400px;
+  height: 400px;
+  background: pink;
+}
+.father.red {
+  background: red;
+}
+.father:hover {
+  background: orange;
+}
+.father:first-child {
+  background: yellow;
+}
+.father::after {
+  content: '';
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: red;
+}

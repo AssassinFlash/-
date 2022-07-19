@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+        background: red;
+        margin: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+
+    <script>
+      /**
+       * 鼠标事件对象的常见属性：
+       * 1. type：获取当前事件的事件名
+       * 2. clientX/clientY：获取光标相对于浏览器可视区域左上角的水平和垂直坐标
+       *      如果有滚动条，不包括被卷去的距离
+       * 3. pageX/pageY：获取光标相对于整个网页左上角的水平和垂直坐标（推荐使用）
+       *      如果有滚动条，包括被卷去的距离
+       * 4.offsetX/offsetY：获取光标相对于当前DOM元素左上角的位置（在border内边界的坐标）
+       *
+       * clientX/Y 和 pageX/Y 的区别：
+       * clientX/Y 时刻都是相对于浏览器可视区域，如果浏览器发生滚动，原先这么多，滚动之后还是这么多
+       * pageX/Y 是相对于整个网页而言，原先这么多，浏览器滚动之后，距离要加上浏览器滚动的距离
+       */
+
+      let div = document.querySelector("div");
+      div.addEventListener("click", function (e) {
+        console.log(e);
+        // 事件名
+        console.log(e.type);
+        // 光标相对于浏览器窗口左上角的坐标
+        console.log("client:", e.clientX, e.clientY);
+        // 光标相对于整个网页左上角的坐标
+        console.log("page:", e.pageX, e.pageY);
+        // 光标相对于当前DOM元素左上角的坐标
+        console.log("offset:", e.offsetX, e.offsetY);
+      });
+    </script>
+  </body>
+</html>

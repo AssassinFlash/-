@@ -1,0 +1,20 @@
+// 针对样式中出现重复的代码，解决办法：把重复的代码抽出成一个公共的类，最后给对应的标签加类名
+// 在less中，可以抽出成一个函数，在对应的选择器中调用
+// 语法：.函数名(){重复的代码}
+
+.common() {
+  width: 300px;
+  height: 300px;
+  background: red;
+}
+
+
+.box {
+  // 调用函数
+  .common();
+}
+
+.orange {
+  .common();
+  background: orange;
+}

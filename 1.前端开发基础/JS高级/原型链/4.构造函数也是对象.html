@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 构造函数也是函数，所以构造函数也是一个对象
+  // 往构造函数中添加属性和方法
+  function Student(name, age) {
+    this.name = name
+    this.age = age
+  }
+  Student.sb = '随便'
+  Student.dsb = function () {
+    console.log(1)
+  }
+  console.dir(Student)
+
+  // 1、验证
+  console.log(Student.__proto__ === Function.prototype) // true
+
+  // 2. 实例化对象
+  let s1 = new Student('jzh', 25)
+  console.log(s1.__proto__ === Student.prototype) // true
+  console.log(s1.__proto__.constructor.__proto__ === Function.prototype)
+
+  // 总结：所以说，构造函数和普通函数并没有什么区别，
+  // 不管是什么函数被创建，系统都会为之创建一个对应的原型对象
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a href="#">点击弹窗</a>
+  <script>
+    /**
+     * 阻止浏览器的默认行为，比如：a标签点击后自带的跳转功能
+     *  1. return false;
+     *     - 只能写在事件处理函数的最后，因为这条语句之后的代码都不会执行
+     *     - 不能处理addEventListener的默认行为
+     *  2. e.preventDefault();
+     *     - 可以写在事件处理函数的任意位置，且之后的代码不受影响
+     *     - 能处理addEventListener的默认行为（推荐）
+    */
+    let link = document.querySelector('a')
+    link.addEventListener('click', function() {
+      alert('弹窗')
+    })
+  </script>
+</body>
+</html>

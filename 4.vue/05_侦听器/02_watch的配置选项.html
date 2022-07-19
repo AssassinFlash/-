@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <template id="my-app">
+      <h2>{{info.name}}</h2>
+      <button @click="changeInfo">改变info</button>
+      <button @click="changeInfoName">改变info.name</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        template: "#my-app",
+        data() {
+          return {
+            // 本质上是一个proxy对象
+            info: {
+              name: "jzh",
+              age: 25,
+            },
+          };
+        },
+        methods: {
+          changeInfo() {
+            this.info = { name: "Kobe" };
+          },
+          changeInfoName() {
+            this.info.name = "Kobe";
+          },
+        },
+        watch: {
+          // 默认情况下，侦听器只能监听数据本身的改变（内部发生的改变是不能侦听的）
+          // 像这里的例子，如果改变的是info对象本身，那是可以侦听的
+          // 但是如果只是改变info对象的某个属性，比如info.name，那么侦听器就无法侦听到数据变化了
+          // info(newValue, oldValue) {
+          //   console.log(newValue, oldValue);
+          // },
+
+          // 深度侦听，使得只是改变info对象的某个属性，侦听器也可以侦听到
+          // info: {
+          //   handler: function (newValue, oldValue) {
+          //     console.log(newValue, oldValue);
+          //   },
+          //   // 深度侦听的选项
+          //   deep: true,
+          // },
+
+          // 立即执行（默认情况下，第一次打开页面，侦听器不会执行）
+          // 通过立即执行选项，使得侦听器在一开始页面打开的时候就执行
+          info: {
+            handler: function (newValue, oldValue) {
+              console.log(newValue, oldValue);
+            },
+            deep: true,
+            // 立即执行
+            immediate: true,
+          },
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

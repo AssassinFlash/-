@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: green;
+}
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+.wrap table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.wrap table thead {
+  height: 50px;
+}
+.wrap table thead tr {
+  background-color: #eee;
+  border-bottom: 1px dashed #ccc;
+}
+.wrap table tbody tr {
+  border-bottom: 1px dashed #ccc;
+}
+.wrap table tbody tr:hover {
+  background-color: #eee;
+}
+.wrap table tbody tr td button {
+  width: 30px;
+  height: 30px;
+}
+.wrap table tbody tr td .num {
+  width: 50px !important;
+  height: 30px;
+  text-align: center;
+}
+.wrap table tbody tr td:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrap table tbody tr td:nth-child(2) img {
+  vertical-align: middle;
+}
+.wrap .clear {
+  height: 50px;
+  padding: 0 20px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .clear .clearCart {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.wrap .clear .total {
+  display: flex;
+  align-items: center;
+}
+.wrap .clear .total span {
+  vertical-align: middle;
+  margin: 0 10px;
+}
+.wrap .clear .total .items,
+.wrap .clear .total .money {
+  margin: 0 5px;
+  font-size: 24px;
+  color: red;
+}
+.wrap .clear .total .buy {
+  display: block;
+  width: 70px;
+  height: 50px;
+  background: red;
+  margin-left: 20px;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}

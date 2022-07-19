@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background: pink;
+      }
+
+      div {
+        width: 100px;
+        height: 100px;
+        background: blue;
+      }
+    </style>
+	</head>
+	<body>
+		<!-- 
+      块元素作为大容器，可嵌套：文本、块元素、行内元素、行内块元素等...
+      
+        注意点：
+          1. p标签不能嵌套任何块级元素，如div、p、h等
+          2. a标签内部可以嵌套任意元素，但不能嵌套a标签
+     -->
+
+     <!-- 
+       此时浏览器会显示三个盒子
+        这是因为浏览器自动认为p不能嵌套div，就变成了div将p分割成两个部分，上半一个p，下半一个p
+      -->
+     <p>
+       <div>111</div>
+     </p>
+
+     <!-- 
+       浏览器认为a不能嵌套a，所以变成两个a标签
+      -->
+     <a href="#">
+       <a href="#">我是一个a标签</a>
+     </a>
+	</body>
+</html>

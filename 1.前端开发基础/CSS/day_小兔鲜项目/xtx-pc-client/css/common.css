@@ -1,0 +1,195 @@
+/* 版心 */
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+/* header.shortcut头部样式开始 */
+.xtx-shortcut {
+  height: 52px;
+  background: #333;
+}
+.xtx-shortcut .container {
+  height: 52px;
+}
+.xtx-shortcut .container ul {
+  float: right;
+}
+.xtx-shortcut .container ul li {
+  float: left;
+  line-height: 52px;
+}
+.xtx-shortcut .container ul li a {
+  font-size: 14px;
+  color: #dcdcdc;
+}
+.xtx-shortcut .container ul li.line {
+  width: 1px;
+  height: 16px;
+  background: #5a5a5a;
+  margin: 20px 16px 0;
+}
+.xtx-shortcut .container ul li:last-of-type a::before {
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 16px;
+  background: url(../images/sprites.png);
+  background-position: -160px -70px;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 5px;
+}
+/* header.shortcut样式结束 */
+
+/* header.main样式开始 */
+.xtx-main-nav {
+  height: 130px;
+  background: white;
+}
+.xtx-main-nav .container {
+  height: 130px;
+  margin: 0 auto;
+  padding: 30px 0 0 25px;
+}
+.xtx-main-nav .container .logo a {
+  display: inline-block;
+  width: 207px;
+  height: 70px;
+  background: url(../images/logo.png);
+  background-size: 100% 100%;
+  /* 隐藏a标签文字的方法 */
+  /* 1.text-indent */
+  /* text-indent: -9999px;
+  overflow: hidden; */
+  /* 2.font-size */
+  font-size: 0;
+  /* 行内块默认与文字基线对齐，所以要改成中部对齐 */
+  vertical-align: middle;
+}
+.xtx-main-nav .container .nav {
+  line-height: 70px;
+  margin: 0 82px 0 40px;
+}
+.xtx-main-nav .container .nav li {
+  float: left;
+  margin-right: 48px;
+}
+.xtx-main-nav .container .nav li:last-of-type {
+  margin-right: 0;
+}
+.xtx-main-nav .container .nav li a:hover {
+  color: #27ba9b;
+  border-bottom: 2px solid #27ba9b;
+  padding-bottom: 7px;
+}
+.xtx-main-nav .container .search {
+  position: relative;
+  width: 172px;
+  height: 30px;
+  margin-top: 23px;
+}
+.xtx-main-nav .container .search::before {
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-57%);
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: url(../images/sprites.png) -79px -69px;
+}
+.xtx-main-nav .container .search input {
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid #ccc;
+  padding-left: 31px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.xtx-main-nav .container .search input::placeholder {
+  color: #ccc;
+}
+.xtx-main-nav .container .cart {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  margin: 26px 0 0 15px;
+  background: url(../images/sprites.png) -119px -70px;
+}
+.xtx-main-nav .container .cart .number {
+  position: absolute;
+  right: -12px;
+  top: -5px;
+  width: 20px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  background: #e26237;
+  border-radius: 7.5px;
+  font-size: 13px;
+  color: #fff;
+}
+/* header.main样式结束 */
+/* footer.service样式开始 */
+.xtx-service {
+  height: 174px;
+  background: #333;
+}
+.xtx-service .container {
+  width: 1393px;
+  height: 174px;
+  border-bottom: 1px solid #434343;
+  text-align: center;
+}
+.xtx-service .container a {
+  float: left;
+  width: 33.33%;
+  height: 100%;
+  line-height: 174px;
+  font-size: 28px;
+  color: #fff;
+}
+.xtx-service .container a::before {
+  content: '';
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  background: url(../images/sprites.png);
+  margin-right: 19px;
+  vertical-align: middle;
+}
+.xtx-service .container a:first-of-type::before {
+  background-position: 0 0;
+}
+.xtx-service .container a:nth-of-type(2)::before {
+  background-position: -64px 0;
+}
+.xtx-service .container a:last-of-type::before {
+  background-position: -129px 0;
+}
+.xtx-copyright {
+  height: 169px;
+  background: #333;
+}
+.xtx-copyright .container {
+  height: 100%;
+  text-align: center;
+  /* 推荐使用padding，因为使用margin会有margin塌陷 */
+  padding-top: 40px;
+  color: #999;
+  font-size: 14px;
+}
+.xtx-copyright .container p:first-of-type {
+  margin-bottom: 19px;
+}
+.xtx-copyright .container p:first-of-type span.line {
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background: #999;
+  margin: -2px 10px 0;
+  vertical-align: middle;
+}
+.xtx-copyright .container p:first-of-type a {
+  color: #999;
+}

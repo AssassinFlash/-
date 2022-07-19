@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <script>
+    /**
+     * 事件对象：任何一个事件触发时都会有一个事件对象，这个对象包含所有与事件相关的一些信息，包括事件源、事件类型、鼠标位置、键盘信息等等
+     * 不管开发中有没有用到事件对象，每个事件触发时都会有一个事件对象
+     * 
+     * 常见情况：
+     * - 鼠标事件触发时，事件对象中会包含鼠标的位置信息
+     * - 键盘事件触发时，事件对象会包含按下的键相关的信息
+     * */
+    
+    //  获取事件对象的方法：
+    let btn = document.querySelector('button')
+    // 在函数中添加形参event
+    btn.addEventListener('click', function(event) {
+      // event就是事件对象
+      console.log(event);
+    })
+  </script>
+</body>
+</html>

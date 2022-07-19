@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      点语法：点语法只认识属性名，不认识变量
+        1. 对象名.属性名
+        2. 对象名.属性名 = 新值
+
+      中括号语法：中括号语法中可以写字符串或者变量
+        1. 对象名['属性名']
+        2. 对象名['属性名'] = 新值
+    */
+    let obj = {
+      name: 'jzh',
+      age: 25,
+      gender: '男',
+      height: 170,
+      weight: 117,
+      eat: function() {
+        console.log('能吃');
+      },
+      sleep: function() {
+        console.log('能睡');
+      },
+      play: function() {
+        console.log('打游戏');
+      }
+    }
+    function getValue(str) {
+      return obj[`${str}`]
+    }
+    console.log(getValue('eat'));
+  </script>
+</body>
+</html>

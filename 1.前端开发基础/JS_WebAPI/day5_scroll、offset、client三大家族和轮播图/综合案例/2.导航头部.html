@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/daohang.css" />
+  </head>
+  <body>
+    <div class="header">我是顶部导航栏</div>
+    <div class="wrap">
+      <div class="section">秒杀模块</div>
+    </div>
+    <div class="back">返回顶部</div>
+
+    <script>
+      let header = document.querySelector(".header");
+      let sectionDiv = document.querySelector(".section");
+      let back = document.querySelector(".back");
+
+      window.addEventListener("scroll", function () {
+        // 如果浏览器滚动距离大于秒杀模块距离网页顶部的距离
+        if (document.documentElement.scrollTop > sectionDiv.offsetTop) {
+          header.style.top = "0";
+          back.classList.add("show");
+        } else {
+          // offsetHeight：盒子的实际高度
+          header.style.top = -header.offsetHeight + 'px';
+          back.classList.remove("show");
+        }
+      });
+
+      back.addEventListener("click", function () {
+        document.documentElement.scrollTop = 0;
+      });
+    </script>
+  </body>
+</html>

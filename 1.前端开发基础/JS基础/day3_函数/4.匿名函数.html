@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      1.函数表达式
+    */
+      let fn = function () {
+        console.log("hello");
+      };
+
+      // 2.立即执行函数（匿名函数自调用），表示函数声明完之后立刻执行一次
+      // 用括号包住函数表示一个整体
+      // 如果用到立即执行函数，最后必须加;结束
+      (function() {
+        console.log("function");
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 需求：将伪数组转成真数组
+  let weiArr = {
+    0: 'jzh',
+    1: 'lmq',
+    2: 'zqh',
+    3: 'cyy',
+    4: 'wq',
+    length: 5
+  }
+
+  // 假如weiArr可以调用slice方法
+  // let newArr = weiArr.slice(0) // 得到的就是一个数组，且内容为伪数组的元素
+  // 但是weiArr是一个对象，它不能调用数组的方法
+  // slice是Array.prototype的成员，那就借用一下
+  let newArr = Array.prototype.slice.call(weiArr, 0) // 更改slice中this的指向，使其指向为weiArr，相当于weiArr调用了slice
+  console.log(newArr)
+
+  // --------------------------
+  // 回忆一下，真数组有个slice方法
+  // 从该数组中返回(start, end)不包括end 的新数组
+  // let arr = [10, 20, 30, 40, 50, 60]
+  // let newArr = arr.slice(2, 5)
+  // 如果end未指定，slice方法会返回从start到数组末尾的新数组
+  // let newArr = arr.slice(0)
+  // console.log(newArr)
+</script>
+</body>
+</html>

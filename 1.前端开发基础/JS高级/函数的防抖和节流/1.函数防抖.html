@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <script>
+      /*
+      什么是抖动？
+        例如用户鼠标轻微晃动，快速划过某一个元素（用户本身不想触发，只是鼠标误触发，常见于鼠标事件 移入/移出/移动）
+        例如输入框手机和邮箱验证，用户在不停的输入，还没有输入的时候其实是不需要验证的，应该等用户输完才验证。
+
+      防抖：
+        如果用户鼠标轻微晃动，在某一个元素上停留很短的时间，就认为是用户误触发，不执行本次事件处理函数
+        一句话总结：用户连续多次触发某个事件，只执行最后一次
+
+      函数防抖：
+        触发事件后，等待n秒，之后函数执行一次，如果在n秒内又触发了事件，则重新计算函数执行时间
+        一句话总结：间隔时间内多次触发事件，以最后一次为准
+
+      函数防抖思路：
+        1.声明一个变量存储定时器id
+        2.每一次触发事件的时候，先开启定时器，等间隔时间之后再触发
+        3.如果在间隔时间内，用户触发了其他事件，则结束上一次的定时器，以最后一次为准
+    */
+
+      let ipt = document.querySelector("input");
+      // 防抖第一步：声明一个变量存储定时器id
+      let timer = null;
+      ipt.addEventListener("keydown", function () {
+        // 1级作用域链
+        // 防抖第三步：如果在间隔时间内，用户再次触发事件，则清除上一次的定时器，重新开启定时器，直到最后一次
+        clearTimeout(timer);
+        // 防抖第二步：触发事件的时候，先不触发，而是开启定时器，等间隔时间之后再触发
+        timer = setTimeout(() => {
+          // 2级作用域链
+          console.log(this.value);
+        }, 300);
+      });
+    </script>
+  </body>
+</html>

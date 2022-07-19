@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 量词：表示重复次数
+  * * 次数 >= 0
+  * + 次数 >= 1
+  * ？次数 0次 或者 1次
+  * {n} 次数 == n次
+  * {n,} 次数 >= n次
+  * {n,m} 次数 >= n次 <= m次
+  * */
+
+  // * 表示次数 >= 0次
+  console.log(/^哈*$/.test('')) // true
+  console.log(/^哈*$/.test('哈')) // true
+  console.log(/^哈*$/.test('哈哈哈')) // true
+
+  // + 表示次数 >= 1次
+  console.log(/^哈+$/.test('')) // false
+  console.log(/^哈+$/.test('哈')) // true
+  console.log(/^哈+$/.test('哈哈哈')) // true
+
+  // ? 表示次数 == 0次 或者次数 == 1次
+  console.log(/^哈?$/.test('')) // true
+  console.log(/^哈?$/.test('哈')) // true
+  console.log(/^哈?$/.test('哈哈哈')) // false
+
+  // {n} 次数 == n次
+  console.log(/^哈{2}$/.test('')) // false
+  console.log(/^哈{1}$/.test('哈')) // true
+  console.log(/^哈{3}$/.test('哈哈哈')) // true
+
+  // {n,} 次数 >= n次
+  console.log(/^哈{2,}$/.test('')) // false
+  console.log(/^哈{1,}$/.test('哈')) // false
+  console.log(/^哈{2,}$/.test('哈哈哈')) // true
+
+  // {n,m} 次数 >= n次 <= m次
+  console.log(/^哈{2,3}$/.test('')) // false
+  console.log(/^哈{2,3}$/.test('哈')) // false
+  console.log(/^哈{2,5}$/.test('哈哈哈')) // true
+
+  // 注意点：量词是就近修饰的，只看它前一个字符
+  console.log(/tang{2}/.test('tang')) // false
+  console.log(/tang{2}/.test('tangtang')) // false
+  console.log(/tang{2}/.test('tangg')) // true
+  console.log(/(tang){2}/.test('tangtang')) // true
+</script>
+</body>
+</html>

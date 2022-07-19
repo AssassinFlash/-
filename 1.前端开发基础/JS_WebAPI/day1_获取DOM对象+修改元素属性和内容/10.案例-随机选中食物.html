@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>晚上吃什么？</button>
+    <select>
+      <option value="">烤肠</option>
+      <option value="">泡面</option>
+      <option value="">鲍鱼</option>
+      <option value="">青菜炒肉</option>
+      <option value="">炒鸡蛋</option>
+    </select>
+
+    <script>
+      let btn = document.querySelector("button");
+      let options = document.querySelectorAll("option");
+
+      btn.onclick = function () {
+        let randomIndex = parseInt(Math.random() * options.length);
+        options[randomIndex].selected = true;
+      };
+    </script>
+  </body>
+</html>

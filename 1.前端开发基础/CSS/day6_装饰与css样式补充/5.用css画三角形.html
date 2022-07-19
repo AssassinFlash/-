@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      1.设置一个盒子，宽高设置为0
+      2.设置四周不同颜色的边框
+      3.选择其中一个，讲其他三个边框的颜色设置为透明
+    */
+    .box {
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-top: 100px solid transparent;
+      border-right: 100px solid blue;
+      border-bottom: 100px solid transparent;
+    }
+  </style>
+</head>
+<body>
+  <!-- css的三角形是通过边框完成的 -->
+  <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .father {
+      width: 600px;
+      height: 400px;
+      border: 1px solid black;
+      margin: 100px auto;
+      display: flex;
+    }
+    .son {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      background: pink;
+    }
+    .son:nth-child(1) {
+      flex: 1;
+      align-self: center;
+    }
+    .son:nth-child(2) {
+      flex: 2;
+      align-self: flex-start;
+    }
+    .son:nth-child(3) {
+      flex: 3;
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    align-self 单个子元素侧轴对齐方式，给子元素设置
+    取值：和align-items取值一样
+   -->
+  <div class="father">
+    <div class="son">1</div>
+    <div class="son">2</div>
+    <div class="son">3</div>
+  </div>
+</body>
+</html>

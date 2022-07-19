@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      filter：筛选数组
+        举例：找出数组中符合条件的元素
+
+      filter方法特点：
+        1.回调执行次数 === 数组长度
+        2.本身返回值：返回满足筛选条件的新数组
+        3.回调函数内部return
+            必须返回布尔类型
+            return true：满足筛选条件，放入新数组中
+            return false：不满足筛选条件，不放入新数组中
+    */
+
+      let arr = [10, 20, 77, 99, 88];
+      let res = arr.filter((value, index) => {
+        return value % 2 === 0;
+      });
+      console.log(res);
+    </script>
+  </body>
+</html>

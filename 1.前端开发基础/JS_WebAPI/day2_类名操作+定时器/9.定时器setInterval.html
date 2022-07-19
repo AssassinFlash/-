@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="setBomb">装炸弹</button>
+  <button id="defuse">拆炸弹</button>
+  <script>
+    /* 
+      定时器：setInterval
+
+        setInterval可以让代码隔一段时间就执行一次，除非被清除，否则将一直执行下去
+
+        语法：
+        setInterval(func, time)
+          参数1：需要重复执行的代码函数
+          参数2：每次间隔的毫秒数
+          返回值：当前定时器的id，用于清除定时器
+
+        移除定时器：
+          clearInterval(id)
+    */
+
+    // 需求：拆装炸弹
+    let setBomb = document.getElementById('setBomb')
+    let defuse = document.getElementById('defuse')
+    let timeId = null
+
+    setBomb.addEventListener('click', function() {
+      timeId = setInterval(function() {
+        console.log('BOOM!!');
+      }, 1000)
+    })
+    defuse.addEventListener('click', function() {
+      clearInterval(timeId)
+      console.log('Bomb has been defused');
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .father {
+      height: 300px;
+      border: 3px solid black;
+      display: flex;
+    }
+    .left, .center, .right {
+      /* 不用设置高度，因为弹性布局的侧轴默认是stretch，自动拉伸盒子高度到撑满父盒子 */
+      flex: 1;
+    }
+    .left, .right {
+      background: blue;
+    }
+    .center {
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>

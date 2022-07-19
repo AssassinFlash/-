@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = [10, 20, 30, 50, 30, 5]
+  // 使用Math.max()
+  // 不用更改Math的this指向，只用到apply的第二个参数是个数组且apply会遍历数组的特点
+  let max = Math.max.apply(Math, arr) // apply遍历arr，将每个元素都交给Math.max计算一遍
+  console.log(max)
+</script>
+</body>
+</html>

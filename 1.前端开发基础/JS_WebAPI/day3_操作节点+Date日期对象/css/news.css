@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+div {
+  width: 400px;
+  height: 500px;
+  padding-top: 30px;
+  border: 1px solid black;
+}
+ul {
+  padding: 0 10px;
+}
+ul li {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid orange;
+}

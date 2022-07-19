@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // 普通调用/方法调用/构造函数调用，这三个的共同特点是：this无法更改
+  let obj = {
+    name: 'jzh'
+  }
+  // function test() {
+  //   this = obj // 报错，this无法更改
+  //   this.car = 'benz'
+  // }
+
+  // 2.如果非要更改函数/方法中this的指向，可以使用函数的上下文调用模式：
+  // call();   apply();     bind();
+
+  // 2.1 call();
+  // 语法：函数名.call(this的新指向，arg1, arg2 ...)
+  // function getSum(num1, num2) {
+  //   console.log('sum:', num1 + num2)
+  //   console.log(this)
+  // }
+  // // getSum(10,20)
+  // getSum.call(obj, 10, 20) // this指向了obj
+
+  // 2.2 apply();
+  // 语法：函数名.apply(this的新指向, 数组或者伪数组) apply只有两个参数
+  // apply会把数组自动遍历，然后传参
+  // function getSum(num1, num2) {
+  //   console.log('sum:', num1 + num2)
+  //   console.log(this)
+  // }
+  // getSum.apply(obj, [10, 20]) // this指向了obj，且数组/伪数组的元素会依次给形参赋值
+
+  // 2.3 bind();
+  // 语法：函数名.bind(this的新指向，可选参数1，可选参数2...)
+  // 特点：它不会执行函数，而是返回一个新的函数，这个函数的this发生了改变，但是函数体是一样的
+  function getSum(num1, num2) {
+    console.log('sum:', num1 + num2)
+    console.log(this)
+  }
+
+  let fn = getSum.bind(obj, 10, 20) // fn接收了bind的返回值
+  // fn() // this指向obj
+  // 也可以这样写
+  // let fn1 = getSum.bind(obj)
+  // fn1(10, 20)
+
+  // 3.这三个（call()、bind()、apply()）是定义在Function.prototype上的
+  // 意味着所有的函数/方法都可以调用这三个方法
+  // console.dir(Function.prototype)
+
+  // 函数上下文调用的注意点：
+  // 如果this的新指向不是一个对象，而是基本类型数据，那么this最终会变成什么？
+  function test() {
+    console.log(1)
+  }
+  test.call(123) // Number
+  test.call('abc') // String
+  test.call(true) // Boolean
+  test.call(undefined) // Window
+  test.call(null) // Window
+</script>
+</body>
+</html>

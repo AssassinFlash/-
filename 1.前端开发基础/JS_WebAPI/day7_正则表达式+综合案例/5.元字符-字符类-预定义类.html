@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Title</title>
+</head>
+<body>
+<script>
+  /*
+  * 元字符-字符类-预定义类
+  * 1. \d 匹配0-9任意数字 -> [0-9]
+  * 2. \D 匹配非0-9的任意字符 -> [^0-9]
+  * 3. \w 匹配任意字母、数字、下划线 -> [a-zA-Z0-9_]
+  * 4. \W 匹配任意非字母、非数字、非下划线 -> [^a-zA-Z0-9_]
+  * 5. \s 匹配不可见字符，如空格、换行\n、制表符tab \t
+  * 6. \S 匹配可见字符
+  * */
+
+  // 1. \d 匹配0-9任意数字 -> [0-9]
+  console.log(/\d/.test('123')) // true
+  console.log(/\d/.test('b2b')) // true
+  console.log(/\d/.test('abc')) // false
+
+  // 2. \D 匹配非0-9的任意字符 -> [^0-9]
+  console.log(/\D/.test('123')) // false
+  console.log(/\D/.test('b2b')) // true
+  console.log(/\D/.test('abc')) // true
+
+  // 3. \w 匹配任意字母、数字、下划线 -> [0-9a-zA-Z_]
+  console.log(/\w/.test('123')) // true
+  console.log(/\w/.test('b2b')) // true
+  console.log(/\w/.test('@#！@#￥@#￥@')) // false
+  console.log(/\w/.test('@#！@#￥@1#￥@')) // true
+
+  // 4. \W 匹配任意非字母、非数字、非下划线 -> [^0-9a-zA-Z_]
+  console.log(/\W/.test('123')) // false
+  console.log(/\W/.test('b2b')) // false
+  console.log(/\W/.test('@#！@#￥@#￥@')) // true
+  console.log(/\W/.test('@#！@#￥@1#￥@')) // true
+
+  // 5. \s 匹配不可见字符，如空格、\n、 \t
+  console.log(/\s/.test('123')) // false
+  console.log(/\s/.test('1 23')) // true
+  console.log(/\s/.test('b2 b')) // true
+  console.log(/\s/.test('   ')) // true
+  console.log(/\s/.test('\n')) // true
+
+  // 6. \S 匹配可见字符
+  console.log(/\S/.test('123')) // true
+  console.log(/\S/.test('1 23')) // true
+  console.log(/\S/.test('b2 b')) // true
+  console.log(/\S/.test('   ')) // false
+  console.log(/\S/.test('\n')) // false
+</script>
+</body>
+</html>

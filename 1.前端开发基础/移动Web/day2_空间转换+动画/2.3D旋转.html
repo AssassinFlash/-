@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* 视距：给父元素加，一般值为1000px，让子元素有近大远小的效果 */
+      perspective: 1000px;
+    }
+    img {
+      display: block;
+      width: 400px;
+      margin: 200px auto;
+      transition: 0.3s;
+    }
+    img:hover {
+      /* transform: rotateX(45deg) */
+      /* transform: rotateY(45deg); */
+      transform: rotateZ(45deg); /*和rotate效果一样*/
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    3D旋转：让元素进行空间的旋转，提升网页效果
+    属性名：transform
+    属性值：沿着x轴或者y轴旋转，此时是3d空间旋转
+
+      取值                  效果
+      rotateX(deg)         沿着x轴旋转
+      rotateY(deg)         沿着y轴旋转
+   -->
+   <img src="./images/hero.jpeg" alt="">
+</body>
+</html>

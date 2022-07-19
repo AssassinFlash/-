@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .father {
+      width: 600px;
+      height: 600px;
+      margin: 100px auto;
+      border: 3px solid black;
+      /* 给父元素设置弹性盒子 */
+      display: flex;
+      /* 在父元素中设置主轴对齐方式 */
+      /* justify-content: flex-start; */
+      /* justify-content: flex-end; */
+      /* justify-content: center; */
+      /* justify-content: space-around; */
+      /* justify-content: space-between; */
+      justify-content: space-evenly;
+    }
+    .son {
+      width: 100px;
+      height: 100px;
+      border: 1px solid orange;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    主轴对齐方式：justify-content
+      元素在主轴上排布，通过justify-content属性设置元素的对齐方式
+
+      取值：
+        1.flex-start 向主轴的开始方向对齐(左对齐)
+        2.flex-end 向主轴的结束方向对齐(右对齐)
+        3.center 居中对齐
+        4.space-around 空白环绕盒子显示(剩下的空间等分) 1盒子2盒子2盒子1
+        5.space-between 空白只在盒子之间显示 0盒子1盒子1盒子0
+        6.space-evenly 空白均分 1盒子1盒子1盒子1
+   -->
+
+   <div class="father">
+     <div class="son">1</div>
+     <div class="son">2</div>
+     <div class="son">3</div>
+   </div>
+</body>
+</html>

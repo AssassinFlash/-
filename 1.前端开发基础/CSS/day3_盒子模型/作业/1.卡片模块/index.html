@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				line-height: 1;
+			}
+			.box {
+				width: 272px;
+				height: 310px;
+				padding: 19px 21px 0;
+				margin: 100px auto;
+				background: #f4f5f9;
+			}
+			.container {
+				height: 100%;
+				/* background: pink; */
+			}
+			.container .image {
+				text-align: center;
+			}
+			.container .image img {
+				width: 228px;
+				height: 152px;
+				vertical-align: bottom;
+			}
+			.container .title {
+				/* background: pink; */
+				padding: 0 23px;
+				margin-top: 23px;
+				line-height: 20px;
+			}
+			.container .title a {
+				text-decoration: none;
+				color: black;
+				font-size: 12px;
+			}
+			.container .info {
+				margin-top: 11px;
+				padding-left: 23px;
+				font-size: 11px;
+				color: #a092ae;
+			}
+			.container .info span:first-of-type {
+				color: #f77321;
+			}
+			.container .info .dot::before {
+				display: inline-block;
+				content: '·';
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="container">
+				<div class="image">
+					<img src="./images/product.png" alt="" />
+				</div>
+				<div class="title">
+					<a href="#">Android网络图片加载框架详解</a>
+				</div>
+				<div class="info">
+					<span>高级</span>
+					<span class="dot"></span>
+					<span>1125人学习</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

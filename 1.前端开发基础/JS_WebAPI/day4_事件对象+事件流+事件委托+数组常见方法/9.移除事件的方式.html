@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <script>
+    let btn = document.querySelector('button')
+    btn.onclick = function() {
+      alert('111')
+    }
+
+    // 移除on注册的事件
+    btn.onclick = null
+
+    function fn() {
+      console.log('222');
+    }
+    btn.addEventListener('click', fn)
+
+    // 移除addEventListener事件 -》通过 事件源.removeEventListener('事件名', 事件处理函数)
+    // 如果需要移除事件，此时需要使用具名函数
+    // 原因：函数属于复杂数据类型，是引用类型，变量存放的是内存地址
+    console.log({} === {}); // false，因为两个变量存放的地址不一样
+
+    btn.removeEventListener('click', fn)
+  </script>
+</body>
+</html>

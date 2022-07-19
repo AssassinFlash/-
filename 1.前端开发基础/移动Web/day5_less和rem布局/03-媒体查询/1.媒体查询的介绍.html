@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+    /* min-width: 600px -> 当屏幕大于等于600px时，内部选择器样式生效 */
+    /* @media screen and (min-width: 600px) {
+      .box {
+        width: 400px;
+        height: 400px;
+        background: skyblue;
+      }
+    } */
+
+    /* max-width: 800px -> 当屏幕小于等于800px时，内部选择器的样式生效 */
+    /* @media screen and (max-width: 800px) {
+      .box {
+        width: 300px;
+        height: 300px;
+        background: orange;
+      }
+    } */
+
+    /* @media screen and (width: 375px) {
+      .box {
+        width: 400px;
+        height: 400px;
+        background: yellow;
+      }
+    } */
+
+    /* 需求：样式需要在600px到800px之间生效 */
+    /* 可以一直and添加条件 */
+    @media screen and (min-width: 600px) and (max-width: 800px) {
+      .box {
+        width: 300px;
+        height: 300px;
+        background: green;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    媒体查询：根据当前屏幕的宽度，自动改变页面元素的样式
+
+    语法：
+      @media screen and (条件) {
+        选择器 {样式}
+      }
+
+    含义：当屏幕满足条件时，让内部选择器的样式生效，当屏幕不满足条件时，内部选择器的样式不生效
+
+    条件：
+      1. min-width：样式生效的屏幕最小宽度，当屏幕大于等于min-width时，内部选择器样式生效
+      2. max-width：样式生效的屏幕最大宽度，当屏幕小于等于max-width时，内部选择器样式生效
+      3. width：样式生效的屏幕宽度，当屏幕正好等于width时，内部选择器样式生效
+
+    注意：媒体查询只能控制样式是否生效，无法提升样式优先级
+         媒体查询中如果需要满足多个条件，可以用and连接
+   -->
+   <div class="box"></div>
+</body>
+</html>

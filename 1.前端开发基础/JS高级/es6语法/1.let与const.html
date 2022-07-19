@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1.介绍es5声明变量var的特点
+
+    // 1.1 预解析：声明提升到当前作用域的最顶端
+    // var num;
+
+    // console.log(num); // undefined
+    // var num = 10;
+    // console.log(num); // 10
+
+    // 1.2 没有块级作用域：var在if和for中都是全局变量
+    // if(1) {
+    //   var num = 10
+    // }
+    // console.log(num); // 10
+
+
+
+    // 2.es6声明变量的特点：
+    // 1.没有预解析，必须先声明后使用
+    
+    // 2.没有块级作用域，let在if和for中都是局部变量
+    // for(let i = 0; i < 5; i++) {
+
+    // }
+    // console.log(i); // 报错
+  </script>
+</body>
+</html>

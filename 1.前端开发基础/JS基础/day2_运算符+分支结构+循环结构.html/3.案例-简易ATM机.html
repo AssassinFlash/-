@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简易ATM机</title>
+  </head>
+  <body>
+    <script>
+      let money = 1000;
+      // 根据用户输入的数字，执行不同的操作
+      let option = "";
+
+      function deposit() {
+        let m = +prompt("请输入存款金额：");
+        money += m;
+        alert(`存款成功，余额为：${money}`);
+      }
+      function withdraw() {
+        let m = +prompt("请输入取款金额：");
+        while (m > money) {
+          m = +prompt("余额不足，请重新输入取款金额");
+        }
+        money -= m;
+        alert(`取款成功，余额为：${money}`);
+      }
+      function balance() {
+        alert(`余额为：${money}`);
+      }
+
+      while (option !== "4") {
+        option = prompt(`简易ATM机：\n1.存款\n2.取钱\n3.查看余额\n4.退出`);
+        switch (option - 0) {
+          case 1:
+            deposit();
+            break;
+          case 2:
+            withdraw();
+            break;
+          case 3:
+            balance();
+            break;
+          default:
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

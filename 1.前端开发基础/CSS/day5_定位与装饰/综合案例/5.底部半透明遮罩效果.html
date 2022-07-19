@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .box {
+      position: relative;
+      width: 1226px;
+      height: 600px;
+      margin: 100px auto;
+      /* background: pink; */
+      background: url(./images/bg.jpg) no-repeat;
+      background-size: 1226px 600px;
+    }
+    .mask {
+      width: 1226px;
+      height: 150px;
+      /* 
+        默认块级元素的宽度会占满父元素的一行，
+        但是盒子绝对定位之后 -> 脱标 -> 脱标之后的元素宽高都变成由内容撑开
+      */
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="mask"></div>
+  </div>
+</body>
+</html>

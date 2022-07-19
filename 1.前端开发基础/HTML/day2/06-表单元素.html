@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- 
+      属性            属性值                    描述
+      name           用户自定义                 定义input元素的名称
+      value          用户自定义                 规定input元素的值
+      checked        checked                  规定input元素在加载时就被选中
+      maxlength      正整数                    输入字段中字符的最大长度
+
+      注意：
+				name和value值一般都需要设置，为了接收数据方便
+        单选按钮和复选按钮必须要有相同的name值
+        checked属性主要针对单选按钮和复选按钮
+     -->
+
+		<!-- 单选按钮 radio -->
+		<!-- name是表单元素的名字，单选按钮必须有相同的name，才可实现多选一 -->
+		性别：男<input type="radio" name="sex" value="male" /> 女<input
+			type="radio"
+			name="sex"
+			value="female"
+		/><br />
+
+		<!-- 多选按钮 checkbox -->
+		<!-- 多选按钮也必须要有相同的name -->
+		爱好：吃饭<input type="checkbox" name="hobby" value="eat" /> 睡觉<input
+			type="checkbox"
+			name="hobby"
+			value="sleep"
+		/><br />
+
+		<!-- submit 提交按钮 会把表单数据发送到服务器 -->
+		<input type="submit" value="免费注册" />
+
+		<!-- reset 重置按钮 会把所有表单数据都清除 -->
+		<input type="reset" /><br />
+
+		<!-- file 文件域 上传文件 -->
+		上传<input type="file" /><br />
+
+		<!-- 
+			select 下拉列表
+				option中定义 selected="selected"，表示当前项为默认选中项
+		 -->
+		籍贯：
+		<select>
+			<option>广东</option>
+			<option>北京</option>
+			<option>山东</option>
+		</select>
+		<br />
+
+		<!-- <textarea>标签 定义多行文本输入的控件 -->
+		今日反馈：<textarea>111111</textarea>
+	</body>
+</html>

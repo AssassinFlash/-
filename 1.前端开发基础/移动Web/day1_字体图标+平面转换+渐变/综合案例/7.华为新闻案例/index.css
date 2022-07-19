@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+li {
+  width: 350px;
+  height: 250px;
+  margin-right: 30px;
+}
+li:last-of-type {
+  margin-right: 0;
+}
+li a {
+  position: relative;
+  display: block;
+  color: white;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  transition: all 0.3s;
+}
+li .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, .5));
+  opacity: 0;
+  transition: all 0.3s;
+}
+li .desc {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  transform: translateY(40px);
+  transition: all 0.3s;
+  z-index: 2;
+}
+li .desc h6 {
+  font-weight: normal;
+}
+li .desc .title {
+  padding-top: 7px;
+  line-height: 24px;
+  font-weight: bold;
+}
+li .desc .more {
+  font-size: 12px;
+  padding-top: 24px;
+}
+li:hover .desc {
+  transform: translateY(0);
+}
+li:hover .mask {
+  opacity: 1;
+}
+li:hover img {
+  transform: scale(1.2)
+}

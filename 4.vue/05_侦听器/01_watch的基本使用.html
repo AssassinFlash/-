@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="my-app">
+      你的问题：<input type="text" v-model="message" />
+      <button @click="queryAnswer">按钮</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        template: "#my-app",
+        data() {
+          return {
+            // 侦听message的变化时，去进行一些逻辑上的处理
+            message: "hello world",
+            answer: ''
+          };
+        },
+        methods: {
+          queryAnswer() {
+            console.log("答案是：" + this.message);
+          },
+        },
+        // 侦听器
+        watch: {
+          // message 是侦听的data中的属性的名称
+          // 侦听属性自带两个参数，newValue和oldValue
+          // newValue 变化后的新值
+          // oldValue 变化前的旧值
+          message(newValue, oldValue) {
+            console.log(newValue);
+            console.log(oldValue);
+            // 调用methods里的方法
+            this.queryAnswer()
+          }
+        }
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

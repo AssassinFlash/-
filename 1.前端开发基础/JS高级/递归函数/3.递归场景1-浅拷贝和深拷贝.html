@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+      /*
+      * 1.浅拷贝：拷贝的是栈中的地址，所以修改拷贝后的数据，原数据也会发生改变
+      * 2.深拷贝：拷贝的是堆中的数据，所以修改拷贝后的数据，原数据不会发生改变
+      * */
+      // let arr1 = [10,20,30]
+      // let arr = arr1 // 浅拷贝
+      // arr[0] = 199
+      // console.log(arr1) // [199, 20, 30]
+
+      /*
+      * 实际开发中用到的深拷贝方式：
+      *
+      * 1.（简单方式）将js对象转换成json，再将json转换为js对象，即完成了深拷贝
+      * */
+      let obj = {
+        name: 'jzh',
+        age: 25,
+        gender: '男',
+        hobby: ['学习', '打篮球', '玩游戏'],
+        lover: {
+          name: 'lmq',
+          age: 24,
+          salary: 10000
+        }
+      }
+      // let json = JSON.stringify(obj) // 编译器底层就会深拷贝一份数据出来
+      // let js = JSON.parse(json)
+      // // 验证
+      // console.log(js === obj) // false，意味着二者的地址已经不一样了
+
+      // 2.复杂方式：使用递归实现
+      let newObj = {}
+
+      function copy(newObj, obj) {
+        for(let key in obj) {
+          // instanceof：判断这个对象是由哪个构造函数生成的
+          if(obj[key] instanceof Array) {
+            newObj[key] = []
+            copy(newObj[key], obj[key])
+          } else if(obj[key] instanceof Object) {
+            newObj[key] = {}
+            copy(newObj[key], obj[key])
+          } else {
+            newObj[key] = obj[key]
+          }
+        }
+      }
+
+        // 但是这样遇到hobby和lover这样的引用类型，进行的还是浅拷贝
+        // for (let key in obj) {
+        //   newObj[key] = obj[key]
+        // }
+      
+
+      copy(newObj, obj)
+      console.log(newObj)
+    </script>
+  </body>
+</html>

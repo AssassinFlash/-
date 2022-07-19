@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // es6新增了promise对象，那么任务就不能简单的分为同步任务和异步任务
+      // 1.同步任务
+      // 2.异步任务（宏任务）：事件、计时器、ajax请求、整个script标签
+      // 3.异步任务（微任务）：promise的then、await
+
+      // 事件循环
+      // 1.进入到了script标签，相当于是第一次进入事件循环
+      // 2.找到同步任务
+      // 3.找到宏任务，放入宏任务队列
+      // 4.找到微任务，放入微任务队列
+      // 5.执行同步任务，然后依次地去执行微任务队列的微任务
+      // 6.dom渲染，表示第一次事件循环结束
+
+      // 7.然后再去执行宏任务，找到一个宏任务表示进入到了第二次事件循环，然后找宏任务里的同步任务...
+      // 8.按照上面的依次反复，直到清空宏任务队列
+
+      console.log(1);
+      new Promise((resolve, reject) => {
+        console.log(2);
+        resolve(4);
+        console.log(3);
+      }).then((res) => {
+        console.log(res);
+      });
+
+      setTimeout(() => {
+        console.log(5);
+        new Promise((resolve, reject) => {
+          console.log(7);
+          resolve(8);
+        }).then((res) => {
+          console.log(res);
+        });
+        console.log(9);
+      }, 0);
+
+      console.log(10); // 1 2 3 10 4 5 7 9 8
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1.定义动画 */
+    @keyframes donghua {
+      from {
+        /* 动画的起始状态 */
+        transform: rotate(0)
+      }
+      to {
+        /* 动画的终止状态 */
+        transform: rotate(360deg)
+      }
+    }
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 200px auto;
+      background: pink;
+      /* 2.调用动画，谁需要动画就给谁设置animation属性 */
+      animation: donghua 1s infinite linear; /*linear 匀速*/
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    动画与过渡的区别：
+      1.动画不需要触发条件，过渡需要触发条件，比如hover
+      2.动画可以一直不停，过渡最终会停下来
+      3.动画可以设置多个状态，过渡只能设置起始和终止状态
+
+    实现动画的步骤：
+
+    1.定义动画：@keyframes 动画名 {}
+      @keyframes 自定义动画名 {
+        from {
+          开始状态样式
+        }
+        to {
+          结束状态样式
+        }
+      }
+
+    2.调用动画：给对应元素设置animation属性
+      .box {
+        animation: 自定义动画名 动画的执行时间 执行动画的次数 什么状态（匀速、加速）
+      }
+   -->
+   <div class="box"></div>
+</body>
+</html>

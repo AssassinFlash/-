@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div.red {
+      width: 200px;
+      height: 200px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <!-- 默认传入event对象，可以不用写括号 -->
+    <div class="red" @click="divClick"></div>
+    <!-- $event可以获取到事件发生时的事件对象 -->
+    <button @click="btnClick($event, 'jzh')">按钮</button>
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          message: 'hello world'
+        }
+      },
+      methods: {
+        // 默认参数为event对象，原理和dom一样，无论是拖拽还是点击还是移动，dom都会产生一个event对象
+        divClick(event) {
+          console.log(event);          
+        },
+        btnClick(event, name) {
+          console.log(event);
+          console.log(name);
+        }
+      },
+    }
+    Vue.createApp(App).mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  /*
+    正则表达式：是用于匹配字符串中字符组合的模式，是一种查找规则
+      正则表达式也是对象
+
+      使用场景：正则通常用于匹配、替换、提取符合正则表达式的文本，
+        - 表单校验中的校验规则功能
+        - 过滤敏感词的替换功能
+        - 字符串中提取想要的部分
+
+      使用步骤：
+        1.定义规则：写正则
+        2.查找：利用正则表达式查找文本，找到则返回结果
+  */
+
+  // 需求：查找下面文本中是否包含字符串：前端
+  let str = 'IT培训,前端开发培训,web前端培训,软件测试培训,产品经理培训'
+
+  // 创建正则表达式
+  let reg = /前端/
+
+  // 正则方法一：reg.test('字符串') 用于查看字符串是否符合正则规则，如果有符合就返回true，否则返回false
+  console.log(reg.test(str));
+
+  // 正则方法二：reg.exec('字符串') 用于查找符合规则的字符串，如果有符合就返回一个数组，否则返回null
+  let result = reg.exec(str)
+  console.log(result);
+  // 结果：
+  // Array(1)
+  // 0: "前端"
+  // groups: undefined
+  // index: 5
+  // input: "IT培训,前端开发培训,web前端培训,软件测试培训,产品经理培训"
+  // length: 1
+</script>
+</body>
+</html>

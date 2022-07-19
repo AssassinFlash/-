@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 正则修饰符：
+      // 1. i ignore的缩写 -> 正则匹配时不区分大小写
+      console.log(/a/i.test("A")); // true
+      console.log(/a/i.test("a")); // true
+
+      // 2. g global的缩写 -> 全局匹配，找到所有的
+      // 补充字符串方法：
+      // 替换字符串中的字符：str.replace(正则表达式，'替换的文本')，返回值为新的字符串
+
+      // 需求：把字符串中所有的菜鸡替换成**
+      let str1 = "你真的是个菜鸡，我也是菜鸡，所以我们都是菜鸡";
+      let str2 = str1.replace(/菜鸡/g, "**");
+      console.log(str2);
+
+      // 需求：去掉字符串中所有的空格
+      let str3 = '         abcd       efgh     ij    k l        mi   '
+      let str4 = str3.replace(/ /g, '')
+      console.log(str4)
+    </script>
+  </body>
+</html>

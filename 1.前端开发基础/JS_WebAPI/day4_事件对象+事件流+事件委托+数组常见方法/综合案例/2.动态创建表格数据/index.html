@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h3>新增学员</h3>
+      <div class="info">
+        <label for="uname">姓名：</label>
+        <input type="text" id="uname" />
+        <label for="age">年龄：</label>
+        <input type="text" id="age" />
+        <label for="gender">性别：</label>
+        <select name="gender" id="gender">
+          <option value="男">男</option>
+          <option value="女">女</option>
+        </select>
+        <label for="salary">薪资：</label>
+        <input type="number" id="salary" />
+        <label for="city">就业城市：</label>
+        <select name="city" id="city">
+          <option value="北京">北京</option>
+          <option value="上海">上海</option>
+          <option value="广州">广州</option>
+          <option value="佛山">佛山</option>
+          <option value="深圳">深圳</option>
+          <option value="东莞">东莞</option>
+        </select>
+        <button>录入</button>
+      </div>
+      <h3>就业榜</h3>
+      <table cellspacing="0" cellpadding="0" border="1">
+        <thead>
+          <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>薪资</th>
+            <th>就业城市</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1001</td>
+            <td>欧阳震天</td>
+            <td>19</td>
+            <td>男</td>
+            <td>20000</td>
+            <td>北京</td>
+            <td><a href="#">删除</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      // 模拟数据
+      let arr = [
+        {
+          stuId: 1001,
+          uname: "欧阳霸天",
+          age: 19,
+          gender: "男",
+          salary: "20000",
+          city: "上海",
+        },
+        {
+          stuId: 1002,
+          uname: "令狐霸天",
+          age: 29,
+          gender: "男",
+          salary: "30000",
+          city: "北京",
+        },
+        {
+          stuId: 1003,
+          uname: "诸葛霸天",
+          age: 39,
+          gender: "男",
+          salary: "2000",
+          city: "北京",
+        },
+      ];
+
+      // 1.将数据渲染到页面中
+      let tbody = document.querySelector("tbody");
+      // 封装渲染函数
+      function render(data) {
+        // 先清空页面原有数据
+        tbody.innerHTML = "";
+        for (let i = 0; i < data.length; i++) {
+          // 创建一个tr
+          let newTr = document.createElement("tr");
+          newTr.innerHTML = `
+          <td>${data[i].stuId}</td>
+          <td>${data[i].uname}</td>
+          <td>${data[i].age}</td>
+          <td>${data[i].gender}</td>
+          <td>${data[i].salary}</td>
+          <td>${data[i].city}</td>
+          <td><a href="#" id="${i}">删除</a></td>
+        `;
+          // 挂载到tbody上
+          tbody.appendChild(newTr);
+        }
+      }
+      // 页面加载时先执行渲染函数
+      render(arr);
+
+      // 2.表格删除功能的实装（利用事件委托）
+      tbody.addEventListener("click", function (e) {
+        // 判断是否点击的是a标签（target对象有tagName属性，用这个判断）
+        if (e.target.tagName === "A") {
+          // 阻止a标签的默认跳转行为
+          e.preventDefault();
+          // 获取数据（上面通过i索引记录了表格中数据的索引），通过id找到数组对应的数据，删除数组中该数据
+          arr.splice(e.target.id, 1);
+          // 重新渲染页面
+          render(arr);
+        }
+      });
+
+      // 3.添加数据到表格
+      let uname = document.getElementById("uname");
+      let age = document.getElementById("age");
+      let gender = document.getElementById("gender");
+      let salary = document.getElementById("salary");
+      let city = document.getElementById("city");
+      let btn = document.querySelector("button");
+
+      btn.addEventListener("click", function () {
+        // 表单校验（任何一项为空都不能添加数据）
+        if (
+          !uname.value ||
+          !age.value ||
+          !gender.value ||
+          !salary.value ||
+          !city.value
+        ) {
+          alert("数据未填写完整，不能添加数据");
+          return;
+        }
+        // 添加数据
+        let obj = {
+          // 往数组的最后添加，id即为最后一项加1
+          stuId: +(arr[arr.length - 1].stuId) + 1,
+          uname: uname.value,
+          age: age.value,
+          gender: gender.value,
+          salary: salary.value,
+          city: city.value,
+        };
+        // 往数组的最后一项添加数据
+        arr.push(obj);
+        // 清空表单数据
+        uname.value = ''
+        age.value = ''
+        gender.value = '男'
+        salary.value = null
+        city.value = '北京'
+        // 重新渲染页面
+        render(arr);
+      });
+    </script>
+  </body>
+</html>

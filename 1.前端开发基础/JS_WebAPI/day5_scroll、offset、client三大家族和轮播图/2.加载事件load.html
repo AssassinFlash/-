@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 加载事件：加载所有外部资源（图片、外联样式、外联js等）加载完毕时触发的事件
+
+    // 原先：如果script标签写在上面，会导致查找元素为null
+    // 现在，使用加载事件 load -> 它会等页面中所有资源加载完毕后再执行内部的代码
+    window.addEventListener('load', function() {
+      let box = document.querySelector('.box')
+      console.log(box);
+    })
+  </script>
+
+  <div class="box"></div>
+</body>
+</html>

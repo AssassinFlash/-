@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/dianti.css" />
+  </head>
+  <body>
+    <ul class="nav">
+      <li><a class="active" href="#" id="0">男装/女装</a></li>
+      <li><a href="#" id="1">儿童服装/游乐园</a></li>
+      <li><a href="#" id="2">电子产品</a></li>
+      <li><a href="#" id="3">电影/美食</a></li>
+    </ul>
+
+    <div class="clothes">男装/女装</div>
+    <div class="playground">儿童服装/游乐园</div>
+    <div class="electric">电子产品</div>
+    <div class="movie">电影/美食</div>
+
+    <script>
+      let links = document.getElementsByTagName("a");
+      let nav = document.querySelector(".nav");
+      let contentDivs = document.getElementsByTagName('div')
+
+      // 给每个a注册事件
+      nav.addEventListener("click", function (e) {
+        if (e.target.tagName === "A") {
+          // 阻止a标签默认跳转
+          e.preventDefault();
+          for (let i = 0; i < links.length; i++) {
+            links[i].classList.remove("active");
+          }
+          e.target.classList.add("active");
+          let windowScroll = document.documentElement;
+          // 点击的是谁就让浏览器滚动到哪里
+          switch (+e.target.id) {
+            case 0:
+              windowScroll.scrollTop = contentDivs[+e.target.id].offsetTop;
+              break;
+            case 1:
+              windowScroll.scrollTop = contentDivs[+e.target.id].offsetTop;
+              break;
+            case 2:
+              windowScroll.scrollTop = contentDivs[+e.target.id].offsetTop;
+              break;
+            case 3:
+              windowScroll.scrollTop = contentDivs[+e.target.id].offsetTop;
+              break;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

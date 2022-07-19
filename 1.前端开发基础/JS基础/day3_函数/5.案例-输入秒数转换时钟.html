@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let userInput = +prompt("请输入秒数");
+      function getClock(userInput) {
+        let res = userInput
+        let hour = 0
+        let min = 0
+        let second = 0
+        // 时
+        if(res / 3600 >= 1) {
+          hour = parseInt(res / 3600)
+          res = res % 3600
+        }
+        // 分
+        if (res / 60 >= 1) {
+          min = parseInt(res / 60)
+          res = res % 60
+        }
+        second = res
+        return {hour, min, second}
+      }
+      let {hour, min, second} = getClock(userInput)
+      document.write(`${hour}时${min}分${second}秒`)
+    </script>
+  </body>
+</html>

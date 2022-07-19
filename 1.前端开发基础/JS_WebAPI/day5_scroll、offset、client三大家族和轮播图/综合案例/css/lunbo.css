@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.wrap {
+  width: 700px;
+  height: 400px;
+  margin: 100px auto;
+}
+.wrap .bigImage {
+  position: relative;
+  width: 100%;
+  height: 321px;
+}
+.wrap .bigImage ul {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.wrap .bigImage ul li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.wrap .bigImage ul li.show {
+  opacity: 1;
+}
+.wrap .bigImage ul li a {
+  display: block;
+  height: 100%;
+}
+.wrap .bigImage ul li a img {
+  width: 100%;
+  height: 100%;
+}
+.wrap .bigImage .indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 53px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 45px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap .bigImage .indicator h3 {
+  font-size: 26px;
+  color: #a9e247;
+}
+.wrap .bigImage .indicator .arrow {
+  display: flex;
+}
+.wrap .bigImage .indicator .arrow span {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+.wrap .bigImage .indicator .arrow span:first-of-type {
+  background-image: url(../images/icon_focus_switch.png);
+  margin-right: 5px;
+}
+.wrap .bigImage .indicator .arrow span:last-of-type {
+  background-image: url(../images/icon_focus_switch.png);
+  background-position: -60px 0;
+}
+.wrap .smallImage {
+  width: 100%;
+  height: calc(100% - 321px);
+  background: black;
+  padding: 10px;
+  display: flex;
+}
+.wrap .smallImage li {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-right: 9px;
+  box-sizing: content-box;
+}
+.wrap .smallImage li:last-of-type {
+  margin-right: 0;
+}
+.wrap .smallImage li .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.wrap .smallImage li.active {
+  border-bottom: 4px solid #a9e247;
+}
+.wrap .smallImage li:first-of-type a {
+  z-index: 1;
+}
+.wrap .smallImage li a {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+.wrap .smallImage li a img {
+  width: 100%;
+  height: 100%;
+}

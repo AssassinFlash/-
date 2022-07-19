@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .shortcut {
+      height: 40px;
+      background: #333;
+    }
+    .nav {
+      width: 1226px;
+      height: 100px;
+      background: #ffc0cb;
+    }
+    .banner {
+      width: 1226px;
+      height: 460px;
+      background: blue;
+    }
+    .left {
+      width: 234px;
+      height: 100%;
+      background: #ffa500;
+    }
+    .right {
+      width: calc(100% - 234px);
+      height: 100%;
+      background: #87ceeb;
+    }
+    .center {
+      margin: 0 auto;
+    }
+    .fl {
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- 布局分析：从上往下，再从外往内 -->
+  <div class="shortcut"></div>
+  <div class="nav center"></div>
+  <div class="banner center">
+    <div class="left fl"></div>
+    <div class="right fl"></div>
+  </div>
+</body>
+</html>

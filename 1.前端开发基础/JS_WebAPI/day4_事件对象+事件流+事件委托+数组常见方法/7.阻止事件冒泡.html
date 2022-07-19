@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .father {
+        width: 400px;
+        height: 400px;
+        background: pink;
+        margin: 0 auto;
+      }
+      .son {
+        width: 200px;
+        height: 200px;
+        background: red;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son"></div>
+    </div>
+
+    <script>
+      /**
+       * 阻止事件流通：一般用于阻止事件冒泡 -》 e.stopPropagation()
+      */
+      let father = document.querySelector(".father");
+      let son = document.querySelector(".son");
+
+      father.addEventListener("click", function (e) {
+        console.log("触发了father事件");
+        e.stopPropagation()
+      });
+      son.addEventListener("click", function (e) {
+        console.log("触发了son事件");
+        e.stopPropagation()
+      });
+    </script>
+  </body>
+</html>

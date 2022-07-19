@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .father {
+      width: 600px;
+      height: 400px;
+      border: 1px solid black;
+      margin: 100px auto;
+      display: flex;
+    }
+    .son {
+      /* 给子元素设置flex:份数 */
+      flex: 1;
+      height: 100px;
+      border: 1px solid red;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    给子元素设置的相关属性
+    flex：分配子元素空间
+  
+    作用：按照份数，分配父元素主轴宽度的剩余空间
+    代码：flex: 份数
+
+    注意点：
+      优先分配具体尺寸，剩下的空间才按照份数进行分配
+   -->
+   <!-- 需求：让弹性盒子中三个子元素等分 -->
+   <div class="father">
+     <div class="son">1</div>
+     <div class="son">2</div>
+     <div class="son">3</div>
+   </div>
+</body>
+</html>

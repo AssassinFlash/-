@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .father {
+      width: 600px;
+      height: 600px;
+      border: 3px solid black;
+      margin: 100px auto;
+      /* 给父元素设置display:flex */
+      display: flex;
+      /* 在父元素中设置侧轴对齐方式 */
+      /* align-items: flex-start; */
+      /* align-items: flex-end; */
+      /* align-items: center; */
+      /* align-items: stretch; */
+      /* 设置主轴方向 */
+      /* flex-direction: column; */
+    }
+    .son {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    单行侧轴对齐方式：align-items
+      取值：
+        1.flex-start：向侧轴开始方向对齐
+        2.flex-end：向侧轴结束方向对齐
+        3.center：居中对齐
+        4.stretch：（默认值）拉伸显示，如果要有拉伸的效果，不能设置子元素的高度或者宽度
+   -->
+   <div class="father">
+     <div class="son">1</div>
+     <div class="son">2</div>
+     <div class="son">3</div>
+   </div>
+</body>
+</html>
