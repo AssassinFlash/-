@@ -54,13 +54,20 @@
 
           // 立即执行（默认情况下，第一次打开页面，侦听器不会执行）
           // 通过立即执行选项，使得侦听器在一开始页面打开的时候就执行
-          info: {
-            handler: function (newValue, oldValue) {
-              console.log(newValue, oldValue);
-            },
-            deep: true,
-            // 立即执行
-            immediate: true,
+          // info: {
+          //   handler: function (newValue, oldValue) {
+          //     console.log(newValue, oldValue);
+          //   },
+          //   deep: true,
+          //   // 立即执行
+          //   // immediate: true,
+          // },
+
+          // 出现bug：如果你要输出newValue.name和oldValue.name，会发现它们两个值是一样的
+          // 这是因为引用类型
+          // 解决办法：直接侦听info.name
+          "info.name": function (newName, oldName) {
+            console.log(newName, oldName);
           },
         },
       };
