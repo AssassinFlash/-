@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <!-- 对象的引用赋值 -->
+    <script>
+      // 对象是引用类型
+      // const info = {
+      //   name: "why",
+      //   age: 25,
+      // };
+      // const obj = info;
+      // info.name = "kobe";
+      // console.log(obj.name);
+    </script>
+
+    <!-- 对象的浅拷贝 -->
+    <script>
+      // const info = {
+      //   name: "why",
+      //   age: 25,
+      //   friend: {
+      //     name: 'james',
+      //     height: 2.03
+      //   }
+      // };
+      // // lodash
+      // const obj = _.clone(info);
+      // // 创建一个新的对象，将上面对象的所有属性拷贝一份放到新对象中
+      // // Object.assign()只是复制了一层，如果里面还有对象，那obj对里面这个对象还是保存的引用
+      // // 比如这里的friends
+      // const obj = Object.assign({}, info);
+      // info.name = "kobe";
+      // info.friend.name = 'paul'
+      // console.log(obj.name); // why
+      // console.log(obj.friend.name); // paul
+    </script>
+
+    <!-- 对象的深拷贝 -->
+    <script>
+      const info = {
+        name: "why",
+        age: 25,
+        friend: {
+          name: "james",
+          height: 2.03,
+        },
+      };
+      // // JSON方法实现深拷贝
+      // const obj = JSON.parse(JSON.stringify(info))
+      // info.friend.name = 'kobe'
+      // console.log(obj.friend.name); // james
+
+      // lodash
+      const obj = _.cloneDeep(info)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="my-app">
+    <!-- 1. .lazy修饰符 -->
+    <!-- 默认绑定@input事件 -->
+    <!-- 
+      如果不希望立马触发，而是等到敲回车之后才触发事件
+      .lazy修饰符，这样就不是默认绑定input事件，而是绑定change事件
+     -->
+    <!-- <input type="text" v-model.lazy="message"> -->
+
+    <!-- 2. .number修饰符 -->
+    <!-- 
+      默认情况下，v-model绑定的值，无论是不是string类型，它都会自动转成string类型
+      .number会自动转化成number类型，但是是将数字字符串进行转换，如果字符串带有字母，则不会获取字母
+     -->
+    <!-- <h2>{{message}}</h2>
+    <input type="text" v-model.number="message">
+    <button @click="showType">查看类型</button> -->
+
+    <!-- 3. .trim修饰符 -->
+    <!-- 将绑定的值前后的空格给去除 -->
+    <input type="text" v-model.trim="message">
+    <button @click="showResult">查看结果</button>
+
+  </template>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          message: 'hello world'
+        }
+      },
+      methods: {
+        showType() {
+          console.log(this.message, typeof this.message);
+        },
+        showResult(){
+          console.log(this.message);
+        }
+      },
+    }
+    Vue.createApp(App).mount('#app')
+  </script>
+</body>
+</html>
