@@ -62,6 +62,15 @@ module.exports = {
           },
         },
       },
+
+      // asset同样可以处理字体图标
+      {
+        test: /\.(eot|ttf|woff2?)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "font/[name]-[hash:6][ext]",
+        },
+      },
     ],
   },
 };
