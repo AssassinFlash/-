@@ -1,3 +1,4 @@
-import { createApp } from 'vue'
-import App from './01_组件的拆分和嵌套/App.vue'
+import {createApp} from 'vue'
+import App from './05_组件传值案例/App.vue'
+
 createApp(App).mount('#app')
