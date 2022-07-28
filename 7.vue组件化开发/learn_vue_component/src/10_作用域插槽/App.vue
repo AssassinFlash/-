@@ -2,7 +2,7 @@
   <!-- 传值给子组件 -->
   <!-- 通过v-slot="xxx"获取到子组件传给父组件的属性值，它是一个对象，通过xxx.绑定的属性值拿到数据 -->
   <!--  <child-cpn :names="names">-->
-  <!--    &lt;!&ndash;  默认插槽名是default，那么还可以进行一下缩写：  &ndash;&gt;-->
+     <!-- &lt;!&ndash;  默认插槽名是default，那么还可以进行一下缩写：  &ndash;&gt; -->
   <!--    <template v-slot="slotProps">-->
   <!--      <button>{{ slotProps.item }} - {{ slotProps.index }}</button>-->
   <!--    </template>-->
@@ -23,12 +23,11 @@
 </template>
 
 <script setup>
-import ChildCpn from './ChildCpn.vue'
-import {ref} from 'vue'
+import ChildCpn from "./ChildCpn.vue";
+import { ref } from "vue";
 
-const names = ref(['jzh', 'kobe', 'james', 'curry'])
+const names = ref(["jzh", "james", "kobe", "curry"]);
 </script>
 
 <style scoped>
-
 </style>
