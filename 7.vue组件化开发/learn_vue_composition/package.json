@@ -1,5 +1,5 @@
 {
-  "name": "learn_vue_animation",
+  "name": "learn_vue_composition",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,9 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
-    "gsap": "^3.10.4",
-    "lodash": "^4.17.21",
     "vue": "^3.2.37"
   },
   "devDependencies": {
