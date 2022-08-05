@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import App from './01_mixin和extend/01_mixin的基本使用.vue'
+import App from './03_computed和watch/05_watch深度侦听.vue'
 
 createApp(App).mount('#app')
