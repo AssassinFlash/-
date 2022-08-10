@@ -54,6 +54,8 @@ function reactive(raw) {
       get: () => {
         // 只要某些地方需要获取这个数据，就触发收集依赖，收集到与这个数据相关的函数
         dep.depend();
+        // 这里需要return value而不是return raw[key]的原因：
+        // 这里是直接对raw进行了数据劫持，通过raw[key]获取value会触发get函数，导致无限循环
         return value;
       },
       set: (newValue) => {
