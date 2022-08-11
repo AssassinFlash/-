@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2><a href="/home">Home</a></h2>
+      <h2><a href="/about">About</a></h2>
+    </div>
+    <div class="content">Default</div>
+
+    <script>
+      // 要先阻止a标签的默认行为
+      // 因为不是hash值，点击a会向服务器请求资源，而我们不希望它向服务器请求资源
+      const contentEL = document.querySelector(".content");
+
+      const aList = document.getElementsByTagName("a");
+      for (const aEl of aList) {
+        aEl.addEventListener("click", function (e) {
+          e.preventDefault();
+          // 阻止了默认跳转行为后，接下来要调用history对象，使路径发生变化
+          const href = this.getAttribute("href");
+          history.pushState({}, "", href);
+          // 监听路径变化，改变组件
+          switch (location.pathname) {
+            case "/home":
+              contentEL.innerHTML = "Home";
+              break;
+            case "/about":
+              contentEL.innerHTML = "About";
+              break;
+            default:
+              contentEL.innerHTML = "Default";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
