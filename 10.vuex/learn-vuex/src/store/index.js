@@ -32,11 +32,25 @@ const store = createStore({
     },
   },
   mutations: {
-    increment(state) {
-      state.counter++;
+    setCounter(state, payload) {
+      state.counter = payload;
     },
-    decrement(state) {
-      state.counter--;
+  },
+  actions: {
+    // context和store实例拥有相同方法和属性
+    // 所以可以从context中通过commit提交一个mutation，或者通过context.state和context.getters来获取state和getters
+    setCounterAction(context, payload) {
+      // const { commit, dispatch, state, rootState, getters, rootGetters } =
+      //   context;
+
+      // context.commit("setCounter", payload);
+
+      // 封装成promise：方便通知调用的组件异步已完成
+      return new Promise((resolve, reject) => {
+        context.commit('setCounter', payload)
+        // 当调用resolve的时候，就会执行组件里的.then回调
+        resolve('异步已完成')
+      })
     },
   },
 });

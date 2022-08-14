@@ -34,15 +34,31 @@ import { useStore, mapState, mapGetters } from "vuex";
 // }
 
 // 再做一层封装，可以通过传过来什么map函数就执行什么函数
-export function useMapper(mapFn, mapper) {
-  const store = useStore();
-  const storeFns = mapFn(mapper);
+// export function useMapper(mapFn, mapper) {
+//   const store = useStore();
+//   const storeFns = mapFn(mapper);
 
-  const storeMapper = {};
-  Object.keys(storeFns).forEach((fnKey) => {
-    const fn = storeFns[fnKey].bind({ $store: store });
-    storeMapper[fnKey] = computed(() => fn());
+//   const storeMapper = {};
+//   Object.keys(storeFns).forEach((fnKey) => {
+//     const fn = storeFns[fnKey].bind({ $store: store });
+//     storeMapper[fnKey] = computed(() => fn());
+//   });
+
+//   return storeMapper;
+// }
+
+const useState = (mapper) => {
+  const store = useStore();
+
+  const storeStateFns = mapState(mapper);
+  const storeState = {};
+
+  Object.keys(storeStateFns).forEach((fnKey) => {
+    const fn = storeStateFns[fnKey].bind({ $store: store });
+    storeState[fnKey] = computed(fn);
   });
 
-  return storeMapper;
-}
+  return storeState;
+};
+
+export default useState;
