@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import App from './04_teleport/App.vue'
+import App from './06_nextTick的理解/01_nextTick.vue'
 // import plugins_object from "./05_编写Vue插件/plugins_object.js";
 import plugins_function from "./05_编写Vue插件/plugins_function.js";
 const app = createApp(App);
