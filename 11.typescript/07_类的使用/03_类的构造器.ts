@@ -13,6 +13,7 @@ class Teacher extends Person1 {
   // 子类也有构造器的时候，需要先调用父类的构造器
   constructor(name: string, public age: number) {
     // super: 父类
+    // super()表示调用了父类的构造器
     super(name);
   }
 }
