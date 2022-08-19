@@ -5,6 +5,14 @@ import { time, price } from "./ts/01_命名空间";
 // 此时就不报错了
 import lodash from "lodash";
 
+import nhltImg from './img/nhlt.jpg'
+
 console.log(lodash.join(["abc", "cba"]));
 console.log(time.format());
 console.log(price.format());
+
+console.log(info.name, info.age);
+foo();
+
+const teacher = new Teacher("jzh", 25);
+console.log(teacher.name, teacher.age);
